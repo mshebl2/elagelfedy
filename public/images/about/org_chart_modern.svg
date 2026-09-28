@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="1000" height="800" fill="none">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bgRadial" cx="50%" cy="46%" r="65%">
+      <stop offset="0%" stop-color="#0e231b"/>
+      <stop offset="45%" stop-color="#0a1518"/>
+      <stop offset="100%" stop-color="#05090b"/>
+    </radialGradient>
+
+    <!-- Metallic Gold Gradient -->
+    <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="25%" stop-color="#eab308"/>
+      <stop offset="55%" stop-color="#c5a869"/>
+      <stop offset="100%" stop-color="#854d0e"/>
+    </linearGradient>
+
+    <!-- Deep Emerald & Sage Gradients -->
+    <linearGradient id="emeraldOrb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="35%" stop-color="#059669"/>
+      <stop offset="85%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+
+    <linearGradient id="centerHubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="20%" stop-color="#047857"/>
+      <stop offset="65%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+
+    <!-- Node Card Fill Gradient -->
+    <linearGradient id="nodeFillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142422" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#0c1719" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#060c0e" stop-opacity="0.98"/>
+    </linearGradient>
+
+    <!-- Glass Glow Filters -->
+    <filter id="hubGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="nodeShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1000" height="800" rx="24" fill="url(#bgRadial)"/>
+
+  <!-- Border Frame -->
+  <rect x="12" y="12" width="976" height="776" rx="18" fill="none" stroke="#c5a869" stroke-width="1.5" opacity="0.35"/>
+  <rect x="18" y="18" width="964" height="764" rx="14" fill="none" stroke="#059669" stroke-width="0.75" stroke-dasharray="8 6" opacity="0.4"/>
+
+  <!-- CAD Blueprint Technical Grid & Vector Schematics -->
+  <g opacity="0.16" stroke="#10b981" stroke-width="1">
+    <!-- Grid -->
+    <line x1="50" y1="370" x2="950" y2="370" stroke-dasharray="4 4"/>
+    <line x1="500" y1="50" x2="500" y2="690" stroke-dasharray="4 4"/>
+    <!-- Diagonal crosshair -->
+    <line x1="140" y1="140" x2="860" y2="600" stroke-dasharray="3 5"/>
+    <line x1="140" y1="600" x2="860" y2="140" stroke-dasharray="3 5"/>
+    
+    <!-- Concentric Technical Calibrations -->
+    <circle cx="500" cy="370" r="140" stroke-dasharray="6 6"/>
+    <circle cx="500" cy="370" r="230" stroke-dasharray="4 4"/>
+    <circle cx="500" cy="370" r="310"/>
+    <circle cx="500" cy="370" r="325" stroke-dasharray="2 6"/>
+    
+    <!-- Corner Technical Coordinate Marks -->
+    <path d="M 35 60 L 35 35 L 60 35" fill="none" stroke="#c5a869" stroke-width="2"/>
+    <path d="M 965 60 L 965 35 L 940 35" fill="none" stroke="#c5a869" stroke-width="2"/>
+    <path d="M 35 740 L 35 765 L 60 765" fill="none" stroke="#c5a869" stroke-width="2"/>
+    <path d="M 965 740 L 965 765 L 940 765" fill="none" stroke="#c5a869" stroke-width="2"/>
+  </g>
+
+  <!-- Top Title Header -->
+  <g transform="translate(500, 52)" text-anchor="middle">
+    <rect x="-260" y="-18" width="520" height="36" rx="18" fill="#0c1719" stroke="#c5a869" stroke-width="1.2" opacity="0.95"/>
+    <text y="5" font-family="'Space Grotesk', 'Plus Jakarta Sans', sans-serif" font-size="12.5" font-weight="800" fill="#c5a869" letter-spacing="2">
+      ★ AACC APPROVED ORGANIZATIONAL STRUCTURE • الهيكل التنظيمي المعتمد ★
+    </text>
+  </g>
+
+  <!-- ================= ORBITAL CONNECTORS & SPOKES ================= -->
+  <!-- Outer Circular Ring connecting all 6 nodes (Radius = 230px, Center = 500, 370) -->
+  <circle cx="500" cy="370" r="230" fill="none" stroke="#059669" stroke-width="2" opacity="0.65"/>
+  <circle cx="500" cy="370" r="230" fill="none" stroke="#c5a869" stroke-width="1.2" stroke-dasharray="8 12" opacity="0.75"/>
+
+  <!-- Radial Spoke Lines extending from Hub to the 6 Nodes -->
+  <g stroke="url(#goldMetallic)" stroke-width="3" stroke-linecap="round">
+    <!-- North: 90 deg (0, -230) -> (500, 140) -->
+    <line x1="500" y1="280" x2="500" y2="155"/>
+    <!-- North-East: 30 deg (230*cos(30)=199, -230*sin(30)=-115) -> (699, 255) -->
+    <line x1="578" y1="325" x2="699" y2="255"/>
+    <!-- South-East: -30 deg -> (699, 485) -->
+    <line x1="578" y1="415" x2="699" y2="485"/>
+    <!-- South: -90 deg -> (500, 600) -->
+    <line x1="500" y1="460" x2="500" y2="585"/>
+    <!-- South-West: 210 deg -> (301, 485) -->
+    <line x1="422" y1="415" x2="301" y2="485"/>
+    <!-- North-West: 150 deg -> (301, 255) -->
+    <line x1="422" y1="325" x2="301" y2="255"/>
+  </g>
+
+  <!-- Glowing Pulse Particles on the Circuit Lines -->
+  <g fill="#34d399" filter="url(#goldGlow)">
+    <circle cx="500" cy="205" r="4.5"/>
+    <circle cx="640" cy="290" r="4.5"/>
+    <circle cx="640" cy="450" r="4.5"/>
+    <circle cx="500" cy="535" r="4.5"/>
+    <circle cx="360" cy="450" r="4.5"/>
+    <circle cx="360" cy="290" r="4.5"/>
+  </g>
+
+  <!-- ================= 1. NORTH NODE: CO-FOUNDER & CEO ================= -->
+  <!-- Position: (500, 140) -->
+  <g transform="translate(500, 140)" filter="url(#nodeShadow)" text-anchor="middle">
+    <!-- Outer Glow Circle -->
+    <circle cx="0" cy="0" r="68" fill="url(#nodeFillGrad)" stroke="url(#goldMetallic)" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="60" fill="url(#emeraldOrb)" opacity="0.25"/>
+    <circle cx="0" cy="0" r="54" fill="none" stroke="#c5a869" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+    
+    <!-- Star Icon Pill -->
+    <rect x="-24" y="-56" width="48" height="16" rx="8" fill="#c5a869" stroke="#12171c" stroke-width="1.5"/>
+    <text y="-44" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="900" fill="#0c1719" letter-spacing="1">CEO</text>
+
+    <!-- Text content -->
+    <text y="-14" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">Co-Founder</text>
+    <text y="4" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" fill="#c5a869">&amp; CEO</text>
+    <text y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#a7f3d0">المؤسس والرئيس التنفيذي</text>
+    <text y="39" font-family="'Space Grotesk', sans-serif" font-size="8.5" font-weight="600" fill="#94a3b8">Eng. Mahmoud Alsheakh</text>
+  </g>
+
+  <!-- ================= 2. NORTH-EAST NODE: HUMAN RESOURCES MANAGER ================= -->
+  <!-- Position: (699, 255) -->
+  <g transform="translate(699, 255)" filter="url(#nodeShadow)" text-anchor="middle">
+    <circle cx="0" cy="0" r="64" fill="url(#nodeFillGrad)" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="0" cy="0" r="56" fill="#1e3a8a" opacity="0.2"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#60a5fa" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+
+    <text y="-18" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">Human</text>
+    <text y="0" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#93c5fd">Resources</text>
+    <text y="18" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Manager</text>
+    <text y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#bfdbfe">مدير الموارد البشرية</text>
+  </g>
+
+  <!-- ================= 3. SOUTH-EAST NODE: FINANCE MANAGER ================= -->
+  <!-- Position: (699, 485) -->
+  <g transform="translate(699, 485)" filter="url(#nodeShadow)" text-anchor="middle">
+    <circle cx="0" cy="0" r="64" fill="url(#nodeFillGrad)" stroke="#10b981" stroke-width="2"/>
+    <circle cx="0" cy="0" r="56" fill="#064e3b" opacity="0.25"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#34d399" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+
+    <text y="-14" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="800" fill="#FFFFFF">Finance</text>
+    <text y="7" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#6ee7b7">Manager</text>
+    <text y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="700" fill="#a7f3d0">المدير المالي</text>
+    <text y="43" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="600" fill="#94a3b8">Governance &amp; Audit</text>
+  </g>
+
+  <!-- ================= 4. SOUTH NODE: HDD SUPERINTENDENT ================= -->
+  <!-- Position: (500, 600) -->
+  <g transform="translate(500, 600)" filter="url(#nodeShadow)" text-anchor="middle">
+    <circle cx="0" cy="0" r="66" fill="url(#nodeFillGrad)" stroke="url(#emeraldOrb)" stroke-width="2.2"/>
+    <circle cx="0" cy="0" r="58" fill="#064e3b" opacity="0.3"/>
+    <circle cx="0" cy="0" r="52" fill="none" stroke="#10b981" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+
+    <text y="-16" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">HDD</text>
+    <text y="4" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="800" fill="#34d399">Superintendent</text>
+    <text y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#a7f3d0">مشرف عام الحفر الموجه</text>
+    <text y="39" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="600" fill="#94a3b8">Drilling &amp; Site Fleet</text>
+  </g>
+
+  <!-- ================= 5. SOUTH-WEST NODE: HDD-MT OPERATIONS MANAGER ================= -->
+  <!-- Position: (301, 485) -->
+  <g transform="translate(301, 485)" filter="url(#nodeShadow)" text-anchor="middle">
+    <circle cx="0" cy="0" r="64" fill="url(#nodeFillGrad)" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="0" cy="0" r="56" fill="#78350f" opacity="0.25"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+
+    <text y="-18" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">HDD-MT</text>
+    <text y="0" font-family="'Space Grotesk', sans-serif" font-size="12.5" font-weight="800" fill="#fcd34d">Operations</text>
+    <text y="18" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">Manager</text>
+    <text y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700" fill="#fef08a">مدير العمليات والأنفاق</text>
+  </g>
+
+  <!-- ================= 6. NORTH-WEST NODE: PROJECTS MANAGER ================= -->
+  <!-- Position: (301, 255) -->
+  <g transform="translate(301, 255)" filter="url(#nodeShadow)" text-anchor="middle">
+    <circle cx="0" cy="0" r="64" fill="url(#nodeFillGrad)" stroke="#c5a869" stroke-width="2"/>
+    <circle cx="0" cy="0" r="56" fill="#713f12" opacity="0.2"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#eab308" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+
+    <text y="-14" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="800" fill="#FFFFFF">Projects</text>
+    <text y="7" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#c5a869">Manager</text>
+    <text y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="700" fill="#fde68a">مدير إدارة المشاريع</text>
+    <text y="43" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="600" fill="#94a3b8">Execution &amp; QA/QC</text>
+  </g>
+
+  <!-- ================= CENTRAL HUB: CHAIRMAN ================= -->
+  <!-- Position: (500, 370) -->
+  <g transform="translate(500, 370)" filter="url(#hubGlow)" text-anchor="middle">
+    <!-- Outer Golden Multi-Rings -->
+    <circle cx="0" cy="0" r="92" fill="none" stroke="url(#goldMetallic)" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="84" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.8"/>
+    
+    <!-- Core Hub Body -->
+    <circle cx="0" cy="0" r="78" fill="url(#centerHubGrad)"/>
+    <circle cx="0" cy="0" r="66" fill="#042f2e" opacity="0.6"/>
+
+    <!-- Royal Crown Icon Graphic -->
+    <path d="M -16 -24 L -8 -12 L 0 -28 L 8 -12 L 16 -24 L 14 0 L -14 0 Z" fill="url(#goldMetallic)"/>
+    <circle cx="-16" cy="-24" r="2" fill="#fef08a"/>
+    <circle cx="0" cy="-28" r="2.5" fill="#fef08a"/>
+    <circle cx="16" cy="-24" r="2" fill="#fef08a"/>
+    <rect x="-14" y="2" width="28" height="4" rx="2" fill="url(#goldMetallic)"/>
+
+    <!-- Text in Core Hub -->
+    <text y="24" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" letter-spacing="1.5">CHAIRMAN</text>
+    <text y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#fde047">رئيس مجلس الإدارة</text>
+    <text y="56" font-family="'Space Grotesk', sans-serif" font-size="8.5" font-weight="700" fill="#a7f3d0" letter-spacing="1">GOVERNANCE LEAD</text>
+  </g>
+
+  <!-- ================= BOTTOM 3 PILLARS FOOTER BAR ================= -->
+  <g transform="translate(500, 715)">
+    <!-- Dividing line -->
+    <line x1="-420" y1="-30" x2="420" y2="-30" stroke="#c5a869" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Left Pillar: الجودة والسلامة QHSE -->
+    <g transform="translate(-280, 0)" text-anchor="middle">
+      <rect x="-115" y="-18" width="230" height="46" rx="10" fill="#0c1719" stroke="#10b981" stroke-width="1.5"/>
+      <circle cx="-90" cy="5" r="5" fill="#10b981"/>
+      <text x="10" y="-1" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#34d399">الجودة والسلامة QHSE</text>
+      <text x="10" y="17" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="600" fill="#94a3b8">Quality, HSE &amp; Aramco PTW</text>
+    </g>
+
+    <!-- Center Pillar: العمليات والميدان -->
+    <g transform="translate(0, 0)" text-anchor="middle">
+      <rect x="-115" y="-18" width="230" height="46" rx="10" fill="#0c1719" stroke="#c5a869" stroke-width="1.5"/>
+      <circle cx="-90" cy="5" r="5" fill="#c5a869"/>
+      <text x="10" y="-1" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#fde047">العمليات والميدان</text>
+      <text x="10" y="17" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="600" fill="#94a3b8">Operations &amp; Rig Fleet</text>
+    </g>
+
+    <!-- Right Pillar: الإدارة التنفيذية -->
+    <g transform="translate(280, 0)" text-anchor="middle">
+      <rect x="-115" y="-18" width="230" height="46" rx="10" fill="#0c1719" stroke="#3b82f6" stroke-width="1.5"/>
+      <circle cx="-90" cy="5" r="5" fill="#3b82f6"/>
+      <text x="10" y="-1" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#93c5fd">الإدارة التنفيذية</text>
+      <text x="10" y="17" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="600" fill="#94a3b8">Executive Board &amp; Growth</text>
+    </g>
+  </g>
+
+  <!-- Bottom Tagline -->
+  <g transform="translate(500, 775)" text-anchor="middle">
+    <text font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700" fill="#64748b" letter-spacing="1">
+      ALAAJ ALFEDHI CONTRACTING CO. (AACC) • TRENCHLESS HDD &amp; MICROTUNNELING SPECIALISTS
+    </text>
+  </g>
+</svg>

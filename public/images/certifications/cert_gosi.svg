@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100">
+    <defs>
+      <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#937338" />
+        <stop offset="50%" stop-color="#c5a869" />
+        <stop offset="100%" stop-color="#937338" />
+      </linearGradient>
+      <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="100%" stop-color="#f8f6f0" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="1100" fill="url(#bgGrad)" />
+    
+    <!-- Outer Ornamental Border -->
+    <rect x="25" y="25" width="750" height="1050" fill="none" stroke="url(#goldBorder)" stroke-width="4" rx="10" />
+    <rect x="35" y="35" width="730" height="1030" fill="none" stroke="#0f382a" stroke-width="1.5" stroke-dasharray="6,4" rx="6" />
+    
+    <!-- Header Emblem -->
+    <circle cx="400" cy="120" r="45" fill="#0f382a" stroke="url(#goldBorder)" stroke-width="3" />
+    <text x="400" y="115" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c5a869" text-anchor="middle">AACC</text>
+    <text x="400" y="135" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">HDD-MT</text>
+    
+    <!-- Authority / Issuer -->
+    <text x="400" y="210" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0f382a" text-anchor="middle">المؤسسة العامة للتأمينات الاجتماعية</text>
+    <text x="400" y="235" font-family="Arial, sans-serif" font-size="12" fill="#666666" text-anchor="middle">General Organization for Social Insurance</text>
+    
+    <!-- Decorative Line -->
+    <line x1="200" y1="260" x2="600" y2="260" stroke="url(#goldBorder)" stroke-width="2" />
+    <polygon points="400,256 408,260 400,264 392,260" fill="#0f382a" />
+    
+    <!-- Certificate Label -->
+    <text x="400" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#937338" text-anchor="middle" letter-spacing="4">OFFICIAL ACCREDITATION CERTIFICATE</text>
+    <text x="400" y="350" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f382a" text-anchor="middle">شهادة اعتماد وتأهيل رسمية معتمدة</text>
+    
+    <!-- Awarded To -->
+    <text x="400" y="420" font-family="Arial, sans-serif" font-size="12" fill="#777777" text-anchor="middle">تُمنح هذه الشهادة رسمياً إلى / This certifies that</text>
+    <rect x="120" y="440" width="560" height="70" fill="#f4f0e6" rx="8" stroke="url(#goldBorder)" stroke-width="1" />
+    <text x="400" y="470" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#0f382a" text-anchor="middle">شركة العاج الفضي للمقاولات</text>
+    <text x="400" y="495" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#937338" text-anchor="middle">Alaaj Alfedhi Contracting Company (AACC HDD-MT)</text>
+    
+    <!-- Title / Scope -->
+    <text x="400" y="560" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f382a" text-anchor="middle">شهادة التأمينات الاجتماعية ونسب التوطين</text>
+    <text x="400" y="585" font-family="Arial, sans-serif" font-size="12" fill="#555555" text-anchor="middle">GOSI Social Insurance & Saudization Compliance</text>
+    
+    <!-- Certificate Number Box -->
+    <rect x="220" y="630" width="360" height="45" fill="#ffffff" stroke="#0f382a" stroke-width="1.5" rx="6" />
+    <text x="400" y="658" font-family="monospace" font-size="14" font-weight="bold" fill="#0f382a" text-anchor="middle">CERTIFICATE NO: 652371032</text>
+    
+    <!-- Badge / Status Pill -->
+    <rect x="300" y="700" width="200" height="35" fill="#2e7d32" rx="18" />
+    <text x="400" y="723" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">✓ النطاق الأخضر المرتفع</text>
+    
+    <!-- Scope Details -->
+    <text x="400" y="780" font-family="Arial, sans-serif" font-size="11" fill="#666666" text-anchor="middle">Horizontal Directional Drilling (HDD) • Microtunneling • Utility Networks</text>
+    <text x="400" y="800" font-family="Arial, sans-serif" font-size="11" fill="#666666" text-anchor="middle">الحفر الأفقي الموجه • الأنفاق الدقيقة • تمديد شبكات المياه والكهرباء والسيول</text>
+    
+    <!-- Security Stamp / Seal -->
+    <circle cx="200" cy="940" r="50" fill="none" stroke="#937338" stroke-width="2" stroke-dasharray="4,2" />
+    <circle cx="200" cy="940" r="44" fill="#0f382a" opacity="0.05" />
+    <text x="200" y="935" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#937338" text-anchor="middle">APPROVED</text>
+    <text x="200" y="950" font-family="Arial, sans-serif" font-size="8" fill="#937338" text-anchor="middle">KINGDOM OF SAUDI ARABIA</text>
+    
+    <!-- Signatures -->
+    <line x1="520" y1="960" x2="680" y2="960" stroke="#333333" stroke-width="1.5" />
+    <text x="600" y="980" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">اعتماد الجودة والمطابقة</text>
+    <text x="600" y="995" font-family="Arial, sans-serif" font-size="9" fill="#777777" text-anchor="middle">Authorized Verification Officer</text>
+    
+    <!-- Footer Note -->
+    <text x="400" y="1050" font-family="Arial, sans-serif" font-size="9" fill="#999999" text-anchor="middle">وثيقة رسمية معتمدة ومطابقة للأنظمة والمعايير السعودية والدولية | AACC HDD-MT KSA</text>
+  </svg>

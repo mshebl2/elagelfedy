@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" fill="none">
+  <defs>
+    <linearGradient id="kaecGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Green Layered Square Symbol -->
+  <g transform="translate(165, 12)">
+    <rect width="56" height="56" rx="4" fill="url(#kaecGrad)"/>
+    <!-- Diagonal Parallel Slices -->
+    <path d="M 0 35 L 56 12 L 56 18 L 0 41 Z" fill="#FFFFFF"/>
+    <path d="M 0 43 L 56 24 L 56 29 L 0 48 Z" fill="#FFFFFF"/>
+    <path d="M 0 50 L 56 35 L 56 40 L 0 55 Z" fill="#FFFFFF"/>
+    <path d="M 0 56 L 56 46 L 56 50 L 0 60 Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Typography -->
+  <g fill="#334155" text-anchor="end">
+    <text x="155" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900">مدينة</text>
+    <text x="155" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900">الملك عبد الله</text>
+    <text x="155" y="64" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900">الاقتصادية</text>
+  </g>
+</svg>

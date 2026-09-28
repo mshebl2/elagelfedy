@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" fill="none">
+  <g transform="translate(10, 12)">
+    <!-- Saudconsult Arch / Engineering Compass -->
+    <rect x="2" y="4" width="48" height="48" rx="10" fill="#003B71" opacity="0.08"/>
+    <g transform="translate(26, 28)">
+      <path d="M-14 14 C-14 -4 14 -4 14 14" stroke="#003B71" stroke-width="3.5" fill="none"/>
+      <path d="M-8 14 C-8 4 8 4 8 14" stroke="#D99B26" stroke-width="2.5" fill="none"/>
+      <circle cx="0" cy="-6" r="3" fill="#003B71"/>
+    </g>
+    <text x="60" y="22" font-family="'Space Grotesk', sans-serif" font-size="17" font-weight="800" fill="#003B71" letter-spacing="0.5">SAUDCONSULT</text>
+    <text x="60" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#D99B26">سعود كونسلت للاستشارات</text>
+  </g>
+</svg>

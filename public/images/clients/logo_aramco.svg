@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" fill="none">
+  <defs>
+    <linearGradient id="aramcoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00a3e0"/>
+      <stop offset="100%" stop-color="#78be20"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Starburst Square Symbol -->
+  <g transform="translate(160, 10)">
+    <rect width="60" height="60" rx="4" fill="url(#aramcoGrad)"/>
+    <!-- Radiating Starburst Burst -->
+    <path d="M30 10 L30 50 M10 30 L50 30 M16 16 L44 44 M16 44 L44 16" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="30" cy="30" r="5" fill="#FFFFFF"/>
+    <circle cx="30" cy="18" r="2" fill="#FFFFFF"/>
+    <circle cx="30" cy="42" r="2" fill="#FFFFFF"/>
+    <circle cx="18" cy="30" r="2" fill="#FFFFFF"/>
+    <circle cx="42" cy="30" r="2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Typography: أرامكو / aramco -->
+  <g fill="#475569">
+    <text x="145" y="36" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="22" font-weight="900" text-anchor="end">أرامكو</text>
+    <text x="145" y="58" font-family="'Space Grotesk', 'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" text-anchor="end" letter-spacing="0.5">aramco</text>
+  </g>
+</svg>

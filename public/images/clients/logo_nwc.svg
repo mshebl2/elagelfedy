@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80" fill="none">
+  <defs>
+    <linearGradient id="nwcWaterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="60%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circular Water Sphere Symbol -->
+  <g transform="translate(170, 14)">
+    <circle cx="26" cy="26" r="26" fill="url(#nwcWaterGrad)"/>
+    <!-- Inner White Wave Crest -->
+    <path d="M 12 36 C 14 18, 30 12, 42 18 C 30 20, 20 28, 26 44 C 20 42, 14 40, 12 36 Z" fill="#FFFFFF"/>
+    <circle cx="34" cy="26" r="10" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <!-- Typography -->
+  <g fill="#0369a1" text-anchor="end">
+    <text x="160" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="900">شركة المياه الوطنية</text>
+    <text x="160" y="56" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="800">National Water Company</text>
+  </g>
+</svg>

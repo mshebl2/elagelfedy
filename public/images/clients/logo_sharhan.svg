@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 95" width="240" height="95" fill="none">
+  <!-- SCC Dual Ring Curve Symbol -->
+  <g transform="translate(120, 26)" text-anchor="middle">
+    <!-- Blue / Grey SCC Curve -->
+    <path d="M -26 0 C -26 -12, -12 -14, -2 -10 C -4 -6, -14 -8, -18 0 C -20 6, -14 10, -2 12 C 4 14, 18 16, 18 6 C 18 -4, 8 -6, 2 -6 C 4 -10, 14 -10, 24 -2 C 28 6, 22 18, 10 20 C -2 22, -26 16, -26 0 Z" fill="#004b97"/>
+    <path d="M 6 -14 C 18 -16, 30 -6, 30 6 C 26 6, 24 -6, 14 -8 C 6 -10, -2 -6, -2 -4 C -2 -8, 0 -12, 6 -14 Z" fill="#64748b"/>
+  </g>
+
+  <!-- Typography -->
+  <g text-anchor="middle">
+    <text x="120" y="56" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="900" fill="#004b97" letter-spacing="2">ALSHARHAN</text>
+    <text x="120" y="78" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="900" fill="#004b97">الشرهان</text>
+  </g>
+</svg>
