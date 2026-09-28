@@ -5,14 +5,14 @@ export interface IServiceDocument extends Omit<ServiceType, '_id'>, Document {}
 
 const ServiceSchema = new Schema<IServiceDocument>(
   {
-    number: { type: String, required: true },
-    code: { type: String, required: true },
-    titleAr: { type: String, required: true },
-    titleEn: { type: String, required: true },
-    subtitleAr: { type: String, required: true },
-    subtitleEn: { type: String, required: true },
-    descriptionAr: { type: String, required: true },
-    descriptionEn: { type: String, required: true },
+    number: { type: String, default: '' },
+    code: { type: String, default: '' },
+    titleAr: { type: String, default: '' },
+    titleEn: { type: String, default: '' },
+    subtitleAr: { type: String, default: '' },
+    subtitleEn: { type: String, default: '' },
+    descriptionAr: { type: String, default: '' },
+    descriptionEn: { type: String, default: '' },
     image: { type: String, default: '' },
     icon: { type: String, default: '' },
     tagsAr: [{ type: String }],

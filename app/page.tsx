@@ -20,7 +20,8 @@ import {
   getClients,
 } from '@/lib/dataService';
 
-export const revalidate = 60; // ISR revalidation every 60 seconds
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function HomePage() {
   const [content, services, projects, equipmentList, certificationsList, heroSlides, clientsList] = await Promise.all([

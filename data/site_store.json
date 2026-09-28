@@ -445,6 +445,7 @@
   ],
   "services": [
     {
+      "_id": "6ab9fd39859bdb070a7d68b8",
       "number": "01",
       "code": "HDD-BORING",
       "titleAr": "الحفر الأفقي الموجه عالي السعة (HDD)",
@@ -454,6 +455,7 @@
       "descriptionAr": "تنفيذ أعمال الحفر الأفقي الموجه فائق الدقة بدون حفر مكشوف لتمرير خطوط الغاز والنفط، كابلات الكهرباء ذات الجهد العالي والجهد الفائق (380 ك.ف / 115 ك.ف)، وخطوط المياه وأنابيب البولي إيثيلين والصلب أسفل الطرق السريعة، خطوط السكك الحديدية، والمجاري المائية.",
       "descriptionEn": "Precision trenchless HDD execution for high-pressure gas/oil pipelines, 380kV/115kV high-voltage power conduits, and large potable water mains beneath major highways, rail tracks, and water bodies with advanced DCI Falcon guidance.",
       "image": "/images/services/service_01_hdd.jpg",
+      "icon": "",
       "tagsAr": [
         "أقطار 60 بوصة",
         "توجيه DCI Falcon",
@@ -478,9 +480,13 @@
         "Unrestricted capability across hard basalt rock, limestone, and saturated sands",
         "Zero surface traffic disruption and structure protection"
       ],
-      "order": 1
+      "order": 1,
+      "createdAt": "2026-09-28T05:32:29.857Z",
+      "updatedAt": "2026-09-28T05:32:29.857Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd39859bdb070a7d68b9",
       "number": "02",
       "code": "MICROTUNNELING",
       "titleAr": "حفر الأنفاق الدقيقة والدفع الهيدروليكي (Microtunneling)",
@@ -490,6 +496,7 @@
       "descriptionAr": "حفر أنفاق المرافق العميقة غير المأهولة باستخدام أحدث ماكينات الدفع الهيدروليكي المغلقة الموجهة بالليزر لشبكات الصرف الصحي بالانحدار وخطوط تصريف مياه الأمطار وعبارات الخدمات المشتركة في المناطق الحضرية والتربة المشبعة بالمياه الجوفية.",
       "descriptionEn": "Automated remote-controlled slurry microtunneling and hydraulic pipe jacking with laser-guided precision for deep gravity sewer lines, stormwater collectors, and multi-utility tunnels under high groundwater pressure.",
       "image": "/images/services/service_02_microtunneling.jpg",
+      "icon": "",
       "tagsAr": [
         "توجيه ليزري دقيق",
         "أنفاق عميقة حتى 25م",
@@ -514,9 +521,13 @@
         "Full slurry pressure balancing with zero surface settlement",
         "Full compliance with NWC, MOT, and Royal Commission specs"
       ],
-      "order": 2
+      "order": 2,
+      "createdAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd39859bdb070a7d68ba",
       "number": "03",
       "code": "WATER-NETWORKS",
       "titleAr": "شبكات نقل وتوزيع المياه الاستراتيجية",
@@ -526,6 +537,7 @@
       "descriptionAr": "تنفيذ وتمديد خطوط نقل المياه الصالحة للشرب وخطوط التحلية ومياه الري المعالجة (TSE) بأنابيب الدكتايل، البولي إيثيلين (HDPE PE100 SDR11)، والكربون ستيل مع غرف الصمامات ومحطات الضخ وربط التغذية الرئيسية لمشاريع التنمية.",
       "descriptionEn": "Turnkey execution of potable water transmission mains, desalination feeds, and treated sewage effluent (TSE) networks utilizing Ductile Iron, HDPE PE100 SDR11, and welded carbon steel with valve chambers and booster stations.",
       "image": "/images/services/service_03_water.jpg",
+      "icon": "",
       "tagsAr": [
         "أنابيب كربون ستيل ودكتايل",
         "لحام كهربائي وحراري",
@@ -550,9 +562,13 @@
         "Full sterilization, chlorination, and hydro-testing protocols",
         "Interconnecting trunk lines to urban developments and industrial hubs"
       ],
-      "order": 3
+      "order": 3,
+      "createdAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd39859bdb070a7d68bb",
       "number": "04",
       "code": "SEWAGE-STORMWATER",
       "titleAr": "شبكات الصرف الصحي وتصريف السيول ومياه الأمطار",
@@ -562,6 +578,7 @@
       "descriptionAr": "إنشاء شبكات الصرف الصحي المتطورة، وخطوط الطرد والرفع، وقنوات تصريف مياه السيول والأمطار المفتوحة والمغلقة، والعبارات الخرسانية الصندوقية (Box Culverts) لدرء أخطار السيول وتأمين البنى التحتية للمدن.",
       "descriptionEn": "Engineering deep gravity trunk sewers, wastewater lift pump stations, stormwater drainage culverts, and cast-in-place reinforced box culverts to protect urban corridors and industrial complexes from flood hazards.",
       "image": "/images/services/service_04_sewage.jpg",
+      "icon": "",
       "tagsAr": [
         "خطوط انحدار بالليزر",
         "عبارات خرسانية صندوقية",
@@ -586,9 +603,13 @@
         "Submersible lift stations with integrated grit/grease separation systems",
         "Regional flood-control channels and culverts for high-volume storm runoff"
       ],
-      "order": 4
+      "order": 4,
+      "createdAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd39859bdb070a7d68bc",
       "number": "05",
       "code": "ROADS-HIGHWAYS",
       "titleAr": "معابر الطرق السريعة وسكك القطارات وإعادة السفلتة",
@@ -598,6 +619,7 @@
       "descriptionAr": "تنفيذ المعابر التحتية المعقدة لجميع خطوط المرافق أسفل الطرق السريعة الحيوية، مسارات السكك الحديدية (SAR)، وتقاطعات الطرق الرئيسية مع أعمال إعادة السفلتة والتنسيق وفق المعايير الصارمة لوزارة النقل والبلديات.",
       "descriptionEn": "Executing heavy utility undercrossings beneath multi-lane expressways and Saudi Arabia Railways (SAR) tracks without interrupting traffic, followed by premium asphalt milling, paving, and MOT-compliant road reinstatement.",
       "image": "/images/services/service_05_roads.jpg",
+      "icon": "",
       "tagsAr": [
         "معابر سكك حديد SAR",
         "طرق سريعة حيوية",
@@ -622,9 +644,13 @@
         "Comprehensive MOT/MOMRA permit processing and certified traffic management",
         "Full milling, asphalt paving, and Marshall compaction density compliance"
       ],
-      "order": 5
+      "order": 5,
+      "createdAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd39859bdb070a7d68bd",
       "number": "06",
       "code": "INDUSTRIAL-SUBSTATIONS",
       "titleAr": "محطات التحويل الكهربائي وشبكات الجهد العالي والفائق",
@@ -634,6 +660,7 @@
       "descriptionAr": "تنفيذ الأعمال المدنية المتخصصة لمحطات التحويل الكهربائي 380/115 ك.ف، وحفر مسارات وأنفاق كابلات الجهد الفائق تحت الأرض، وتشييد غرف سحب الكابلات (Joint Bays & Vaults) وفق معايير الشركة السعودية للكهرباء (SEC) وأرامكو.",
       "descriptionEn": "Turnkey civil and trenchless subterranean infrastructure for 380/115kV electrical substations, underground high-voltage XLPE cable routes, precast joint bays, and transformer containment yards adhering to SEC and Saudi Aramco standards.",
       "image": "/images/services/service_06_substations.jpg",
+      "icon": "",
       "tagsAr": [
         "محطات 380/115 ك.ف",
         "كابلات جهد فائق XLPE",
@@ -658,9 +685,13 @@
         "Installation of copper grounding grids, cathodic protection, and oil containment pits",
         "Civil foundation works for OHTL towers and primary power transformers"
       ],
-      "order": 6
+      "order": 6,
+      "createdAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd39859bdb070a7d68be",
       "number": "07",
       "code": "REALESTATE-UTILITIES",
       "titleAr": "البنية التحتية للمخططات الكبرى والمجمعات السكنية",
@@ -670,6 +701,7 @@
       "descriptionAr": "تطوير البنى التحتية الكاملة للمخططات السكنية والتجارية والمدن الاقتصادية والصناعية الجديدة، بما يشمل شبكات كابلات الألياف الضوئية، شبكات التغذية الكهربائية، شبكات المياه، إنارة الشوارع، وشبكات الري والتصريف.",
       "descriptionEn": "Comprehensive master-plan infrastructure engineering for mega residential master plans, industrial zones, and economic cities—installing fiber-optic telecommunication duct banks, power distribution networks, district cooling pipes, and urban lighting.",
       "image": "/images/services/service_07_realestate.jpg",
+      "icon": "",
       "tagsAr": [
         "مخططات سكنية وصناعية",
         "أنابيب اتصالات وألياف",
@@ -694,9 +726,13 @@
         "Smart irrigation mains, pump skids, and complete plot utility connections",
         "3D BIM utility clash detection to ensure zero underground infrastructure conflicts"
       ],
-      "order": 7
+      "order": 7,
+      "createdAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd39859bdb070a7d68bf",
       "number": "08",
       "code": "SOLAR-RENEWABLES",
       "titleAr": "مزارع الطاقة المتجددة ومحطات الطاقة الشمسية",
@@ -706,6 +742,7 @@
       "descriptionAr": "تنفيذ شبكات الكابلات التحت أرضية لمزارع الطاقة الشمسية الكهروضوئية (Solar PV)، وربط العواكس الكهربائية (Inverters) بمحطات التجميع، والمعابر الهندسية تحت الطرق والسيول لتغذية الشبكة الوطنية بالطاقة النظيفة.",
       "descriptionEn": "Civil infrastructure and subterranean cable routing for utility-scale Solar PV power plants, including DC string cabling, MV feeder collection trenches, inverter skid foundations, and trenchless grid interconnection conduits.",
       "image": "/images/services/service_08_solar.jpg",
+      "icon": "",
       "tagsAr": [
         "طاقة شمسية كهروضوئية",
         "كابلات جهد متوسط MV",
@@ -730,11 +767,67 @@
         "HDD protective crossings across seasonal wadis and major transport corridors",
         "Civil pads for central inverters, MV switchgear skids, and pre-commissioning testing"
       ],
-      "order": 8
+      "order": 8,
+      "createdAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "__v": 0
+    },
+    {
+      "_id": "6ab9fd39859bdb070a7d68c0",
+      "number": "09",
+      "code": "432209",
+      "titleAr": "خدمة اختبار الفحص الهيدروستاتيكي 2026",
+      "titleEn": "Hydrostatic Testing Service 2026",
+      "subtitleAr": "فحص واختبار شبكات الضغط العالي",
+      "subtitleEn": "High Pressure Network Testing",
+      "descriptionAr": "فحص واختبار الأنابيب والأنفاق وفق معايير أرامكو",
+      "descriptionEn": "Testing pipelines according to Aramco standards",
+      "image": "/images/services/service_01_hdd.jpg",
+      "icon": "",
+      "tagsAr": [],
+      "tagsEn": [],
+      "featuresAr": [],
+      "featuresEn": [],
+      "order": 9,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:38:01.297Z",
+      "updatedAt": "2026-09-28T05:38:01.297Z"
+    },
+    {
+      "number": "09",
+      "code": "432209",
+      "titleAr": "خدمة اختبار الفحص الهيدروستاتيكي 2026",
+      "titleEn": "Hydrostatic Testing Service 2026",
+      "subtitleAr": "فحص واختبار شبكات الضغط العالي",
+      "subtitleEn": "High Pressure Network Testing",
+      "descriptionAr": "فحص واختبار الأنابيب والأنفاق وفق معايير أرامكو",
+      "descriptionEn": "Testing pipelines according to Aramco standards",
+      "image": "/images/services/service_01_hdd.jpg",
+      "_id": "srv-1790573930493",
+      "order": 10
     }
   ],
   "projects": [
     {
+      "titleAr": "مشروع حفر أنفاق الرياض الجديد 2026",
+      "titleEn": "New Riyadh Tunnelling Project 2026",
+      "client": "أمانة منطقة الرياض",
+      "location": "الرياض - طريق الملك فهد",
+      "year": "2026",
+      "lengthLm": "450 m",
+      "diameter": "DN1200",
+      "category": "Microtunneling",
+      "mainImage": "/images/projects/project_alnarjis.jpg",
+      "descriptionAr": "تنفيذ خط مياه استراتيجي بالحفر الآلي",
+      "descriptionEn": "Strategic water pipeline execution",
+      "slug": "new-riyadh-tunnelling-project-2026-6722",
+      "_id": "proj-1790573926722",
+      "order": 11,
+      "gallery": [],
+      "featured": false
+    },
+    {
+      "_id": "6ab9fd35859bdb070a7d68af",
       "slug": "amaala-red-sea-binyah",
       "titleAr": "نفق موجه قطر 20 بوصة لحامل 18 بوصة (44.0م) - أمالا البحر الأحمر",
       "titleEn": "20\" HDD Bore / 18\" Carrier Pipe (44.0m) - Amaala Red Sea",
@@ -752,12 +845,17 @@
         "/images/projects/project_01_amaala.jpg"
       ],
       "certificateImage": "/images/projects/cert_01_amaala.jpg",
+      "schematicImage": "",
       "featured": true,
       "order": 1,
       "seoTitle": "مشروع حفر موجه أمالا البحر الأحمر | شركة العاج الفضي",
-      "seoDescription": "شهادة إنجاز معتمدة لمشروع حفر نفق موجه بقطر 20 بوصة في مدينة أمالا على البحر الأحمر لصالح شركة بنية."
+      "seoDescription": "شهادة إنجاز معتمدة لمشروع حفر نفق موجه بقطر 20 بوصة في مدينة أمالا على البحر الأحمر لصالح شركة بنية.",
+      "createdAt": "2026-09-28T05:21:46.613Z",
+      "updatedAt": "2026-09-28T05:21:46.613Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd35859bdb070a7d68b0",
       "slug": "al-janahin-riyadh-al-aridh",
       "titleAr": "نفق 32 بوصة لحزمة 5 أنابيب ضغط 16 بار (160.0م) - الرياض حي العارض",
       "titleEn": "32\" Tunnel / 5x 16-Bar Pipes (160.0m) - Riyadh Al-Aridh",
@@ -775,12 +873,17 @@
         "/images/projects/project_02_aljanahin.jpg"
       ],
       "certificateImage": "/images/projects/cert_02_aljanahin.jpg",
+      "schematicImage": "",
       "featured": true,
       "order": 2,
       "seoTitle": "مشروع حفر نفق 32 بوصة حي العارض بالرياض | AACC HDD-MT",
-      "seoDescription": "سجل إنجاز معتمد لحفر نفق 32 بوصة وسحب حزمة أنابيب بطول 160 متراً في الرياض."
+      "seoDescription": "سجل إنجاز معتمد لحفر نفق 32 بوصة وسحب حزمة أنابيب بطول 160 متراً في الرياض.",
+      "createdAt": "2026-09-28T05:21:46.614Z",
+      "updatedAt": "2026-09-28T05:21:46.614Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd35859bdb070a7d68b1",
       "slug": "al-sharhan-riyadh-al-narjis",
       "titleAr": "معبر أنبوب مفرد قطر 200 ملم (117.0م) - الرياض حي النرجس",
       "titleEn": "200mm Single Pipe Crossing (117.0m) - Riyadh Al-Narjis",
@@ -798,12 +901,17 @@
         "/images/projects/project_03_alnarjis.jpg"
       ],
       "certificateImage": "/images/projects/cert_03_alnarjis.jpg",
+      "schematicImage": "",
       "featured": true,
       "order": 3,
       "seoTitle": "مشروع حفر موجه حي النرجس بالرياض | شركة العاج الفضي",
-      "seoDescription": "حفر معبر أنبوب 200 ملم بطول 117 متراً في حي النرجس بالرياض لصالح شركة الشرهان."
+      "seoDescription": "حفر معبر أنبوب 200 ملم بطول 117 متراً في حي النرجس بالرياض لصالح شركة الشرهان.",
+      "createdAt": "2026-09-28T05:21:46.614Z",
+      "updatedAt": "2026-09-28T05:21:46.614Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd35859bdb070a7d68b2",
       "slug": "kaec-12-crossings-al-hareth",
       "titleAr": "مشروع 12 معبراً بأنابيب 160 ملم PE100 (1,200.0م) - مدينة الملك عبدالله الاقتصادية",
       "titleEn": "12x Crossings 160mm PE100 (1,200.0m) - King Abdullah Economic City",
@@ -821,12 +929,17 @@
         "/images/projects/project_04_kaec.jpg"
       ],
       "certificateImage": "/images/certifications/cert_iso9001.svg",
+      "schematicImage": "",
       "featured": true,
       "order": 4,
       "seoTitle": "مشروع معابر مدينة الملك عبدالله الاقتصادية 1,200 متر | AACC HDD-MT",
-      "seoDescription": "سجل إنجاز رسمي لتنفيذ 12 معبراً بطول 1,200 متر طولي في مدينة الملك عبدالله الاقتصادية."
+      "seoDescription": "سجل إنجاز رسمي لتنفيذ 12 معبراً بطول 1,200 متر طولي في مدينة الملك عبدالله الاقتصادية.",
+      "createdAt": "2026-09-28T05:21:46.614Z",
+      "updatedAt": "2026-09-28T05:21:46.614Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd35859bdb070a7d68b3",
       "slug": "sec-dammam-jubail-railway-crossing",
       "titleAr": "حزم أنابيب 200 ملم تحت طريق الدمام - الجبيل والسكة الحديد (507.0م) - الشرقية",
       "titleEn": "Bundled 200mm Under Dammam-Jubail Hwy & Rail (507.0m) - Eastern Province",
@@ -844,12 +957,17 @@
         "/images/projects/project_05_dammam_rail.jpg"
       ],
       "certificateImage": "/images/certifications/cert_iso9001.svg",
+      "schematicImage": "",
       "featured": true,
       "order": 5,
       "seoTitle": "معبر كابلات الجهد العالي طريق الدمام الجبيل والسكة الحديد | شركة العاج الفضي",
-      "seoDescription": "تنفيذ معبر حفر موجه بطول 507 أمتار أسفل خط السكك الحديدية وطريق الدمام الجبيل لصالح السعودية للكهرباء."
+      "seoDescription": "تنفيذ معبر حفر موجه بطول 507 أمتار أسفل خط السكك الحديدية وطريق الدمام الجبيل لصالح السعودية للكهرباء.",
+      "createdAt": "2026-09-28T05:21:46.614Z",
+      "updatedAt": "2026-09-28T05:21:46.614Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd35859bdb070a7d68b4",
       "slug": "sec-wadi-al-summan-substation-ohtl",
       "titleAr": "خط نقل 115 ك.ف من محطة وادي الصمان 380/115 ك.ف إلى الرفيعة-2 (355.0م) - الرياض",
       "titleEn": "115kV OHTL Line from Wadi Al-Summan 380/115kV Substation (355.0m) - Riyadh",
@@ -867,12 +985,17 @@
         "/images/projects/project_06_wadisumman.jpg"
       ],
       "certificateImage": "/images/certifications/cert_iso9001.svg",
+      "schematicImage": "",
       "featured": true,
       "order": 6,
       "seoTitle": "مشروع محطة وادي الصمان 380/115 ك.ف | شركة العاج الفضي",
-      "seoDescription": "أعمال حفر موجه لخطوط نقل الطاقة 115 ك.ف لمحطة وادي الصمان بالرياض."
+      "seoDescription": "أعمال حفر موجه لخطوط نقل الطاقة 115 ك.ف لمحطة وادي الصمان بالرياض.",
+      "createdAt": "2026-09-28T05:21:46.614Z",
+      "updatedAt": "2026-09-28T05:21:46.614Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd35859bdb070a7d68b5",
       "slug": "sec-dammam-gulf-street-crossing",
       "titleAr": "أنبوب 225 ملم أسفل شارع الخليج بمدينة الدمام (300.0م) - الدمام",
       "titleEn": "225mm HDPE Pipe Under Gulf Street in Dammam (300.0m) - Dammam",
@@ -890,12 +1013,17 @@
         "/images/projects/project_07_gulfstreet.jpg"
       ],
       "certificateImage": "/images/certifications/cert_iso9001.svg",
+      "schematicImage": "",
       "featured": true,
       "order": 7,
       "seoTitle": "معبر شارع الخليج بالدمام | شركة العاج الفضي للمقاولات",
-      "seoDescription": "حفر موجه وتمديد أنبوب 225 ملم بطول 300 متراً في شارع الخليج بالدمام."
+      "seoDescription": "حفر موجه وتمديد أنبوب 225 ملم بطول 300 متراً في شارع الخليج بالدمام.",
+      "createdAt": "2026-09-28T05:21:46.614Z",
+      "updatedAt": "2026-09-28T05:21:46.614Z",
+      "__v": 0
     },
     {
+      "_id": "6ab9fd35859bdb070a7d68b6",
       "slug": "aramco-haradh-gas-field-20-inch-steel",
       "titleAr": "أنبوب غلاف صلب 20 بوصة في حقل غاز حرض (100.0م) - أرامكو السعودية",
       "titleEn": "20\" Steel Casing Pipe in Haradh Gas Field Area (100.0m) - Saudi Aramco",
@@ -913,10 +1041,66 @@
         "/images/projects/project_08_haradh.jpg"
       ],
       "certificateImage": "/images/certifications/cert_iso9001.svg",
+      "schematicImage": "",
       "featured": true,
       "order": 8,
       "seoTitle": "مشروع حقل غاز حرض أرامكو السعودية | AACC HDD-MT",
-      "seoDescription": "سجل إنجاز رسمي لحفر معبر ودفع أنبوب صلب 20 بوصة في حقل غاز حرض لصالح أرامكو السعودية."
+      "seoDescription": "سجل إنجاز رسمي لحفر معبر ودفع أنبوب صلب 20 بوصة في حقل غاز حرض لصالح أرامكو السعودية.",
+      "createdAt": "2026-09-28T05:21:46.615Z",
+      "updatedAt": "2026-09-28T05:21:46.615Z",
+      "__v": 0
+    },
+    {
+      "_id": "6ab9fd35859bdb070a7d68b7",
+      "slug": "-2505",
+      "titleAr": "ةوى",
+      "titleEn": "نم",
+      "descriptionAr": "بصقصبصب",
+      "descriptionEn": "صب",
+      "client": "حسن",
+      "mainContractor": "حسم",
+      "location": "الرياض",
+      "year": "2025",
+      "lengthLm": "100 m",
+      "diameter": "39",
+      "category": "HDD Drilling",
+      "mainImage": "data:image/jpeg;base64,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",
+      "gallery": [],
+      "certificateImage": "data:image/jpeg;base64,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",
+      "schematicImage": "",
+      "featured": true,
+      "order": 9,
+      "seoTitle": "",
+      "seoDescription": "",
+      "createdAt": "2026-09-28T05:29:42.647Z",
+      "updatedAt": "2026-09-28T05:29:42.647Z",
+      "__v": 0
+    },
+    {
+      "_id": "6ab9fd35859bdb070a7d68ae",
+      "slug": "new-riyadh-tunnelling-project-2026-7132",
+      "titleAr": "مشروع حفر أنفاق الرياض الجديد 2026",
+      "titleEn": "New Riyadh Tunnelling Project 2026",
+      "descriptionAr": "تنفيذ خط مياه استراتيجي بالحفر الآلي",
+      "descriptionEn": "Strategic water pipeline execution",
+      "client": "أمانة منطقة الرياض",
+      "mainContractor": "",
+      "location": "الرياض - طريق الملك فهد",
+      "year": "2026",
+      "lengthLm": "450 m",
+      "diameter": "DN1200",
+      "category": "Microtunneling",
+      "mainImage": "/images/projects/project_alnarjis.jpg",
+      "gallery": [],
+      "certificateImage": "",
+      "schematicImage": "",
+      "featured": false,
+      "order": 10,
+      "seoTitle": "",
+      "seoDescription": "",
+      "__v": 0,
+      "createdAt": "2026-09-28T05:37:57.433Z",
+      "updatedAt": "2026-09-28T05:37:57.433Z"
     }
   ],
   "equipment": [

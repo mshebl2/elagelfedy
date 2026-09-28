@@ -30,9 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'سجل المشاريع المعتمدة والإنجازات | AACC HDD-MT',
     description: 'توثيق رسمي لأكثر من 12,136 متر طولي من الحفر الموجه والأنفاق المنفذة لصالح كبرى الجهات والشركات السيادية بالمملكة.',
-    url: 'https://aacc-ksa.vercel.app/projects',
   },
 };
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function ProjectsPage() {
   const projects = await getProjects();

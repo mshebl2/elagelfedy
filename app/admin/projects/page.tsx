@@ -113,15 +113,13 @@ export default function AdminProjectsPage() {
     setSaving(true);
 
     try {
-      const url = editingProject?._id
-        ? `/api/admin/projects/${editingProject._id}`
-        : '/api/admin/projects';
-      const method = editingProject?._id ? 'PUT' : 'POST';
+      const url = '/api/admin/projects';
+      const method = editingProject ? 'PUT' : 'POST';
 
       const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, _id: editingProject?._id || editingProject?.slug }),
       });
 
       const data = await res.json();
@@ -143,7 +141,7 @@ export default function AdminProjectsPage() {
     if (!confirm('هل أنت متأكد من حذف هذا المشروع نهائياً؟')) return;
 
     try {
-      const res = await fetch(`/api/admin/projects/${id}`, {
+      const res = await fetch(`/api/admin/projects?id=${id}`, {
         method: 'DELETE',
       });
       const data = await res.json();
