@@ -33,6 +33,15 @@ import {
   ContactSettingsType,
 } from '@/types';
 
+async function pingSearchEngines() {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://aacc-ksa.vercel.app';
+    const sitemapUrl = encodeURIComponent(`${baseUrl}/sitemap.xml`);
+    fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`).catch(() => {});
+    fetch(`https://www.bing.com/ping?sitemap=${sitemapUrl}`).catch(() => {});
+  } catch (e) {}
+}
+
 export async function ensureDatabaseSeeded() {
   const db = await connectDB();
   if (!db) return;
@@ -317,6 +326,7 @@ export async function saveServices(services: ServiceType[]): Promise<ServiceType
       console.warn('Error persisting services to MongoDB:', e);
     }
   }
+  pingSearchEngines();
   return services;
 }
 
@@ -350,6 +360,7 @@ export async function saveProjects(projects: ProjectType[]): Promise<ProjectType
       console.warn('Error persisting projects to MongoDB:', e);
     }
   }
+  pingSearchEngines();
   return projects;
 }
 

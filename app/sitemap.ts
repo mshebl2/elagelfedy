@@ -1,14 +1,18 @@
 import { MetadataRoute } from 'next';
-import { getProjects } from '@/lib/dataService';
+import { getProjects, getServices } from '@/lib/dataService';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://aacc-ksa.vercel.app';
   const projects = await getProjects();
+  const services = await getServices();
 
   const coreRoutes = [
     { path: '', changeFrequency: 'daily' as const, priority: 1.0 },
     { path: '/about', changeFrequency: 'monthly' as const, priority: 0.9 },
-    { path: '/services', changeFrequency: 'monthly' as const, priority: 0.95 },
+    { path: '/services', changeFrequency: 'weekly' as const, priority: 0.95 },
     { path: '/projects', changeFrequency: 'weekly' as const, priority: 0.95 },
     { path: '/equipment', changeFrequency: 'monthly' as const, priority: 0.85 },
     { path: '/certifications', changeFrequency: 'monthly' as const, priority: 0.85 },
@@ -34,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/projects/${p.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: 0.85,
     alternates: {
       languages: {
         ar: `${baseUrl}/projects/${p.slug}`,
@@ -45,3 +49,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticUrls, ...projectUrls];
 }
+
