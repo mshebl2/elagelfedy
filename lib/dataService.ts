@@ -6,6 +6,8 @@ import Certification from '@/models/Certification';
 import SiteContent from '@/models/SiteContent';
 import AdminUser from '@/models/AdminUser';
 import Client from '@/models/Client';
+import HeroSlide from '@/models/HeroSlide';
+import SiteConfig from '@/models/SiteConfig';
 import { hashPassword } from './auth';
 import { readStore, writeStore } from './fileStore';
 import {
@@ -92,6 +94,23 @@ export async function ensureDatabaseSeeded() {
       await Client.insertMany(INITIAL_CLIENTS);
       console.log('✅ Clients seeded');
     }
+
+    // Seed Hero Slides
+    const heroSlidesCount = await HeroSlide.countDocuments();
+    if (heroSlidesCount === 0) {
+      await HeroSlide.insertMany(INITIAL_HERO_SLIDES);
+      console.log('✅ Hero Slides seeded');
+    }
+
+    // Seed Site Config
+    const configCount = await SiteConfig.countDocuments();
+    if (configCount === 0) {
+      await SiteConfig.create({
+        branding: INITIAL_BRANDING_SETTINGS,
+        contact: INITIAL_CONTACT_SETTINGS,
+      });
+      console.log('✅ Site Config seeded');
+    }
   } catch (error) {
     console.error('Error during auto-seeding:', error);
   }
@@ -134,11 +153,32 @@ export async function saveSiteContent(content: Partial<SiteContentType>): Promis
 // 2. Hero Slides
 export async function getHeroSlides(): Promise<HeroSlideType[]> {
   const store = readStore();
+  const db = await connectDB();
+  if (db) {
+    try {
+      await ensureDatabaseSeeded();
+      const slides = await HeroSlide.find().sort({ order: 1 }).lean();
+      if (slides && slides.length > 0) {
+        return JSON.parse(JSON.stringify(slides));
+      }
+    } catch (e) {
+      console.warn('Error fetching hero slides from MongoDB, using store fallback:', e);
+    }
+  }
   return store.heroSlides || INITIAL_HERO_SLIDES;
 }
 
 export async function saveHeroSlides(slides: HeroSlideType[]): Promise<HeroSlideType[]> {
   writeStore({ heroSlides: slides });
+  const db = await connectDB();
+  if (db) {
+    try {
+      await HeroSlide.deleteMany({});
+      await HeroSlide.insertMany(slides);
+    } catch (e) {
+      console.warn('Error persisting hero slides to MongoDB:', e);
+    }
+  }
   return slides;
 }
 
@@ -177,6 +217,18 @@ export async function saveClients(clients: ClientType[]): Promise<ClientType[]> 
 // 4. Branding Settings
 export async function getBrandingSettings(): Promise<BrandingSettingsType> {
   const store = readStore();
+  const db = await connectDB();
+  if (db) {
+    try {
+      await ensureDatabaseSeeded();
+      const config = await SiteConfig.findOne().lean();
+      if (config && config.branding) {
+        return JSON.parse(JSON.stringify(config.branding));
+      }
+    } catch (e) {
+      console.warn('Error fetching branding from MongoDB, using store fallback:', e);
+    }
+  }
   return store.branding || INITIAL_BRANDING_SETTINGS;
 }
 
@@ -184,12 +236,33 @@ export async function saveBrandingSettings(settings: Partial<BrandingSettingsTyp
   const current = await getBrandingSettings();
   const merged = { ...current, ...settings };
   writeStore({ branding: merged });
+  
+  const db = await connectDB();
+  if (db) {
+    try {
+      await SiteConfig.findOneAndUpdate({}, { $set: { branding: merged } }, { upsert: true });
+    } catch (e) {
+      console.warn('Error saving branding to MongoDB:', e);
+    }
+  }
   return merged;
 }
 
 // 5. Contact Settings
 export async function getContactSettings(): Promise<ContactSettingsType> {
   const store = readStore();
+  const db = await connectDB();
+  if (db) {
+    try {
+      await ensureDatabaseSeeded();
+      const config = await SiteConfig.findOne().lean();
+      if (config && config.contact) {
+        return JSON.parse(JSON.stringify(config.contact));
+      }
+    } catch (e) {
+      console.warn('Error fetching contact from MongoDB, using store fallback:', e);
+    }
+  }
   return store.contact || INITIAL_CONTACT_SETTINGS;
 }
 
@@ -197,6 +270,15 @@ export async function saveContactSettings(settings: Partial<ContactSettingsType>
   const current = await getContactSettings();
   const merged = { ...current, ...settings };
   writeStore({ contact: merged });
+  
+  const db = await connectDB();
+  if (db) {
+    try {
+      await SiteConfig.findOneAndUpdate({}, { $set: { contact: merged } }, { upsert: true });
+    } catch (e) {
+      console.warn('Error saving contact to MongoDB:', e);
+    }
+  }
   return merged;
 }
 
