@@ -33,6 +33,26 @@ import {
   ContactSettingsType,
 } from '@/types';
 
+// In-Memory Fast Cache (TTL: 30 Seconds)
+const memoryCache: Record<string, { data: any; timestamp: number }> = {};
+const CACHE_TTL = 30000;
+
+function getFromCache<T>(key: string): T | null {
+  const item = memoryCache[key];
+  if (item && Date.now() - item.timestamp < CACHE_TTL) {
+    return item.data as T;
+  }
+  return null;
+}
+
+function setCache<T>(key: string, data: T): void {
+  memoryCache[key] = { data, timestamp: Date.now() };
+}
+
+function invalidateCache(key: string): void {
+  delete memoryCache[key];
+}
+
 async function pingSearchEngines() {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://aacc-ksa.vercel.app';
@@ -42,108 +62,97 @@ async function pingSearchEngines() {
   } catch (e) {}
 }
 
+let isSeeded = false;
+let seedingPromise: Promise<void> | null = null;
+
 export async function ensureDatabaseSeeded() {
-  const db = await connectDB();
-  if (!db) return;
+  if (isSeeded) return;
+  if (!seedingPromise) {
+    seedingPromise = (async () => {
+      const db = await connectDB();
+      if (!db) return;
 
-  try {
-    // Seed Admin User
-    const adminCount = await AdminUser.countDocuments();
-    if (adminCount === 0) {
-      const defaultUser = process.env.ADMIN_DEFAULT_USER || 'admin';
-      const defaultPass = process.env.ADMIN_DEFAULT_PASS || 'AaccAdmin2026!';
-      const passwordHash = await hashPassword(defaultPass);
-      await AdminUser.create({
-        username: defaultUser,
-        email: 'admin@aacc-ksa.com',
-        passwordHash,
-        role: 'superadmin',
-      });
-      console.log('✅ Default Admin User created:', defaultUser);
-    }
+      try {
+        const adminCount = await AdminUser.countDocuments();
+        if (adminCount === 0) {
+          const defaultUser = process.env.ADMIN_DEFAULT_USER || 'admin';
+          const defaultPass = process.env.ADMIN_DEFAULT_PASS || 'AaccAdmin2026!';
+          const passwordHash = await hashPassword(defaultPass);
+          await AdminUser.create({
+            username: defaultUser,
+            email: 'admin@aacc-ksa.com',
+            passwordHash,
+            role: 'superadmin',
+          });
+        }
 
-    // Seed Site Content
-    const contentCount = await SiteContent.countDocuments();
-    if (contentCount === 0) {
-      await SiteContent.create(INITIAL_SITE_CONTENT);
-      console.log('✅ Site Content seeded');
-    }
+        const contentCount = await SiteContent.countDocuments();
+        if (contentCount === 0) await SiteContent.create(INITIAL_SITE_CONTENT);
 
-    // Seed Services
-    const servicesCount = await Service.countDocuments();
-    if (servicesCount === 0) {
-      await Service.insertMany(INITIAL_SERVICES);
-      console.log('✅ Services seeded (8 activities)');
-    }
+        const servicesCount = await Service.countDocuments();
+        if (servicesCount === 0) await Service.insertMany(INITIAL_SERVICES);
 
-    // Seed Projects
-    const projectsCount = await Project.countDocuments();
-    if (projectsCount === 0) {
-      await Project.insertMany(INITIAL_PROJECTS);
-      console.log('✅ Projects seeded');
-    }
+        const projectsCount = await Project.countDocuments();
+        if (projectsCount === 0) await Project.insertMany(INITIAL_PROJECTS);
 
-    // Seed Equipment
-    const equipmentCount = await Equipment.countDocuments();
-    if (equipmentCount === 0) {
-      await Equipment.insertMany(INITIAL_EQUIPMENT);
-      console.log('✅ Equipment seeded');
-    }
+        const equipmentCount = await Equipment.countDocuments();
+        if (equipmentCount === 0) await Equipment.insertMany(INITIAL_EQUIPMENT);
 
-    // Seed Certifications
-    const certsCount = await Certification.countDocuments();
-    if (certsCount === 0) {
-      await Certification.insertMany(INITIAL_CERTIFICATIONS);
-      console.log('✅ Certifications seeded');
-    }
+        const certsCount = await Certification.countDocuments();
+        if (certsCount === 0) await Certification.insertMany(INITIAL_CERTIFICATIONS);
 
-    // Seed Clients
-    const clientsCount = await Client.countDocuments();
-    if (clientsCount === 0) {
-      await Client.insertMany(INITIAL_CLIENTS);
-      console.log('✅ Clients seeded');
-    }
+        const clientsCount = await Client.countDocuments();
+        if (clientsCount === 0) await Client.insertMany(INITIAL_CLIENTS);
 
-    // Seed Hero Slides
-    const heroSlidesCount = await HeroSlide.countDocuments();
-    if (heroSlidesCount === 0) {
-      await HeroSlide.insertMany(INITIAL_HERO_SLIDES);
-      console.log('✅ Hero Slides seeded');
-    }
+        const heroSlidesCount = await HeroSlide.countDocuments();
+        if (heroSlidesCount === 0) await HeroSlide.insertMany(INITIAL_HERO_SLIDES);
 
-    // Seed Site Config
-    const configCount = await SiteConfig.countDocuments();
-    if (configCount === 0) {
-      await SiteConfig.create({
-        branding: INITIAL_BRANDING_SETTINGS,
-        contact: INITIAL_CONTACT_SETTINGS,
-      });
-      console.log('✅ Site Config seeded');
-    }
-  } catch (error) {
-    console.error('Error during auto-seeding:', error);
+        const configCount = await SiteConfig.countDocuments();
+        if (configCount === 0) {
+          await SiteConfig.create({
+            branding: INITIAL_BRANDING_SETTINGS,
+            contact: INITIAL_CONTACT_SETTINGS,
+          });
+        }
+        isSeeded = true;
+      } catch (error) {
+        console.error('Error during auto-seeding:', error);
+      } finally {
+        seedingPromise = null;
+      }
+    })();
   }
+  return seedingPromise;
 }
 
 // 1. Site Content
 export async function getSiteContent(): Promise<SiteContentType> {
-  const store = readStore();
+  const cached = getFromCache<SiteContentType>('siteContent');
+  if (cached) return cached;
+
   const db = await connectDB();
   if (db) {
     try {
       await ensureDatabaseSeeded();
       const content = await SiteContent.findOne().lean();
       if (content) {
-        return JSON.parse(JSON.stringify(content));
+        const parsed = JSON.parse(JSON.stringify(content));
+        setCache('siteContent', parsed);
+        return parsed;
       }
     } catch (e) {
-      console.warn('Error fetching site content from MongoDB, using store fallback:', e);
+      console.warn('Error fetching site content from MongoDB:', e);
     }
   }
-  return store.siteContent || INITIAL_SITE_CONTENT;
+
+  const store = readStore();
+  const fallback = store.siteContent || INITIAL_SITE_CONTENT;
+  setCache('siteContent', fallback);
+  return fallback;
 }
 
 export async function saveSiteContent(content: Partial<SiteContentType>): Promise<SiteContentType> {
+  invalidateCache('siteContent');
   const current = await getSiteContent();
   const merged = { ...current, ...content };
   const { _id, ...cleanMerged } = merged as any;
@@ -153,6 +162,7 @@ export async function saveSiteContent(content: Partial<SiteContentType>): Promis
   if (db) {
     try {
       await SiteContent.findOneAndUpdate({}, cleanMerged, { upsert: true, new: true });
+      setCache('siteContent', merged as SiteContentType);
     } catch (e) {
       console.warn('Error saving site content to MongoDB:', e);
     }
@@ -162,23 +172,32 @@ export async function saveSiteContent(content: Partial<SiteContentType>): Promis
 
 // 2. Hero Slides
 export async function getHeroSlides(): Promise<HeroSlideType[]> {
-  const store = readStore();
+  const cached = getFromCache<HeroSlideType[]>('heroSlides');
+  if (cached) return cached;
+
   const db = await connectDB();
   if (db) {
     try {
       await ensureDatabaseSeeded();
       const slides = await HeroSlide.find().sort({ order: 1 }).lean();
       if (slides && slides.length > 0) {
-        return JSON.parse(JSON.stringify(slides));
+        const parsed = JSON.parse(JSON.stringify(slides));
+        setCache('heroSlides', parsed);
+        return parsed;
       }
     } catch (e) {
-      console.warn('Error fetching hero slides from MongoDB, using store fallback:', e);
+      console.warn('Error fetching hero slides from MongoDB:', e);
     }
   }
-  return store.heroSlides || INITIAL_HERO_SLIDES;
+
+  const store = readStore();
+  const fallback = store.heroSlides || INITIAL_HERO_SLIDES;
+  setCache('heroSlides', fallback);
+  return fallback;
 }
 
 export async function saveHeroSlides(slides: HeroSlideType[]): Promise<HeroSlideType[]> {
+  invalidateCache('heroSlides');
   writeStore({ heroSlides: slides });
   const db = await connectDB();
   if (db) {
@@ -186,6 +205,7 @@ export async function saveHeroSlides(slides: HeroSlideType[]): Promise<HeroSlide
       await HeroSlide.deleteMany({});
       const cleaned = slides.map(({ _id, ...rest }: any) => rest);
       await HeroSlide.insertMany(cleaned);
+      setCache('heroSlides', slides);
     } catch (e) {
       console.warn('Error persisting hero slides to MongoDB:', e);
     }
@@ -195,23 +215,32 @@ export async function saveHeroSlides(slides: HeroSlideType[]): Promise<HeroSlide
 
 // 3. Clients
 export async function getClients(): Promise<ClientType[]> {
-  const store = readStore();
+  const cached = getFromCache<ClientType[]>('clients');
+  if (cached) return cached;
+
   const db = await connectDB();
   if (db) {
     try {
       await ensureDatabaseSeeded();
       const clients = await Client.find().sort({ order: 1 }).lean();
       if (clients && clients.length > 0) {
-        return JSON.parse(JSON.stringify(clients));
+        const parsed = JSON.parse(JSON.stringify(clients));
+        setCache('clients', parsed);
+        return parsed;
       }
     } catch (e) {
-      console.warn('Error fetching clients from MongoDB, using store fallback:', e);
+      console.warn('Error fetching clients from MongoDB:', e);
     }
   }
-  return store.clients || INITIAL_CLIENTS;
+
+  const store = readStore();
+  const fallback = store.clients || INITIAL_CLIENTS;
+  setCache('clients', fallback);
+  return fallback;
 }
 
 export async function saveClients(clients: ClientType[]): Promise<ClientType[]> {
+  invalidateCache('clients');
   writeStore({ clients });
   const db = await connectDB();
   if (db) {
@@ -219,6 +248,7 @@ export async function saveClients(clients: ClientType[]): Promise<ClientType[]> 
       await Client.deleteMany({});
       const cleaned = clients.map(({ _id, ...rest }: any) => rest);
       await Client.insertMany(cleaned);
+      setCache('clients', clients);
     } catch (e) {
       console.warn('Error persisting clients to MongoDB:', e);
     }
@@ -228,23 +258,32 @@ export async function saveClients(clients: ClientType[]): Promise<ClientType[]> 
 
 // 4. Branding Settings
 export async function getBrandingSettings(): Promise<BrandingSettingsType> {
-  const store = readStore();
+  const cached = getFromCache<BrandingSettingsType>('branding');
+  if (cached) return cached;
+
   const db = await connectDB();
   if (db) {
     try {
       await ensureDatabaseSeeded();
       const config = await SiteConfig.findOne().lean();
       if (config && config.branding) {
-        return JSON.parse(JSON.stringify(config.branding));
+        const parsed = JSON.parse(JSON.stringify(config.branding));
+        setCache('branding', parsed);
+        return parsed;
       }
     } catch (e) {
-      console.warn('Error fetching branding from MongoDB, using store fallback:', e);
+      console.warn('Error fetching branding from MongoDB:', e);
     }
   }
-  return store.branding || INITIAL_BRANDING_SETTINGS;
+
+  const store = readStore();
+  const fallback = store.branding || INITIAL_BRANDING_SETTINGS;
+  setCache('branding', fallback);
+  return fallback;
 }
 
 export async function saveBrandingSettings(settings: Partial<BrandingSettingsType>): Promise<BrandingSettingsType> {
+  invalidateCache('branding');
   const current = await getBrandingSettings();
   const merged = { ...current, ...settings };
   const { _id, ...cleanBranding } = merged as any;
@@ -254,6 +293,7 @@ export async function saveBrandingSettings(settings: Partial<BrandingSettingsTyp
   if (db) {
     try {
       await SiteConfig.findOneAndUpdate({}, { $set: { branding: cleanBranding } }, { upsert: true });
+      setCache('branding', merged);
     } catch (e) {
       console.warn('Error saving branding to MongoDB:', e);
     }
@@ -263,23 +303,32 @@ export async function saveBrandingSettings(settings: Partial<BrandingSettingsTyp
 
 // 5. Contact Settings
 export async function getContactSettings(): Promise<ContactSettingsType> {
-  const store = readStore();
+  const cached = getFromCache<ContactSettingsType>('contact');
+  if (cached) return cached;
+
   const db = await connectDB();
   if (db) {
     try {
       await ensureDatabaseSeeded();
       const config = await SiteConfig.findOne().lean();
       if (config && config.contact) {
-        return JSON.parse(JSON.stringify(config.contact));
+        const parsed = JSON.parse(JSON.stringify(config.contact));
+        setCache('contact', parsed);
+        return parsed;
       }
     } catch (e) {
-      console.warn('Error fetching contact from MongoDB, using store fallback:', e);
+      console.warn('Error fetching contact from MongoDB:', e);
     }
   }
-  return store.contact || INITIAL_CONTACT_SETTINGS;
+
+  const store = readStore();
+  const fallback = store.contact || INITIAL_CONTACT_SETTINGS;
+  setCache('contact', fallback);
+  return fallback;
 }
 
 export async function saveContactSettings(settings: Partial<ContactSettingsType>): Promise<ContactSettingsType> {
+  invalidateCache('contact');
   const current = await getContactSettings();
   const merged = { ...current, ...settings };
   const { _id, ...cleanContact } = merged as any;
@@ -289,6 +338,7 @@ export async function saveContactSettings(settings: Partial<ContactSettingsType>
   if (db) {
     try {
       await SiteConfig.findOneAndUpdate({}, { $set: { contact: cleanContact } }, { upsert: true });
+      setCache('contact', merged);
     } catch (e) {
       console.warn('Error saving contact to MongoDB:', e);
     }
@@ -298,23 +348,32 @@ export async function saveContactSettings(settings: Partial<ContactSettingsType>
 
 // 6. Services
 export async function getServices(): Promise<ServiceType[]> {
-  const store = readStore();
+  const cached = getFromCache<ServiceType[]>('services');
+  if (cached) return cached;
+
   const db = await connectDB();
   if (db) {
     try {
       await ensureDatabaseSeeded();
       const services = await Service.find().sort({ order: 1 }).lean();
       if (services && services.length > 0) {
-        return JSON.parse(JSON.stringify(services));
+        const parsed = JSON.parse(JSON.stringify(services));
+        setCache('services', parsed);
+        return parsed;
       }
     } catch (e) {
-      console.warn('Error fetching services from MongoDB, using store fallback:', e);
+      console.warn('Error fetching services from MongoDB:', e);
     }
   }
-  return store.services || INITIAL_SERVICES;
+
+  const store = readStore();
+  const fallback = store.services || INITIAL_SERVICES;
+  setCache('services', fallback);
+  return fallback;
 }
 
 export async function saveServices(services: ServiceType[]): Promise<ServiceType[]> {
+  invalidateCache('services');
   writeStore({ services });
   const db = await connectDB();
   if (db) {
@@ -322,6 +381,7 @@ export async function saveServices(services: ServiceType[]): Promise<ServiceType
       await Service.deleteMany({});
       const cleaned = services.map(({ _id, ...rest }: any) => rest);
       await Service.insertMany(cleaned);
+      setCache('services', services);
     } catch (e) {
       console.warn('Error persisting services to MongoDB:', e);
     }
@@ -332,23 +392,32 @@ export async function saveServices(services: ServiceType[]): Promise<ServiceType
 
 // 7. Projects
 export async function getProjects(): Promise<ProjectType[]> {
-  const store = readStore();
+  const cached = getFromCache<ProjectType[]>('projects');
+  if (cached) return cached;
+
   const db = await connectDB();
   if (db) {
     try {
       await ensureDatabaseSeeded();
       const projects = await Project.find().sort({ order: 1 }).lean();
       if (projects && projects.length > 0) {
-        return JSON.parse(JSON.stringify(projects));
+        const parsed = JSON.parse(JSON.stringify(projects));
+        setCache('projects', parsed);
+        return parsed;
       }
     } catch (e) {
-      console.warn('Error fetching projects from MongoDB, using store fallback:', e);
+      console.warn('Error fetching projects from MongoDB:', e);
     }
   }
-  return store.projects || INITIAL_PROJECTS;
+
+  const store = readStore();
+  const fallback = store.projects || INITIAL_PROJECTS;
+  setCache('projects', fallback);
+  return fallback;
 }
 
 export async function saveProjects(projects: ProjectType[]): Promise<ProjectType[]> {
+  invalidateCache('projects');
   writeStore({ projects });
   const db = await connectDB();
   if (db) {
@@ -356,6 +425,7 @@ export async function saveProjects(projects: ProjectType[]): Promise<ProjectType
       await Project.deleteMany({});
       const cleaned = projects.map(({ _id, ...rest }: any) => rest);
       await Project.insertMany(cleaned);
+      setCache('projects', projects);
     } catch (e) {
       console.warn('Error persisting projects to MongoDB:', e);
     }
@@ -372,23 +442,32 @@ export async function getProjectBySlug(slug: string): Promise<ProjectType | null
 
 // 8. Equipment
 export async function getEquipmentList(): Promise<EquipmentType[]> {
-  const store = readStore();
+  const cached = getFromCache<EquipmentType[]>('equipment');
+  if (cached) return cached;
+
   const db = await connectDB();
   if (db) {
     try {
       await ensureDatabaseSeeded();
       const equipment = await Equipment.find().sort({ order: 1 }).lean();
       if (equipment && equipment.length > 0) {
-        return JSON.parse(JSON.stringify(equipment));
+        const parsed = JSON.parse(JSON.stringify(equipment));
+        setCache('equipment', parsed);
+        return parsed;
       }
     } catch (e) {
-      console.warn('Error fetching equipment from MongoDB, using store fallback:', e);
+      console.warn('Error fetching equipment from MongoDB:', e);
     }
   }
-  return store.equipment || INITIAL_EQUIPMENT;
+
+  const store = readStore();
+  const fallback = store.equipment || INITIAL_EQUIPMENT;
+  setCache('equipment', fallback);
+  return fallback;
 }
 
 export async function saveEquipment(equipment: EquipmentType[]): Promise<EquipmentType[]> {
+  invalidateCache('equipment');
   writeStore({ equipment });
   const db = await connectDB();
   if (db) {
@@ -396,6 +475,7 @@ export async function saveEquipment(equipment: EquipmentType[]): Promise<Equipme
       await Equipment.deleteMany({});
       const cleaned = equipment.map(({ _id, ...rest }: any) => rest);
       await Equipment.insertMany(cleaned);
+      setCache('equipment', equipment);
     } catch (e) {
       console.warn('Error persisting equipment to MongoDB:', e);
     }
@@ -407,23 +487,32 @@ export const getEquipment = getEquipmentList;
 
 // 9. Certifications
 export async function getCertificationsList(): Promise<CertificationType[]> {
-  const store = readStore();
+  const cached = getFromCache<CertificationType[]>('certifications');
+  if (cached) return cached;
+
   const db = await connectDB();
   if (db) {
     try {
       await ensureDatabaseSeeded();
       const certs = await Certification.find().sort({ order: 1 }).lean();
       if (certs && certs.length > 0) {
-        return JSON.parse(JSON.stringify(certs));
+        const parsed = JSON.parse(JSON.stringify(certs));
+        setCache('certifications', parsed);
+        return parsed;
       }
     } catch (e) {
-      console.warn('Error fetching certifications from MongoDB, using store fallback:', e);
+      console.warn('Error fetching certifications from MongoDB:', e);
     }
   }
-  return store.certifications || INITIAL_CERTIFICATIONS;
+
+  const store = readStore();
+  const fallback = store.certifications || INITIAL_CERTIFICATIONS;
+  setCache('certifications', fallback);
+  return fallback;
 }
 
 export async function saveCertifications(certs: CertificationType[]): Promise<CertificationType[]> {
+  invalidateCache('certifications');
   writeStore({ certifications: certs });
   const db = await connectDB();
   if (db) {
@@ -431,6 +520,7 @@ export async function saveCertifications(certs: CertificationType[]): Promise<Ce
       await Certification.deleteMany({});
       const cleaned = certs.map(({ _id, ...rest }: any) => rest);
       await Certification.insertMany(cleaned);
+      setCache('certifications', certs);
     } catch (e) {
       console.warn('Error persisting certifications to MongoDB:', e);
     }
@@ -439,4 +529,3 @@ export async function saveCertifications(certs: CertificationType[]): Promise<Ce
 }
 
 export const getCertifications = getCertificationsList;
-
