@@ -5,6 +5,7 @@ import Equipment from '@/models/Equipment';
 import Certification from '@/models/Certification';
 import SiteContent from '@/models/SiteContent';
 import AdminUser from '@/models/AdminUser';
+import Client from '@/models/Client';
 import { hashPassword } from './auth';
 import { readStore, writeStore } from './fileStore';
 import {
@@ -84,6 +85,13 @@ export async function ensureDatabaseSeeded() {
       await Certification.insertMany(INITIAL_CERTIFICATIONS);
       console.log('✅ Certifications seeded');
     }
+
+    // Seed Clients
+    const clientsCount = await Client.countDocuments();
+    if (clientsCount === 0) {
+      await Client.insertMany(INITIAL_CLIENTS);
+      console.log('✅ Clients seeded');
+    }
   } catch (error) {
     console.error('Error during auto-seeding:', error);
   }
@@ -137,11 +145,32 @@ export async function saveHeroSlides(slides: HeroSlideType[]): Promise<HeroSlide
 // 3. Clients
 export async function getClients(): Promise<ClientType[]> {
   const store = readStore();
+  const db = await connectDB();
+  if (db) {
+    try {
+      await ensureDatabaseSeeded();
+      const clients = await Client.find().sort({ order: 1 }).lean();
+      if (clients && clients.length > 0) {
+        return JSON.parse(JSON.stringify(clients));
+      }
+    } catch (e) {
+      console.warn('Error fetching clients from MongoDB, using store fallback:', e);
+    }
+  }
   return store.clients || INITIAL_CLIENTS;
 }
 
 export async function saveClients(clients: ClientType[]): Promise<ClientType[]> {
   writeStore({ clients });
+  const db = await connectDB();
+  if (db) {
+    try {
+      await Client.deleteMany({});
+      await Client.insertMany(clients);
+    } catch (e) {
+      console.warn('Error persisting clients to MongoDB:', e);
+    }
+  }
   return clients;
 }
 
