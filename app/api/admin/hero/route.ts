@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getHeroSlides, saveHeroSlides } from '@/lib/dataService';
 import { HeroSlideType } from '@/types';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   try {
     const slides = await getHeroSlides();

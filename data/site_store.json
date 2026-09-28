@@ -162,6 +162,7 @@
   },
   "heroSlides": [
     {
+      "_id": "6ab9fa85fa7d980f6a9eab96",
       "id": "hero-1",
       "image": "/images/hero/hero_slide_1.jpg",
       "titleAr": "حفارات الحفر الأفقي الموجه العملاقة (HDD)",
@@ -171,9 +172,13 @@
       "badgeAr": "أسطول الحفر التخصصي",
       "badgeEn": "Specialized Fleet",
       "active": true,
-      "order": 1
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.805Z",
+      "updatedAt": "2026-09-28T05:26:29.805Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab97",
       "id": "hero-2",
       "image": "/images/hero/hero_slide_2.jpg",
       "titleAr": "أنفاق البنية التحتية الدقيقة (Microtunneling)",
@@ -183,9 +188,13 @@
       "badgeAr": "أنفاق عميقة بدون حفر مفتوح",
       "badgeEn": "Trenchless Microtunneling",
       "active": true,
-      "order": 2
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.805Z",
+      "updatedAt": "2026-09-28T05:26:29.805Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab98",
       "id": "hero-3",
       "image": "/images/hero/hero_slide_3.jpg",
       "titleAr": "معابر الطرق السريعة وسكك الحديد الكبرى",
@@ -195,9 +204,13 @@
       "badgeAr": "معابر استراتيجية آمنة",
       "badgeEn": "Non-Disruptive Crossings",
       "active": true,
-      "order": 3
+      "order": 3,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.805Z",
+      "updatedAt": "2026-09-28T05:26:29.805Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab99",
       "id": "hero-4",
       "image": "/images/hero/hero_slide_4.jpg",
       "titleAr": "تمديد كابلات الجهد العالي وشبكات الطاقة",
@@ -207,152 +220,227 @@
       "badgeAr": "طاقة وبنية تحتية مستدامة",
       "badgeEn": "High-Voltage Energy Grid",
       "active": true,
-      "order": 4
+      "order": 4,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.805Z",
+      "updatedAt": "2026-09-28T05:26:29.805Z"
+    },
+    {
+      "image": "/images/hero/slide1.jpg",
+      "titleAr": "اختبار العاج الفضي",
+      "titleEn": "AACC Test Slide",
+      "subtitleAr": "الحفر الأفقي الموجه",
+      "subtitleEn": "Horizontal Directional Drilling",
+      "active": true,
+      "id": "hero-1790573226168",
+      "order": 5
     }
   ],
   "clients": [
     {
+      "_id": "6ab9fa85fa7d980f6a9eab89",
       "id": "client-1",
       "name": "Saudi Aramco",
       "nameAr": "أرامكو السعودية",
       "categoryAr": "قطاع الطاقة والنفط والغاز",
       "categoryEn": "Energy & Oil/Gas Sector",
       "logo": "/images/clients/logo_aramco.svg",
-      "order": 1,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.086Z",
+      "updatedAt": "2026-09-28T05:26:29.086Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab8a",
       "id": "client-2",
       "name": "Saudi Electricity Company (SEC)",
       "nameAr": "الشركة السعودية للكهرباء",
       "categoryAr": "شبكات الجهد الفائق ومحطات التحويل",
       "categoryEn": "High-Voltage Power & Substations",
       "logo": "/images/clients/logo_sec.svg",
-      "order": 2,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab8b",
       "id": "client-3",
       "name": "National Water Company (NWC)",
       "nameAr": "شركة المياه الوطنية",
       "categoryAr": "خطوط نقل المياه الاستراتيجية",
       "categoryEn": "Bulk Water Transmission & Utilities",
       "logo": "/images/clients/logo_nwc.svg",
-      "order": 3,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 3,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab8c",
       "id": "client-4",
       "name": "BINYAH (Infrastructure)",
       "nameAr": "شركة بنية للمقاولات",
       "categoryAr": "تطوير البنية التحتية للمدن الكبرى",
       "categoryEn": "Mega Infrastructure Development",
       "logo": "/images/clients/logo_binyah.svg",
-      "order": 4,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 4,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab8d",
       "id": "client-5",
       "name": "NEOM / Amaala",
       "nameAr": "نيوم / أمالا البحر الأحمر",
       "categoryAr": "مشاريع الرؤية السعودية 2030",
       "categoryEn": "Saudi Vision 2030 Giga Projects",
       "logo": "/images/clients/logo_neom.svg",
-      "order": 5,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 5,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab8e",
       "id": "client-6",
       "name": "Red Sea Global",
       "nameAr": "البحر الأحمر الدولية",
       "categoryAr": "الوجهات العالمية المستدامة",
       "categoryEn": "Regenerative Global Tourism",
       "logo": "/images/clients/logo_redsea.svg",
-      "order": 6,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 6,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab8f",
       "id": "client-7",
       "name": "Saudconsult",
       "nameAr": "سعود كونسلت للاستشارات",
       "categoryAr": "الاستشارات الهندسية والإشراف الفني",
       "categoryEn": "Engineering Consultancy & Supervision",
       "logo": "/images/clients/logo_saudconsult.svg",
-      "order": 7,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 7,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab90",
       "id": "client-8",
       "name": "King Abdullah Economic City (KAEC)",
       "nameAr": "مدينة الملك عبدالله الاقتصادية",
       "categoryAr": "المناطق الاقتصادية والمدن الصناعية",
       "categoryEn": "Economic Zones & Industrial Cities",
       "logo": "/images/clients/logo_kaec.svg",
-      "order": 8,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 8,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab91",
       "id": "client-9",
       "name": "Al-Mashariq Contracting",
       "nameAr": "شركة المشارق للإنشاءات",
       "categoryAr": "شبكات الطاقة والسكك الحديدية",
       "categoryEn": "Tier-1 EPC Power & Rail Infrastructure",
       "logo": "/images/clients/logo_mashariq.svg",
-      "order": 9,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 9,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab92",
       "id": "client-10",
       "name": "National Contracting Co. (NCC)",
       "nameAr": "شركة المقاولات الوطنية",
       "categoryAr": "محطات التحويل والخطوط الهوائية",
       "categoryEn": "380kV Substations & Transmission Lines",
       "logo": "/images/clients/logo_ncc.svg",
-      "order": 10,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 10,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab93",
       "id": "client-11",
       "name": "Al-Sharhan Contracting",
       "nameAr": "شركة الشرهان للمقاولات",
       "categoryAr": "مشاريع الحفر الموجه في الرياض",
       "categoryEn": "Urban Trenchless Crossings - Riyadh",
       "logo": "/images/clients/logo_sharhan.svg",
-      "order": 11,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 11,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab94",
       "id": "client-12",
       "name": "Al-Janahin Contracting",
       "nameAr": "شركة الجناحين للتجارة والمقاولات",
       "categoryAr": "تمديد حزم الأنابيب المعقدة",
       "categoryEn": "Bundled Heavy Pipe Installations",
       "logo": "/images/clients/logo_janahin.svg",
-      "order": 12,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 12,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
     },
     {
+      "_id": "6ab9fa85fa7d980f6a9eab95",
       "id": "client-13",
       "name": "ANABEEB Contracting",
       "nameAr": "شركة أنابيب للمقاولات",
       "categoryAr": "خطوط الأنابيب الفولاذية والغاز",
       "categoryEn": "Heavy Steel Pipelines & Gas Fields",
       "logo": "/images/clients/logo_anabeeb.svg",
-      "order": 13,
+      "website": "",
       "active": true,
-      "website": ""
+      "order": 13,
+      "__v": 0,
+      "createdAt": "2026-09-28T05:26:29.088Z",
+      "updatedAt": "2026-09-28T05:26:29.088Z"
+    },
+    {
+      "name": "Saudi Aramco Test",
+      "nameAr": "أرامكو السعودية تجربة",
+      "categoryAr": "قطاع النفط والغاز",
+      "categoryEn": "Oil & Gas Sector",
+      "logo": "/images/clients/aramco.svg",
+      "active": true,
+      "id": "client-1790573222868",
+      "order": 14
     }
   ],
   "services": [
@@ -1308,8 +1396,8 @@
   "branding": {
     "logoUrl": "/images/logo/aacc_official_logo.png",
     "logoHeight": 52,
-    "brandNameAr": "شركة العاج الفضي للمقاولات",
-    "brandNameEn": "Alaaj Alfedhi Contracting Company",
+    "brandNameAr": "شركة العاج الفضي للتجارة والمقاولات",
+    "brandNameEn": "AACC Contracting Co.",
     "taglineAr": "حلول الحفر الأفقي الموجه والأنفاق الدقيقة (HDD & Microtunneling)",
     "taglineEn": "Directional Drilling & Microtunneling Specialists",
     "primaryColor": "#0f382a",
@@ -1318,7 +1406,7 @@
     "faviconUrl": "/favicon.ico"
   },
   "contact": {
-    "phone": "+966 55 522 7109",
+    "phone": "+966 13 800 0000",
     "secondaryPhone": "+966 50 123 4567",
     "whatsapp": "+966555227109",
     "email": "info@aacc-ksa.com",

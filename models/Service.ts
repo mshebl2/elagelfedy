@@ -21,7 +21,7 @@ const ServiceSchema = new Schema<IServiceDocument>(
     featuresEn: [{ type: String }],
     order: { type: Number, default: 0 },
   },
-  { timestamps: true }
+  { timestamps: true, strict: false }
 );
 
 const Service: Model<IServiceDocument> =

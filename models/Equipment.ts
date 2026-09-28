@@ -32,7 +32,7 @@ const EquipmentSchema = new Schema<IEquipmentDocument>(
     featured: { type: Boolean, default: false },
     order: { type: Number, default: 0 },
   },
-  { timestamps: true }
+  { timestamps: true, strict: false }
 );
 
 const Equipment: Model<IEquipmentDocument> =

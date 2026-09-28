@@ -3,6 +3,9 @@ import { getAdminSession } from '@/lib/auth';
 import { getProjects, saveProjects } from '@/lib/dataService';
 import { ProjectType } from '@/types';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   try {
     const session = await getAdminSession();

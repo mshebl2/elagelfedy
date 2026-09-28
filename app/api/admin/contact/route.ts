@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getContactSettings, saveContactSettings } from '@/lib/dataService';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   try {
     const contact = await getContactSettings();

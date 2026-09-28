@@ -43,3 +43,8 @@ next-env.d.ts
 # temp scripts
 *.bat
 *.ps1
+/scratch/
+find-git.js
+test-admin-save.js
+git-push.js
+

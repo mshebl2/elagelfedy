@@ -137,12 +137,13 @@ export async function getSiteContent(): Promise<SiteContentType> {
 export async function saveSiteContent(content: Partial<SiteContentType>): Promise<SiteContentType> {
   const current = await getSiteContent();
   const merged = { ...current, ...content };
-  writeStore({ siteContent: merged as SiteContentType });
+  const { _id, ...cleanMerged } = merged as any;
+  writeStore({ siteContent: cleanMerged as SiteContentType });
 
   const db = await connectDB();
   if (db) {
     try {
-      await SiteContent.findOneAndUpdate({}, merged, { upsert: true, new: true });
+      await SiteContent.findOneAndUpdate({}, cleanMerged, { upsert: true, new: true });
     } catch (e) {
       console.warn('Error saving site content to MongoDB:', e);
     }
@@ -174,7 +175,8 @@ export async function saveHeroSlides(slides: HeroSlideType[]): Promise<HeroSlide
   if (db) {
     try {
       await HeroSlide.deleteMany({});
-      await HeroSlide.insertMany(slides);
+      const cleaned = slides.map(({ _id, ...rest }: any) => rest);
+      await HeroSlide.insertMany(cleaned);
     } catch (e) {
       console.warn('Error persisting hero slides to MongoDB:', e);
     }
@@ -206,7 +208,8 @@ export async function saveClients(clients: ClientType[]): Promise<ClientType[]> 
   if (db) {
     try {
       await Client.deleteMany({});
-      await Client.insertMany(clients);
+      const cleaned = clients.map(({ _id, ...rest }: any) => rest);
+      await Client.insertMany(cleaned);
     } catch (e) {
       console.warn('Error persisting clients to MongoDB:', e);
     }
@@ -235,12 +238,13 @@ export async function getBrandingSettings(): Promise<BrandingSettingsType> {
 export async function saveBrandingSettings(settings: Partial<BrandingSettingsType>): Promise<BrandingSettingsType> {
   const current = await getBrandingSettings();
   const merged = { ...current, ...settings };
-  writeStore({ branding: merged });
+  const { _id, ...cleanBranding } = merged as any;
+  writeStore({ branding: cleanBranding });
   
   const db = await connectDB();
   if (db) {
     try {
-      await SiteConfig.findOneAndUpdate({}, { $set: { branding: merged } }, { upsert: true });
+      await SiteConfig.findOneAndUpdate({}, { $set: { branding: cleanBranding } }, { upsert: true });
     } catch (e) {
       console.warn('Error saving branding to MongoDB:', e);
     }
@@ -269,12 +273,13 @@ export async function getContactSettings(): Promise<ContactSettingsType> {
 export async function saveContactSettings(settings: Partial<ContactSettingsType>): Promise<ContactSettingsType> {
   const current = await getContactSettings();
   const merged = { ...current, ...settings };
-  writeStore({ contact: merged });
+  const { _id, ...cleanContact } = merged as any;
+  writeStore({ contact: cleanContact });
   
   const db = await connectDB();
   if (db) {
     try {
-      await SiteConfig.findOneAndUpdate({}, { $set: { contact: merged } }, { upsert: true });
+      await SiteConfig.findOneAndUpdate({}, { $set: { contact: cleanContact } }, { upsert: true });
     } catch (e) {
       console.warn('Error saving contact to MongoDB:', e);
     }
@@ -306,7 +311,8 @@ export async function saveServices(services: ServiceType[]): Promise<ServiceType
   if (db) {
     try {
       await Service.deleteMany({});
-      await Service.insertMany(services);
+      const cleaned = services.map(({ _id, ...rest }: any) => rest);
+      await Service.insertMany(cleaned);
     } catch (e) {
       console.warn('Error persisting services to MongoDB:', e);
     }
@@ -338,7 +344,8 @@ export async function saveProjects(projects: ProjectType[]): Promise<ProjectType
   if (db) {
     try {
       await Project.deleteMany({});
-      await Project.insertMany(projects);
+      const cleaned = projects.map(({ _id, ...rest }: any) => rest);
+      await Project.insertMany(cleaned);
     } catch (e) {
       console.warn('Error persisting projects to MongoDB:', e);
     }
@@ -370,6 +377,21 @@ export async function getEquipmentList(): Promise<EquipmentType[]> {
   return store.equipment || INITIAL_EQUIPMENT;
 }
 
+export async function saveEquipment(equipment: EquipmentType[]): Promise<EquipmentType[]> {
+  writeStore({ equipment });
+  const db = await connectDB();
+  if (db) {
+    try {
+      await Equipment.deleteMany({});
+      const cleaned = equipment.map(({ _id, ...rest }: any) => rest);
+      await Equipment.insertMany(cleaned);
+    } catch (e) {
+      console.warn('Error persisting equipment to MongoDB:', e);
+    }
+  }
+  return equipment;
+}
+
 export const getEquipment = getEquipmentList;
 
 // 9. Certifications
@@ -390,4 +412,20 @@ export async function getCertificationsList(): Promise<CertificationType[]> {
   return store.certifications || INITIAL_CERTIFICATIONS;
 }
 
+export async function saveCertifications(certs: CertificationType[]): Promise<CertificationType[]> {
+  writeStore({ certifications: certs });
+  const db = await connectDB();
+  if (db) {
+    try {
+      await Certification.deleteMany({});
+      const cleaned = certs.map(({ _id, ...rest }: any) => rest);
+      await Certification.insertMany(cleaned);
+    } catch (e) {
+      console.warn('Error persisting certifications to MongoDB:', e);
+    }
+  }
+  return certs;
+}
+
 export const getCertifications = getCertificationsList;
+

@@ -34,7 +34,7 @@ const CertificationSchema = new Schema<ICertificationDocument>(
     ],
     order: { type: Number, default: 0 },
   },
-  { timestamps: true }
+  { timestamps: true, strict: false }
 );
 
 const Certification: Model<ICertificationDocument> =

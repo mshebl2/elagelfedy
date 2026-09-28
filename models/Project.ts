@@ -26,7 +26,7 @@ const ProjectSchema = new Schema<IProjectDocument>(
     seoTitle: { type: String, default: '' },
     seoDescription: { type: String, default: '' },
   },
-  { timestamps: true }
+  { timestamps: true, strict: false }
 );
 
 const Project: Model<IProjectDocument> =

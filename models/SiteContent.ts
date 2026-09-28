@@ -88,7 +88,7 @@ const SiteContentSchema = new Schema<ISiteContentDocument>(
       ogImage: { type: String, default: '' },
     },
   },
-  { timestamps: true }
+  { timestamps: true, strict: false }
 );
 
 const SiteContent: Model<ISiteContentDocument> =
