@@ -11,7 +11,9 @@ import {
   ExternalLink,
   Building2,
   ShieldCheck,
-  Globe2
+  Globe2,
+  FileText,
+  Download
 } from 'lucide-react';
 
 export default function Footer() {
@@ -188,6 +190,19 @@ export default function Footer() {
                 <Link href="/admin" className="hover:text-[#c5a869] text-emerald-300 font-bold transition-colors">
                   {lang === 'ar' ? 'لوحة التحكم (Admin)' : 'Admin Portal'}
                 </Link>
+              </li>
+              <li className="pt-1.5">
+                <a
+                  href="/AACC_Company_Profile_2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="AACC_Company_Profile_2026.pdf"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#c5a869]/20 border border-[#c5a869]/50 text-[#fde047] font-bold hover:bg-[#c5a869] hover:text-black transition-all shadow-xs text-xs"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>{lang === 'ar' ? 'الملف التعريفي (PDF)' : 'Company Profile (PDF)'}</span>
+                  <Download className="w-3.5 h-3.5" />
+                </a>
               </li>
             </ul>
           </div>

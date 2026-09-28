@@ -15,7 +15,9 @@ import {
   ShieldCheck,
   Clock,
   Globe2,
-  Layers
+  Layers,
+  FileText,
+  Download
 } from 'lucide-react';
 
 interface AboutSectionProps {
@@ -123,13 +125,26 @@ export default function AboutSection({ content }: AboutSectionProps) {
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
           {lang === 'ar' ? content?.titleAr || dict.about.title : content?.titleEn || dict.about.title}
         </h2>
-        <p className="text-base text-slate-600 dark:text-zinc-300 max-w-4xl leading-relaxed mb-12">
-          {lang === 'ar'
-            ? content?.descriptionAr ||
-              'تأسست شركة العاج الفضي للمقاولات (AACC HDD-MT) بقدرات تخصصية عالية في الحفر الأفقي الموجه والبنية التحتية المدنية، وتقود تنفيذ أكثر المعابر الأرضية تعقيداً، وتمديد خطوط المرافق الحيوية للمشاريع العملاقة في المملكة.'
-            : content?.descriptionEn ||
-              'Founded with specialized horizontal directional boring and civil infrastructure capabilities, Alaaj Alfedhi Contracting Company (AACC HDD-MT) leads complex subterranean crossings, utility installations, and mega infrastructure across the Kingdom.'}
-        </p>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12">
+          <p className="text-base text-slate-600 dark:text-zinc-300 max-w-3xl leading-relaxed">
+            {lang === 'ar'
+              ? content?.descriptionAr ||
+                'تأسست شركة العاج الفضي للمقاولات (AACC HDD-MT) بقدرات تخصصية عالية في الحفر الأفقي الموجه والبنية التحتية المدنية، وتقود تنفيذ أكثر المعابر الأرضية تعقيداً، وتمديد خطوط المرافق الحيوية للمشاريع العملاقة في المملكة.'
+              : content?.descriptionEn ||
+                'Founded with specialized horizontal directional boring and civil infrastructure capabilities, Alaaj Alfedhi Contracting Company (AACC HDD-MT) leads complex subterranean crossings, utility installations, and mega infrastructure across the Kingdom.'}
+          </p>
+          <a
+            href="/AACC_Company_Profile_2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="AACC_Company_Profile_2026.pdf"
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#0f382a] to-[#184e3b] dark:from-[#c5a869] dark:to-[#b89758] text-white dark:text-black font-bold text-xs sm:text-sm tracking-wide shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all shrink-0 self-start lg:self-center border border-emerald-600/30 dark:border-amber-400/40"
+          >
+            <FileText className="w-4 h-4 text-[#c5a869] dark:text-black" />
+            <span>{lang === 'ar' ? 'تحميل البروفايل الرسمي (PDF)' : 'Download Company Profile (PDF)'}</span>
+            <Download className="w-4 h-4" />
+          </a>
+        </div>
 
         {/* Leadership Profiles */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
