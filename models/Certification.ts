@@ -22,14 +22,14 @@ const CertificationSchema = new Schema<ICertificationDocument>(
     badgeEn: { type: String, default: '' },
     detailsAr: [
       {
-        label: { type: String, required: true },
-        value: { type: String, required: true },
+        label: { type: String, default: '' },
+        value: { type: String, default: '' },
       },
     ],
     detailsEn: [
       {
-        label: { type: String, required: true },
-        value: { type: String, required: true },
+        label: { type: String, default: '' },
+        value: { type: String, default: '' },
       },
     ],
     order: { type: Number, default: 0 },

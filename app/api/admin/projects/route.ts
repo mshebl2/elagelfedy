@@ -72,9 +72,27 @@ export async function PUT(req: NextRequest) {
         .replace(/(^-|-$)+/g, '') + `-${Date.now().toString().slice(-4)}`;
     }
 
-    const updated = projects.map((p) => (p._id === id || p.slug === id || p.slug === body.slug ? { ...p, ...body } : p));
-    await saveProjects(updated);
-    return NextResponse.json({ success: true, data: updated, message: 'تم تحديث بيانات المشروع بنجاح' });
+    let matched = false;
+    const updated = projects.map((p) => {
+      const isMatch =
+        (id && (String(p._id) === String(id) || String((p as any).id) === String(id))) ||
+        (p.slug && String(p.slug) === String(body.slug)) ||
+        (body.slug && String(p.slug) === String(body.slug)) ||
+        (p.titleAr && String(p.titleAr) === String(body.titleAr));
+
+      if (isMatch) {
+        matched = true;
+        return { ...p, ...body };
+      }
+      return p;
+    });
+
+    if (!matched) {
+      updated.unshift(body);
+    }
+
+    const saved = await saveProjects(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم تحديث بيانات المشروع بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }
@@ -94,9 +112,9 @@ export async function DELETE(req: NextRequest) {
     }
 
     const projects = await getProjects();
-    const updated = projects.filter((p) => p._id !== id && p.slug !== id);
-    await saveProjects(updated);
-    return NextResponse.json({ success: true, message: 'تم حذف المشروع بنجاح' });
+    const updated = projects.filter((p) => String(p._id) !== String(id) && String(p.slug) !== String(id));
+    const saved = await saveProjects(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حذف المشروع بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }

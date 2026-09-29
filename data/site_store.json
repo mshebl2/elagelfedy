@@ -445,7 +445,7 @@
   ],
   "services": [
     {
-      "_id": "6ab9fd39859bdb070a7d68b8",
+      "_id": "6abb62d73028131e45cf54a8",
       "number": "01",
       "code": "HDD-BORING",
       "titleAr": "الحفر الأفقي الموجه عالي السعة (HDD)",
@@ -481,12 +481,56 @@
         "Zero surface traffic disruption and structure protection"
       ],
       "order": 1,
-      "createdAt": "2026-09-28T05:32:29.857Z",
-      "updatedAt": "2026-09-28T05:32:29.857Z",
-      "__v": 0
+      "createdAt": "2026-09-29T07:00:24.463Z",
+      "updatedAt": "2026-09-29T07:08:46.935Z",
+      "__v": 0,
+      "specsAr": [
+        {
+          "label": "أقصى قطر للمواسير",
+          "value": "1,500 ملم (60 بوصة)",
+          "_id": "6abb6208af26579c7b66673b"
+        },
+        {
+          "label": "قوة السحب والتوجيه",
+          "value": "100,000 رطل",
+          "_id": "6abb6208af26579c7b66673c"
+        },
+        {
+          "label": "نظام القياس والتوجيه",
+          "value": "DCI Falcon F5",
+          "_id": "6abb6208af26579c7b66673d"
+        },
+        {
+          "label": "المعايير المعتمدة",
+          "value": "أرامكو السعودية / الهيئة الملكية",
+          "_id": "6abb6208af26579c7b66673e"
+        }
+      ],
+      "specsEn": [
+        {
+          "label": "Max Pipe Diameter",
+          "value": "1,500 mm (60 in)",
+          "_id": "6abb6208af26579c7b66673f"
+        },
+        {
+          "label": "Pullback Capacity",
+          "value": "100,000 lbs",
+          "_id": "6abb6208af26579c7b666740"
+        },
+        {
+          "label": "Telemetry Guidance",
+          "value": "DCI Falcon F5",
+          "_id": "6abb6208af26579c7b666741"
+        },
+        {
+          "label": "Approved Standard",
+          "value": "Saudi Aramco / Royal Commission",
+          "_id": "6abb6208af26579c7b666742"
+        }
+      ]
     },
     {
-      "_id": "6ab9fd39859bdb070a7d68b9",
+      "_id": "6abb62d73028131e45cf54a9",
       "number": "02",
       "code": "MICROTUNNELING",
       "titleAr": "حفر الأنفاق الدقيقة والدفع الهيدروليكي (Microtunneling)",
@@ -522,19 +566,63 @@
         "Full compliance with NWC, MOT, and Royal Commission specs"
       ],
       "order": 2,
-      "createdAt": "2026-09-28T05:32:29.858Z",
-      "updatedAt": "2026-09-28T05:32:29.858Z",
-      "__v": 0
+      "createdAt": "2026-09-29T07:00:24.800Z",
+      "updatedAt": "2026-09-29T07:08:47.231Z",
+      "__v": 0,
+      "specsAr": [
+        {
+          "label": "نطاق الأقطار",
+          "value": "500 - 2,400 ملم",
+          "_id": "6abb6208af26579c7b66674b"
+        },
+        {
+          "label": "أقصى عمق للأنفاق",
+          "value": "25 متراً",
+          "_id": "6abb6208af26579c7b66674c"
+        },
+        {
+          "label": "نظام الملاحة",
+          "value": "توجيه ليزري رقمي",
+          "_id": "6abb6208af26579c7b66674d"
+        },
+        {
+          "label": "المعايير المعتمدة",
+          "value": "شركة المياه الوطنية NWC",
+          "_id": "6abb6208af26579c7b66674e"
+        }
+      ],
+      "specsEn": [
+        {
+          "label": "Diameter Range",
+          "value": "500 - 2,400 mm",
+          "_id": "6abb6208af26579c7b66674f"
+        },
+        {
+          "label": "Max Tunnel Depth",
+          "value": "25 meters",
+          "_id": "6abb6208af26579c7b666750"
+        },
+        {
+          "label": "Navigation",
+          "value": "Laser Digital Guidance",
+          "_id": "6abb6208af26579c7b666751"
+        },
+        {
+          "label": "Approved Standard",
+          "value": "National Water Company (NWC)",
+          "_id": "6abb6208af26579c7b666752"
+        }
+      ]
     },
     {
-      "_id": "6ab9fd39859bdb070a7d68ba",
+      "_id": "6abb62d73028131e45cf54aa",
       "number": "03",
       "code": "WATER-NETWORKS",
       "titleAr": "شبكات نقل وتوزيع المياه الاستراتيجية",
       "titleEn": "Strategic Water Transmission & Distribution Networks",
       "subtitleAr": "خطوط النقل الكبرى، محطات الضخ، وخزانات التجميع الاستراتيجية",
       "subtitleEn": "Bulk Transmission Mains, Booster Stations & Strategic Reservoirs",
-      "descriptionAr": "تنفيذ وتمديد خطوط نقل المياه الصالحة للشرب وخطوط التحلية ومياه الري المعالجة (TSE) بأنابيب الدكتايل، البولي إيثيلين (HDPE PE100 SDR11)، والكربون ستيل مع غرف الصمامات ومحطات الضخ وربط التغذية الرئيسية لمشاريع التنمية.",
+      "descriptionAr": "تنفيذ وتمديد خطوط نقل المياه الصالحة للشرب وخطوط التحلية ومياه الري المعالجة (TSE) بأنابيب الدكتايل، البولي إيثيلين (HDPE PE100 SDR11)، والكربون ستيل مع غرف الصمامات ومحطات الضخ وربط التغذية الرئيسية لمشاريع التنمية. تحت الكبار والطرق والسكك الحديدة او المباني ",
       "descriptionEn": "Turnkey execution of potable water transmission mains, desalination feeds, and treated sewage effluent (TSE) networks utilizing Ductile Iron, HDPE PE100 SDR11, and welded carbon steel with valve chambers and booster stations.",
       "image": "/images/services/service_03_water.jpg",
       "icon": "",
@@ -564,11 +652,11 @@
       ],
       "order": 3,
       "createdAt": "2026-09-28T05:32:29.858Z",
-      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-29T07:08:47.521Z",
       "__v": 0
     },
     {
-      "_id": "6ab9fd39859bdb070a7d68bb",
+      "_id": "6abb62d73028131e45cf54ab",
       "number": "04",
       "code": "SEWAGE-STORMWATER",
       "titleAr": "شبكات الصرف الصحي وتصريف السيول ومياه الأمطار",
@@ -605,18 +693,18 @@
       ],
       "order": 4,
       "createdAt": "2026-09-28T05:32:29.858Z",
-      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-29T07:08:47.814Z",
       "__v": 0
     },
     {
-      "_id": "6ab9fd39859bdb070a7d68bc",
+      "_id": "6abb62d73028131e45cf54ac",
       "number": "05",
       "code": "ROADS-HIGHWAYS",
-      "titleAr": "معابر الطرق السريعة وسكك القطارات وإعادة السفلتة",
+      "titleAr": "معابر الطرق السريعة وسكك القطارات ",
       "titleEn": "Highway, Railway Trenchless Crossings & Pavement Restoration",
       "subtitleAr": "معابر حفر غير مكشوف تحت الطرق الحيوية بدون إيقاف حركة السير",
       "subtitleEn": "Live Traffic Underpasses, Steel Sleeve Push & High-Spec Asphalt Reinstatement",
-      "descriptionAr": "تنفيذ المعابر التحتية المعقدة لجميع خطوط المرافق أسفل الطرق السريعة الحيوية، مسارات السكك الحديدية (SAR)، وتقاطعات الطرق الرئيسية مع أعمال إعادة السفلتة والتنسيق وفق المعايير الصارمة لوزارة النقل والبلديات.",
+      "descriptionAr": "تنفيذ المعابر التحتية المعقدة لجميع خطوط المرافق أسفل الطرق السريعة الحيوية، مسارات السكك الحديدية (SAR)، وتقاطعات الطرق الرئيسية  والتنسيق وفق المعايير الصارمة لوزارة النقل والبلديات.",
       "descriptionEn": "Executing heavy utility undercrossings beneath multi-lane expressways and Saudi Arabia Railways (SAR) tracks without interrupting traffic, followed by premium asphalt milling, paving, and MOT-compliant road reinstatement.",
       "image": "/images/services/service_05_roads.jpg",
       "icon": "",
@@ -646,18 +734,18 @@
       ],
       "order": 5,
       "createdAt": "2026-09-28T05:32:29.858Z",
-      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-29T07:08:48.102Z",
       "__v": 0
     },
     {
-      "_id": "6ab9fd39859bdb070a7d68bd",
+      "_id": "6abb62d73028131e45cf54ad",
       "number": "06",
       "code": "INDUSTRIAL-SUBSTATIONS",
       "titleAr": "محطات التحويل الكهربائي وشبكات الجهد العالي والفائق",
       "titleEn": "Power Substations (380kV/115kV) & High-Voltage Grids",
       "subtitleAr": "أعمال البنية المدنية والأنفاق لكابلات الكهرباء 380/115/33/13.8 ك.ف",
       "subtitleEn": "Civil Foundations, Cable Vaults & Trenchless Power Infeeds for SEC/Aramco Grids",
-      "descriptionAr": "تنفيذ الأعمال المدنية المتخصصة لمحطات التحويل الكهربائي 380/115 ك.ف، وحفر مسارات وأنفاق كابلات الجهد الفائق تحت الأرض، وتشييد غرف سحب الكابلات (Joint Bays & Vaults) وفق معايير الشركة السعودية للكهرباء (SEC) وأرامكو.",
+      "descriptionAr": "تنفيذ الأعمال المدنية المتخصصة ، وحفر مسارات وأنفاق كابلات الجهد الفائق تحت الأرض، وتشييد غرف سحب الكابلات (Joint Bays & Vaults) وفق معايير الشركة السعودية للكهرباء (SEC) وأرامكو.",
       "descriptionEn": "Turnkey civil and trenchless subterranean infrastructure for 380/115kV electrical substations, underground high-voltage XLPE cable routes, precast joint bays, and transformer containment yards adhering to SEC and Saudi Aramco standards.",
       "image": "/images/services/service_06_substations.jpg",
       "icon": "",
@@ -687,18 +775,18 @@
       ],
       "order": 6,
       "createdAt": "2026-09-28T05:32:29.858Z",
-      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-29T07:08:48.386Z",
       "__v": 0
     },
     {
-      "_id": "6ab9fd39859bdb070a7d68be",
+      "_id": "6abb62d73028131e45cf54ae",
       "number": "07",
       "code": "REALESTATE-UTILITIES",
       "titleAr": "البنية التحتية للمخططات الكبرى والمجمعات السكنية",
       "titleEn": "Master-Plan Utility Infrastructure & Megaprojects",
       "subtitleAr": "شبكات المرافق المتكاملة: مياه، كهرباء، اتصالات، إنارة وصرف",
       "subtitleEn": "Integrated Urban Utilities: Power, Fiber Telecom, Water, Lighting & Stormwater",
-      "descriptionAr": "تطوير البنى التحتية الكاملة للمخططات السكنية والتجارية والمدن الاقتصادية والصناعية الجديدة، بما يشمل شبكات كابلات الألياف الضوئية، شبكات التغذية الكهربائية، شبكات المياه، إنارة الشوارع، وشبكات الري والتصريف.",
+      "descriptionAr": "تطوير البنى التحتية الكاملة للمخططات السكنية والتجارية والمدن الاقتصادية والصناعية الجديدة، بما يشمل شبكات كابلات الألياف الضوئية، شبكات التغذية الكهربائية، شبكات المياه، إنارة الشوارع، وشبكات الري والتصريف يتم التنفيذ عن طريق الثقب الافقي ( الدفع الهيدروليكي mt - الثقب الافقي الموجه hdd )",
       "descriptionEn": "Comprehensive master-plan infrastructure engineering for mega residential master plans, industrial zones, and economic cities—installing fiber-optic telecommunication duct banks, power distribution networks, district cooling pipes, and urban lighting.",
       "image": "/images/services/service_07_realestate.jpg",
       "icon": "",
@@ -728,11 +816,11 @@
       ],
       "order": 7,
       "createdAt": "2026-09-28T05:32:29.858Z",
-      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-29T07:08:48.676Z",
       "__v": 0
     },
     {
-      "_id": "6ab9fd39859bdb070a7d68bf",
+      "_id": "6abb62d73028131e45cf54af",
       "number": "08",
       "code": "SOLAR-RENEWABLES",
       "titleAr": "مزارع الطاقة المتجددة ومحطات الطاقة الشمسية",
@@ -769,42 +857,8 @@
       ],
       "order": 8,
       "createdAt": "2026-09-28T05:32:29.858Z",
-      "updatedAt": "2026-09-28T05:32:29.858Z",
+      "updatedAt": "2026-09-29T07:08:48.961Z",
       "__v": 0
-    },
-    {
-      "_id": "6ab9fd39859bdb070a7d68c0",
-      "number": "09",
-      "code": "432209",
-      "titleAr": "خدمة اختبار الفحص الهيدروستاتيكي 2026",
-      "titleEn": "Hydrostatic Testing Service 2026",
-      "subtitleAr": "فحص واختبار شبكات الضغط العالي",
-      "subtitleEn": "High Pressure Network Testing",
-      "descriptionAr": "فحص واختبار الأنابيب والأنفاق وفق معايير أرامكو",
-      "descriptionEn": "Testing pipelines according to Aramco standards",
-      "image": "/images/services/service_01_hdd.jpg",
-      "icon": "",
-      "tagsAr": [],
-      "tagsEn": [],
-      "featuresAr": [],
-      "featuresEn": [],
-      "order": 9,
-      "__v": 0,
-      "createdAt": "2026-09-28T05:38:01.297Z",
-      "updatedAt": "2026-09-28T05:38:01.297Z"
-    },
-    {
-      "number": "09",
-      "code": "432209",
-      "titleAr": "خدمة اختبار الفحص الهيدروستاتيكي 2026",
-      "titleEn": "Hydrostatic Testing Service 2026",
-      "subtitleAr": "فحص واختبار شبكات الضغط العالي",
-      "subtitleEn": "High Pressure Network Testing",
-      "descriptionAr": "فحص واختبار الأنابيب والأنفاق وفق معايير أرامكو",
-      "descriptionEn": "Testing pipelines according to Aramco standards",
-      "image": "/images/services/service_01_hdd.jpg",
-      "_id": "srv-1790573930493",
-      "order": 10
     }
   ],
   "projects": [

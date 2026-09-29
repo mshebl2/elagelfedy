@@ -26,7 +26,10 @@ export default function AdminHeroSlidesPage() {
 
   const loadSlides = async () => {
     try {
-      const res = await fetch('/api/admin/hero');
+      const res = await fetch(`/api/admin/hero?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' },
+      });
       const data = await res.json();
       if (data.success) {
         setSlides(data.data);

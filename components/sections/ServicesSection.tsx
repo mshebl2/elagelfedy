@@ -225,6 +225,23 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
                         ))}
                       </div>
                     )}
+
+                    {/* Structured Technical Specifications Table */}
+                    {((lang === 'ar' ? service.specsAr : service.specsEn) || []).length > 0 && (
+                      <div className="mt-4 p-3 rounded-xl bg-[#0f382a]/5 dark:bg-[#c5a869]/5 border border-[#0f382a]/15 dark:border-[#c5a869]/20">
+                        <span className="text-[10px] font-technical uppercase text-[#0f382a] dark:text-[#c5a869] font-bold block mb-2">
+                          {lang === 'ar' ? 'المعايير والمواصفات الفنية المعتمدة' : 'Approved Technical Parameters'}
+                        </span>
+                        <div className="grid grid-cols-2 gap-2">
+                          {(lang === 'ar' ? service.specsAr : service.specsEn)?.map((spec, sIdx) => (
+                            <div key={sIdx} className="bg-white dark:bg-[#12161a] p-2 rounded-lg border border-slate-200/80 dark:border-[#2a313a]">
+                              <span className="block text-[10px] text-slate-500 dark:text-zinc-400 font-technical truncate">{spec.label}</span>
+                              <span className="block text-xs font-bold text-slate-900 dark:text-zinc-100 font-technical truncate">{spec.value}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -285,6 +302,18 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
                     <p className="text-xs text-slate-600 dark:text-zinc-300 mt-2 line-clamp-2 leading-relaxed">
                       {lang === 'ar' ? service.descriptionAr : service.descriptionEn}
                     </p>
+                    <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                      {((lang === 'ar' ? service.tagsAr : service.tagsEn) || []).slice(0, 3).map((tag, tIdx) => (
+                        <span key={tIdx} className="text-[10px] font-technical px-2 py-0.5 rounded bg-slate-100 dark:bg-[#181d22] text-slate-600 dark:text-zinc-400 border border-slate-200 dark:border-[#2a313a]">
+                          {tag}
+                        </span>
+                      ))}
+                      {((lang === 'ar' ? service.featuresAr : service.featuresEn) || []).length > 0 && (
+                        <span className="text-[10px] font-technical px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/40 font-semibold">
+                          {(lang === 'ar' ? service.featuresAr : service.featuresEn)!.length} {lang === 'ar' ? 'مواصفات تنفيذية' : 'Capabilities'}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
 

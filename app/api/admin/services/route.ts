@@ -53,9 +53,27 @@ export async function PUT(req: NextRequest) {
     const body = await req.json();
     const services = await getServices();
     const id = body._id || body.id;
-    const updated = services.map((s) => (s._id === id || s.number === body.number ? { ...s, ...body } : s));
-    await saveServices(updated);
-    return NextResponse.json({ success: true, data: updated, message: 'تم تحديث بيانات الخدمة بنجاح' });
+
+    let matched = false;
+    const updated = services.map((s) => {
+      const isMatch =
+        (id && (String(s._id) === String(id) || String((s as any).id) === String(id))) ||
+        (body.number && String(s.number) === String(body.number)) ||
+        (body.code && String(s.code) === String(body.code));
+
+      if (isMatch) {
+        matched = true;
+        return { ...s, ...body };
+      }
+      return s;
+    });
+
+    if (!matched) {
+      updated.push(body);
+    }
+
+    const saved = await saveServices(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم تحديث بيانات ومواصفات الخدمة بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }
@@ -74,9 +92,9 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json({ success: false, message: 'Service ID is required' }, { status: 400 });
     }
     const services = await getServices();
-    const updated = services.filter((s) => s._id !== id && s.number !== id);
-    await saveServices(updated);
-    return NextResponse.json({ success: true, message: 'تم حذف الخدمة بنجاح' });
+    const updated = services.filter((s) => String(s._id) !== String(id) && String(s.number) !== String(id));
+    const saved = await saveServices(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حذف الخدمة بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }

@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+import { revalidatePath } from 'next/cache';
 import connectDB from './db';
 import Project from '@/models/Project';
 import Service from '@/models/Service';
@@ -33,9 +35,9 @@ import {
   ContactSettingsType,
 } from '@/types';
 
-// In-Memory Fast Cache (TTL: 30 Seconds)
+// In-Memory Fast Cache (TTL: 5 Seconds for ultra-fresh updates)
 const memoryCache: Record<string, { data: any; timestamp: number }> = {};
-const CACHE_TTL = 30000;
+const CACHE_TTL = 5000;
 
 function getFromCache<T>(key: string): T | null {
   const item = memoryCache[key];
@@ -49,8 +51,23 @@ function setCache<T>(key: string, data: T): void {
   memoryCache[key] = { data, timestamp: Date.now() };
 }
 
-function invalidateCache(key: string): void {
-  delete memoryCache[key];
+export function invalidateCache(key?: string): void {
+  if (key) {
+    delete memoryCache[key];
+  } else {
+    Object.keys(memoryCache).forEach((k) => delete memoryCache[k]);
+  }
+}
+
+function triggerRevalidation(paths: string[] = ['/', '/services', '/projects', '/equipment', '/contact', '/admin']) {
+  try {
+    revalidatePath('/', 'layout');
+    for (const p of paths) {
+      revalidatePath(p);
+    }
+  } catch (err) {
+    // revalidatePath might throw if called outside Next.js request context, which is safe to ignore
+  }
 }
 
 async function pingSearchEngines() {
@@ -73,6 +90,8 @@ export async function ensureDatabaseSeeded() {
       if (!db) return;
 
       try {
+        const store = readStore();
+
         const adminCount = await AdminUser.countDocuments();
         if (adminCount === 0) {
           const defaultUser = process.env.ADMIN_DEFAULT_USER || 'admin';
@@ -87,31 +106,57 @@ export async function ensureDatabaseSeeded() {
         }
 
         const contentCount = await SiteContent.countDocuments();
-        if (contentCount === 0) await SiteContent.create(INITIAL_SITE_CONTENT);
+        if (contentCount === 0) {
+          await SiteContent.create(store.siteContent || INITIAL_SITE_CONTENT);
+        }
 
         const servicesCount = await Service.countDocuments();
-        if (servicesCount === 0) await Service.insertMany(INITIAL_SERVICES);
+        if (servicesCount === 0) {
+          const initial = store.services && store.services.length > 0 ? store.services : INITIAL_SERVICES;
+          const cleaned = initial.map(({ _id, ...rest }: any) => rest);
+          await Service.insertMany(cleaned);
+        }
 
         const projectsCount = await Project.countDocuments();
-        if (projectsCount === 0) await Project.insertMany(INITIAL_PROJECTS);
+        if (projectsCount === 0) {
+          const initial = store.projects && store.projects.length > 0 ? store.projects : INITIAL_PROJECTS;
+          const cleaned = initial.map(({ _id, ...rest }: any) => rest);
+          await Project.insertMany(cleaned);
+        }
 
         const equipmentCount = await Equipment.countDocuments();
-        if (equipmentCount === 0) await Equipment.insertMany(INITIAL_EQUIPMENT);
+        if (equipmentCount === 0) {
+          const initial = store.equipment && store.equipment.length > 0 ? store.equipment : INITIAL_EQUIPMENT;
+          const cleaned = initial.map(({ _id, ...rest }: any) => rest);
+          await Equipment.insertMany(cleaned);
+        }
 
         const certsCount = await Certification.countDocuments();
-        if (certsCount === 0) await Certification.insertMany(INITIAL_CERTIFICATIONS);
+        if (certsCount === 0) {
+          const initial = store.certifications && store.certifications.length > 0 ? store.certifications : INITIAL_CERTIFICATIONS;
+          const cleaned = initial.map(({ _id, ...rest }: any) => rest);
+          await Certification.insertMany(cleaned);
+        }
 
         const clientsCount = await Client.countDocuments();
-        if (clientsCount === 0) await Client.insertMany(INITIAL_CLIENTS);
+        if (clientsCount === 0) {
+          const initial = store.clients && store.clients.length > 0 ? store.clients : INITIAL_CLIENTS;
+          const cleaned = initial.map(({ _id, ...rest }: any) => rest);
+          await Client.insertMany(cleaned);
+        }
 
         const heroSlidesCount = await HeroSlide.countDocuments();
-        if (heroSlidesCount === 0) await HeroSlide.insertMany(INITIAL_HERO_SLIDES);
+        if (heroSlidesCount === 0) {
+          const initial = store.heroSlides && store.heroSlides.length > 0 ? store.heroSlides : INITIAL_HERO_SLIDES;
+          const cleaned = initial.map(({ _id, ...rest }: any) => rest);
+          await HeroSlide.insertMany(cleaned);
+        }
 
         const configCount = await SiteConfig.countDocuments();
         if (configCount === 0) {
           await SiteConfig.create({
-            branding: INITIAL_BRANDING_SETTINGS,
-            contact: INITIAL_CONTACT_SETTINGS,
+            branding: store.branding || INITIAL_BRANDING_SETTINGS,
+            contact: store.contact || INITIAL_CONTACT_SETTINGS,
           });
         }
         isSeeded = true;
@@ -167,6 +212,8 @@ export async function saveSiteContent(content: Partial<SiteContentType>): Promis
       console.warn('Error saving site content to MongoDB:', e);
     }
   }
+
+  triggerRevalidation(['/', '/about', '/contact', '/admin/content']);
   return merged as SiteContentType;
 }
 
@@ -199,17 +246,41 @@ export async function getHeroSlides(): Promise<HeroSlideType[]> {
 export async function saveHeroSlides(slides: HeroSlideType[]): Promise<HeroSlideType[]> {
   invalidateCache('heroSlides');
   writeStore({ heroSlides: slides });
+
   const db = await connectDB();
   if (db) {
     try {
-      await HeroSlide.deleteMany({});
-      const cleaned = slides.map(({ _id, ...rest }: any) => rest);
-      await HeroSlide.insertMany(cleaned);
-      setCache('heroSlides', slides);
+      const activeIds: any[] = [];
+      for (const slide of slides) {
+        const { _id, ...cleanData } = slide as any;
+        let query: any = null;
+        if (_id && mongoose.isValidObjectId(_id)) {
+          query = { _id };
+        } else if (slide.id) {
+          query = { id: slide.id };
+        } else {
+          query = { titleAr: slide.titleAr };
+        }
+        const savedDoc = await HeroSlide.findOneAndUpdate(query, cleanData, { upsert: true, new: true });
+        if (savedDoc) activeIds.push(savedDoc._id);
+      }
+
+      if (activeIds.length > 0) {
+        await HeroSlide.deleteMany({ _id: { $nin: activeIds } });
+      }
+
+      const fresh = await HeroSlide.find().sort({ order: 1 }).lean();
+      const parsed = JSON.parse(JSON.stringify(fresh));
+      setCache('heroSlides', parsed);
+      writeStore({ heroSlides: parsed });
+      triggerRevalidation(['/', '/admin/hero']);
+      return parsed;
     } catch (e) {
       console.warn('Error persisting hero slides to MongoDB:', e);
     }
   }
+
+  triggerRevalidation(['/', '/admin/hero']);
   return slides;
 }
 
@@ -242,17 +313,41 @@ export async function getClients(): Promise<ClientType[]> {
 export async function saveClients(clients: ClientType[]): Promise<ClientType[]> {
   invalidateCache('clients');
   writeStore({ clients });
+
   const db = await connectDB();
   if (db) {
     try {
-      await Client.deleteMany({});
-      const cleaned = clients.map(({ _id, ...rest }: any) => rest);
-      await Client.insertMany(cleaned);
-      setCache('clients', clients);
+      const activeIds: any[] = [];
+      for (const client of clients) {
+        const { _id, ...cleanData } = client as any;
+        let query: any = null;
+        if (_id && mongoose.isValidObjectId(_id)) {
+          query = { _id };
+        } else if (client.id) {
+          query = { id: client.id };
+        } else {
+          query = { name: client.name };
+        }
+        const savedDoc = await Client.findOneAndUpdate(query, cleanData, { upsert: true, new: true });
+        if (savedDoc) activeIds.push(savedDoc._id);
+      }
+
+      if (activeIds.length > 0) {
+        await Client.deleteMany({ _id: { $nin: activeIds } });
+      }
+
+      const fresh = await Client.find().sort({ order: 1 }).lean();
+      const parsed = JSON.parse(JSON.stringify(fresh));
+      setCache('clients', parsed);
+      writeStore({ clients: parsed });
+      triggerRevalidation(['/', '/admin/clients']);
+      return parsed;
     } catch (e) {
       console.warn('Error persisting clients to MongoDB:', e);
     }
   }
+
+  triggerRevalidation(['/', '/admin/clients']);
   return clients;
 }
 
@@ -298,6 +393,8 @@ export async function saveBrandingSettings(settings: Partial<BrandingSettingsTyp
       console.warn('Error saving branding to MongoDB:', e);
     }
   }
+
+  triggerRevalidation(['/', '/admin/branding']);
   return merged;
 }
 
@@ -343,6 +440,8 @@ export async function saveContactSettings(settings: Partial<ContactSettingsType>
       console.warn('Error saving contact to MongoDB:', e);
     }
   }
+
+  triggerRevalidation(['/', '/contact', '/admin/contact']);
   return merged;
 }
 
@@ -375,17 +474,46 @@ export async function getServices(): Promise<ServiceType[]> {
 export async function saveServices(services: ServiceType[]): Promise<ServiceType[]> {
   invalidateCache('services');
   writeStore({ services });
+
   const db = await connectDB();
   if (db) {
     try {
-      await Service.deleteMany({});
-      const cleaned = services.map(({ _id, ...rest }: any) => rest);
-      await Service.insertMany(cleaned);
-      setCache('services', services);
+      const activeIds: any[] = [];
+      for (const service of services) {
+        const { _id, ...cleanData } = service as any;
+        let query: any = null;
+        if (service.number) {
+          query = { number: service.number };
+        } else if (_id && mongoose.isValidObjectId(_id)) {
+          query = { _id };
+        } else if (service.code) {
+          query = { code: service.code };
+        } else {
+          query = { titleAr: service.titleAr };
+        }
+
+        const savedDoc = await Service.findOneAndUpdate(query, cleanData, { upsert: true, returnDocument: 'after' });
+        if (savedDoc) activeIds.push(savedDoc._id);
+      }
+
+      // Clean deleted services safely without deleting whole collection
+      if (activeIds.length > 0) {
+        await Service.deleteMany({ _id: { $nin: activeIds } });
+      }
+
+      const fresh = await Service.find().sort({ order: 1 }).lean();
+      const parsed = JSON.parse(JSON.stringify(fresh));
+      setCache('services', parsed);
+      writeStore({ services: parsed });
+      triggerRevalidation(['/', '/services', '/admin/services']);
+      pingSearchEngines();
+      return parsed;
     } catch (e) {
       console.warn('Error persisting services to MongoDB:', e);
     }
   }
+
+  triggerRevalidation(['/', '/services', '/admin/services']);
   pingSearchEngines();
   return services;
 }
@@ -419,17 +547,43 @@ export async function getProjects(): Promise<ProjectType[]> {
 export async function saveProjects(projects: ProjectType[]): Promise<ProjectType[]> {
   invalidateCache('projects');
   writeStore({ projects });
+
   const db = await connectDB();
   if (db) {
     try {
-      await Project.deleteMany({});
-      const cleaned = projects.map(({ _id, ...rest }: any) => rest);
-      await Project.insertMany(cleaned);
-      setCache('projects', projects);
+      const activeIds: any[] = [];
+      for (const project of projects) {
+        const { _id, ...cleanData } = project as any;
+        let query: any = null;
+        if (project.slug) {
+          query = { slug: project.slug };
+        } else if (_id && mongoose.isValidObjectId(_id)) {
+          query = { _id };
+        } else {
+          query = { titleAr: project.titleAr };
+        }
+
+        const savedDoc = await Project.findOneAndUpdate(query, cleanData, { upsert: true, returnDocument: 'after' });
+        if (savedDoc) activeIds.push(savedDoc._id);
+      }
+
+      if (activeIds.length > 0) {
+        await Project.deleteMany({ _id: { $nin: activeIds } });
+      }
+
+      const fresh = await Project.find().sort({ order: 1 }).lean();
+      const parsed = JSON.parse(JSON.stringify(fresh));
+      setCache('projects', parsed);
+      writeStore({ projects: parsed });
+      triggerRevalidation(['/', '/projects', '/admin/projects']);
+      pingSearchEngines();
+      return parsed;
     } catch (e) {
       console.warn('Error persisting projects to MongoDB:', e);
     }
   }
+
+  triggerRevalidation(['/', '/projects', '/admin/projects']);
   pingSearchEngines();
   return projects;
 }
@@ -469,17 +623,42 @@ export async function getEquipmentList(): Promise<EquipmentType[]> {
 export async function saveEquipment(equipment: EquipmentType[]): Promise<EquipmentType[]> {
   invalidateCache('equipment');
   writeStore({ equipment });
+
   const db = await connectDB();
   if (db) {
     try {
-      await Equipment.deleteMany({});
-      const cleaned = equipment.map(({ _id, ...rest }: any) => rest);
-      await Equipment.insertMany(cleaned);
-      setCache('equipment', equipment);
+      const activeIds: any[] = [];
+      for (const eq of equipment) {
+        const { _id, ...cleanData } = eq as any;
+        let query: any = null;
+        if (_id && mongoose.isValidObjectId(_id)) {
+          query = { _id };
+        } else if (eq.nameAr) {
+          query = { nameAr: eq.nameAr };
+        } else {
+          query = { nameEn: eq.nameEn };
+        }
+
+        const savedDoc = await Equipment.findOneAndUpdate(query, cleanData, { upsert: true, new: true });
+        if (savedDoc) activeIds.push(savedDoc._id);
+      }
+
+      if (activeIds.length > 0) {
+        await Equipment.deleteMany({ _id: { $nin: activeIds } });
+      }
+
+      const fresh = await Equipment.find().sort({ order: 1 }).lean();
+      const parsed = JSON.parse(JSON.stringify(fresh));
+      setCache('equipment', parsed);
+      writeStore({ equipment: parsed });
+      triggerRevalidation(['/', '/equipment', '/admin/equipment']);
+      return parsed;
     } catch (e) {
       console.warn('Error persisting equipment to MongoDB:', e);
     }
   }
+
+  triggerRevalidation(['/', '/equipment', '/admin/equipment']);
   return equipment;
 }
 
@@ -514,17 +693,42 @@ export async function getCertificationsList(): Promise<CertificationType[]> {
 export async function saveCertifications(certs: CertificationType[]): Promise<CertificationType[]> {
   invalidateCache('certifications');
   writeStore({ certifications: certs });
+
   const db = await connectDB();
   if (db) {
     try {
-      await Certification.deleteMany({});
-      const cleaned = certs.map(({ _id, ...rest }: any) => rest);
-      await Certification.insertMany(cleaned);
-      setCache('certifications', certs);
+      const activeIds: any[] = [];
+      for (const cert of certs) {
+        const { _id, ...cleanData } = cert as any;
+        let query: any = null;
+        if (_id && mongoose.isValidObjectId(_id)) {
+          query = { _id };
+        } else if (cert.certNumber) {
+          query = { certNumber: cert.certNumber };
+        } else {
+          query = { titleAr: cert.titleAr };
+        }
+
+        const savedDoc = await Certification.findOneAndUpdate(query, cleanData, { upsert: true, new: true });
+        if (savedDoc) activeIds.push(savedDoc._id);
+      }
+
+      if (activeIds.length > 0) {
+        await Certification.deleteMany({ _id: { $nin: activeIds } });
+      }
+
+      const fresh = await Certification.find().sort({ order: 1 }).lean();
+      const parsed = JSON.parse(JSON.stringify(fresh));
+      setCache('certifications', parsed);
+      writeStore({ certifications: parsed });
+      triggerRevalidation(['/', '/certifications', '/quality', '/admin/certifications']);
+      return parsed;
     } catch (e) {
       console.warn('Error persisting certifications to MongoDB:', e);
     }
   }
+
+  triggerRevalidation(['/', '/certifications', '/quality', '/admin/certifications']);
   return certs;
 }
 

@@ -45,7 +45,10 @@ export default function AdminContactPage() {
 
   const loadSettings = async () => {
     try {
-      const res = await fetch('/api/admin/contact');
+      const res = await fetch(`/api/admin/contact?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' },
+      });
       const data = await res.json();
       if (data.success) {
         setSettings(data.data);

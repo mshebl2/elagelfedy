@@ -34,7 +34,10 @@ export default function AdminBrandingPage() {
 
   const loadSettings = async () => {
     try {
-      const res = await fetch('/api/admin/branding');
+      const res = await fetch(`/api/admin/branding?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' },
+      });
       const data = await res.json();
       if (data.success) {
         setSettings(data.data);

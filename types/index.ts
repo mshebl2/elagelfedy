@@ -58,6 +58,8 @@ export interface ServiceType {
   tagsEn?: string[];
   featuresAr?: string[];
   featuresEn?: string[];
+  specsAr?: { label: string; value: string }[];
+  specsEn?: { label: string; value: string }[];
   order: number;
 }
 

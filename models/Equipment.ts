@@ -15,14 +15,14 @@ const EquipmentSchema = new Schema<IEquipmentDocument>(
     descriptionEn: { type: String, required: true },
     specsAr: [
       {
-        label: { type: String, required: true },
-        value: { type: String, required: true },
+        label: { type: String, default: '' },
+        value: { type: String, default: '' },
       },
     ],
     specsEn: [
       {
-        label: { type: String, required: true },
-        value: { type: String, required: true },
+        label: { type: String, default: '' },
+        value: { type: String, default: '' },
       },
     ],
     footerNoteAr: { type: String, default: '' },

@@ -27,7 +27,10 @@ export default function AdminCertificationsPage() {
 
   const loadCerts = async () => {
     try {
-      const res = await fetch('/api/admin/certifications');
+      const res = await fetch(`/api/admin/certifications?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' },
+      });
       const data = await res.json();
       if (data.success) {
         setCerts(data.data);

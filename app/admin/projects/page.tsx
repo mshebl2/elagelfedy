@@ -34,7 +34,10 @@ export default function AdminProjectsPage() {
 
   const loadProjects = async () => {
     try {
-      const res = await fetch('/api/admin/projects');
+      const res = await fetch(`/api/admin/projects?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' },
+      });
       const data = await res.json();
       if (data.success) {
         setProjects(data.data);

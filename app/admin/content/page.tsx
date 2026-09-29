@@ -24,7 +24,10 @@ export default function AdminContentPage() {
 
   const loadContent = async () => {
     try {
-      const res = await fetch('/api/admin/content');
+      const res = await fetch(`/api/admin/content?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' },
+      });
       const data = await res.json();
       if (data.success) {
         setContent(data.data);

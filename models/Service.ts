@@ -19,6 +19,18 @@ const ServiceSchema = new Schema<IServiceDocument>(
     tagsEn: [{ type: String }],
     featuresAr: [{ type: String }],
     featuresEn: [{ type: String }],
+    specsAr: [
+      {
+        label: { type: String, default: '' },
+        value: { type: String, default: '' },
+      },
+    ],
+    specsEn: [
+      {
+        label: { type: String, default: '' },
+        value: { type: String, default: '' },
+      },
+    ],
     order: { type: Number, default: 0 },
   },
   { timestamps: true, strict: false }

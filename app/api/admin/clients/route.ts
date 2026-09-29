@@ -36,14 +36,29 @@ export async function PUT(req: NextRequest) {
   try {
     const body = await req.json();
     if (Array.isArray(body)) {
-      await saveClients(body);
-      return NextResponse.json({ success: true, data: body });
+      const saved = await saveClients(body);
+      return NextResponse.json({ success: true, data: saved });
     }
-    const { id, ...updates } = body;
+    const { id, _id, ...updates } = body;
+    const targetId = id || _id;
     const clients = await getClients();
-    const updated = clients.map((c) => (c.id === id || c._id === id ? { ...c, ...updates } : c));
-    await saveClients(updated);
-    return NextResponse.json({ success: true, data: updated });
+    let matched = false;
+    const updated = clients.map((c) => {
+      const isMatch =
+        (targetId && (String(c.id) === String(targetId) || String(c._id) === String(targetId))) ||
+        (body.name && String(c.name) === String(body.name)) ||
+        (body.nameAr && String(c.nameAr) === String(body.nameAr));
+      if (isMatch) {
+        matched = true;
+        return { ...c, ...updates };
+      }
+      return c;
+    });
+    if (!matched) {
+      updated.push(body);
+    }
+    const saved = await saveClients(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حفظ العميل بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }
@@ -57,9 +72,9 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json({ success: false, message: 'Client ID is required' }, { status: 400 });
     }
     const clients = await getClients();
-    const updated = clients.filter((c) => c.id !== id && c._id !== id);
-    await saveClients(updated);
-    return NextResponse.json({ success: true, message: 'Client deleted' });
+    const updated = clients.filter((c) => String(c.id) !== String(id) && String(c._id) !== String(id));
+    const saved = await saveClients(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حذف العميل بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }

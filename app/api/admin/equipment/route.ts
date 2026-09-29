@@ -29,21 +29,31 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json();
     const equipment = await getEquipmentList();
+    const id = body._id || body.id;
 
-    let updated: EquipmentType[];
-    if (body._id || body.id) {
-      const id = body._id || body.id;
-      updated = equipment.map((item: any) => (item._id === id || item.id === id ? { ...item, ...body } : item));
-    } else {
+    let matched = false;
+    const updated = equipment.map((item: any) => {
+      const isMatch =
+        (id && (String(item._id) === String(id) || String(item.id) === String(id))) ||
+        (body.nameAr && String(item.nameAr) === String(body.nameAr));
+
+      if (isMatch) {
+        matched = true;
+        return { ...item, ...body };
+      }
+      return item;
+    });
+
+    if (!matched) {
       const newItem = {
         ...body,
         order: equipment.length + 1,
       };
-      updated = [...equipment, newItem];
+      updated.push(newItem);
     }
 
-    await saveEquipment(updated);
-    return NextResponse.json({ success: true, data: updated });
+    const saved = await saveEquipment(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حفظ المعدة بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }
@@ -67,9 +77,9 @@ export async function DELETE(req: NextRequest) {
     }
 
     const equipment = await getEquipmentList();
-    const updated = equipment.filter((item: any) => item._id !== id && item.id !== id);
-    await saveEquipment(updated);
-    return NextResponse.json({ success: true, message: 'Deleted successfully' });
+    const updated = equipment.filter((item: any) => String(item._id) !== String(id) && String(item.id) !== String(id));
+    const saved = await saveEquipment(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حذف المعدة بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }

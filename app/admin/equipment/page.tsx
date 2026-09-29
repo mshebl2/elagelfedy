@@ -34,7 +34,10 @@ export default function AdminEquipmentPage() {
 
   const loadEquipment = async () => {
     try {
-      const res = await fetch('/api/admin/equipment');
+      const res = await fetch(`/api/admin/equipment?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' },
+      });
       const data = await res.json();
       if (data.success) {
         setEquipment(data.data);

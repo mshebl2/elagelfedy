@@ -36,15 +36,28 @@ export async function PUT(req: NextRequest) {
   try {
     const body = await req.json();
     if (Array.isArray(body)) {
-      // Reordering / bulk update
-      await saveHeroSlides(body);
-      return NextResponse.json({ success: true, data: body });
+      const saved = await saveHeroSlides(body);
+      return NextResponse.json({ success: true, data: saved });
     }
-    const { id, ...updates } = body;
+    const { id, _id, ...updates } = body;
+    const targetId = id || _id;
     const slides = await getHeroSlides();
-    const updated = slides.map((s) => (s.id === id || s._id === id ? { ...s, ...updates } : s));
-    await saveHeroSlides(updated);
-    return NextResponse.json({ success: true, data: updated });
+    let matched = false;
+    const updated = slides.map((s) => {
+      const isMatch =
+        (targetId && (String(s.id) === String(targetId) || String(s._id) === String(targetId))) ||
+        (body.titleAr && String(s.titleAr) === String(body.titleAr));
+      if (isMatch) {
+        matched = true;
+        return { ...s, ...updates };
+      }
+      return s;
+    });
+    if (!matched) {
+      updated.push(body);
+    }
+    const saved = await saveHeroSlides(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حفظ شريحة العرض بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }
@@ -58,9 +71,9 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json({ success: false, message: 'Slide ID is required' }, { status: 400 });
     }
     const slides = await getHeroSlides();
-    const updated = slides.filter((s) => s.id !== id && s._id !== id);
-    await saveHeroSlides(updated);
-    return NextResponse.json({ success: true, message: 'Slide deleted' });
+    const updated = slides.filter((s) => String(s.id) !== String(id) && String(s._id) !== String(id));
+    const saved = await saveHeroSlides(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حذف شريحة العرض بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }

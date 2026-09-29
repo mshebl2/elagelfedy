@@ -29,21 +29,32 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json();
     const certs = await getCertificationsList();
+    const id = body._id || body.id;
 
-    let updated: CertificationType[];
-    if (body._id || body.id) {
-      const id = body._id || body.id;
-      updated = certs.map((item: any) => (item._id === id || item.id === id ? { ...item, ...body } : item));
-    } else {
+    let matched = false;
+    const updated = certs.map((item: any) => {
+      const isMatch =
+        (id && (String(item._id) === String(id) || String(item.id) === String(id))) ||
+        (body.certNumber && String(item.certNumber) === String(body.certNumber)) ||
+        (body.titleAr && String(item.titleAr) === String(body.titleAr));
+
+      if (isMatch) {
+        matched = true;
+        return { ...item, ...body };
+      }
+      return item;
+    });
+
+    if (!matched) {
       const newItem = {
         ...body,
         order: certs.length + 1,
       };
-      updated = [...certs, newItem];
+      updated.push(newItem);
     }
 
-    await saveCertifications(updated);
-    return NextResponse.json({ success: true, data: updated });
+    const saved = await saveCertifications(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حفظ الشهادة بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }
@@ -67,9 +78,9 @@ export async function DELETE(req: NextRequest) {
     }
 
     const certs = await getCertificationsList();
-    const updated = certs.filter((item: any) => item._id !== id && item.id !== id);
-    await saveCertifications(updated);
-    return NextResponse.json({ success: true, message: 'Deleted successfully' });
+    const updated = certs.filter((item: any) => String(item._id) !== String(id) && String(item.id) !== String(id));
+    const saved = await saveCertifications(updated);
+    return NextResponse.json({ success: true, data: saved, message: 'تم حذف الشهادة بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }

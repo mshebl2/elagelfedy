@@ -38,7 +38,10 @@ export default function AdminClientsPage() {
 
   const loadClients = async () => {
     try {
-      const res = await fetch('/api/admin/clients');
+      const res = await fetch(`/api/admin/clients?_t=${Date.now()}`, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' },
+      });
       const data = await res.json();
       if (data.success) {
         setClients(data.data);
