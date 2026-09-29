@@ -31,13 +31,13 @@ export default function HeroSection({ content, slides }: HeroSectionProps) {
   const highlight = lang === 'ar' ? content?.highlightAr || dict.hero.highlight : content?.highlightEn || dict.hero.highlight;
   const subtitle = lang === 'ar'
     ? content?.subtitleAr ||
-      'شركة العاج الفضي للمقاولات (AACC) — المقاول المتخصص في تنفيذ معابر الحفر الأفقي الموجه (HDD) حتى 1,500 ملم، وحفر الأنفاق الدقيقة (Microtunneling)، وتمديد شبكات الطاقة والمياه والغاز الإستراتيجية بالمملكة وفق معايير أرامكو وISO.'
+      'شركة العاج الفضي للمقاولات (AACC) — المقاول المتخصص في تنفيذ معابر الحفر الأفقي الموجه (HDD) حسب طلب العميل، وحفر الأنفاق الدقيقة (Microtunneling)، وتمديد شبكات الطاقة والمياه والغاز الإستراتيجية بالمملكة وفق معايير أرامكو وISO.'
     : content?.subtitleEn ||
-      'Alaaj Alfedhi Contracting Co. (AACC HDD-MT) provides specialized trenchless drilling (up to 1,500 mm), microtunneling, and regional utility lifelines across the Kingdom of Saudi Arabia under certified Aramco and ISO quality standards.';
+      'Alaaj Alfedhi Contracting Co. (AACC HDD-MT) provides specialized trenchless drilling (per client request), microtunneling, and regional utility lifelines across the Kingdom of Saudi Arabia under certified Aramco and ISO quality standards.';
 
   const metrics = content?.metrics || [
     { labelAr: 'أقصى قوة سحب', labelEn: 'Max Pullback', value: '100,000 lbs', highlight: true },
-    { labelAr: 'أقصى قطر حفر', labelEn: 'Max Bore Dia', value: '1,500 mm (60")' },
+    { labelAr: 'أقصى قطر حفر', labelEn: 'Max Bore Dia', value: 'حسب طلب العميل' },
     { labelAr: 'مسافة دفع أحادية', labelEn: 'Single Reach', value: '1,200+ m' },
     { labelAr: 'سجل السلامة المهنية', labelEn: 'Safety Record', value: '100% Zero LTI', highlight: true },
   ];
@@ -178,14 +178,16 @@ export default function HeroSection({ content, slides }: HeroSectionProps) {
                     {lang === 'ar' ? metric.labelAr : metric.labelEn}
                   </span>
                   <span
-                    className={`text-base sm:text-lg font-extrabold flex items-baseline gap-1 ${
+                    className={`font-extrabold flex items-baseline gap-1 ${
+                      parsedEnd > 0 ? 'text-base sm:text-lg' : 'text-xs sm:text-sm'
+                    } ${
                       isZeroLti
                         ? 'text-emerald-700 dark:text-emerald-400'
                         : metric.highlight
                         ? 'text-[#0f382a] dark:text-[#c5a869]'
                         : 'text-slate-900 dark:text-white'
                     }`}
-                    dir="ltr"
+                    dir={parsedEnd > 0 ? "ltr" : "auto"}
                   >
                     {parsedEnd > 0 ? (
                       <AnimatedCounter
@@ -195,7 +197,9 @@ export default function HeroSection({ content, slides }: HeroSectionProps) {
                         duration={2000}
                       />
                     ) : (
-                      metric.value
+                      <span className="leading-snug truncate">
+                        {lang === 'ar' ? metric.value : (metric as any).valueEn || metric.value}
+                      </span>
                     )}
                   </span>
                 </div>

@@ -8,11 +8,11 @@ export const INITIAL_SITE_CONTENT: SiteContentType = {
     titleEn: 'HORIZONTAL DIRECTIONAL DRILLING & MICROTUNNELING',
     highlightAr: 'للبنية التحتية وشبكات المرافق بالمملكة',
     highlightEn: 'STRATEGIC INFRASTRUCTURE IN SAUDI ARABIA',
-    subtitleAr: 'شركة العاج الفضي للمقاولات (AACC) — المقاول المتخصص في تنفيذ معابر الحفر الأفقي الموجه (HDD) حتى 1,500 ملم، وحفر الأنفاق الدقيقة (Microtunneling)، وتمديد شبكات الطاقة والمياه والغاز الإستراتيجية بالمملكة وفق معايير أرامكو وISO.',
-    subtitleEn: 'Alaaj Alfedhi Contracting Co. (AACC HDD-MT) provides specialized trenchless drilling (up to 1,500 mm), microtunneling, and regional utility lifelines across the Kingdom of Saudi Arabia under certified Aramco and ISO quality standards.',
+    subtitleAr: 'شركة العاج الفضي للمقاولات (AACC) — المقاول المتخصص في تنفيذ معابر الحفر الأفقي الموجه (HDD) حسب طلب العميل، وحفر الأنفاق الدقيقة (Microtunneling)، وتمديد شبكات الطاقة والمياه والغاز الإستراتيجية بالمملكة وفق معايير أرامكو وISO.',
+    subtitleEn: 'Alaaj Alfedhi Contracting Co. (AACC HDD-MT) provides specialized trenchless drilling (per client request), microtunneling, and regional utility lifelines across the Kingdom of Saudi Arabia under certified Aramco and ISO quality standards.',
     metrics: [
       { labelAr: 'أقصى قوة سحب', labelEn: 'Max Pullback', value: '100,000 lbs', highlight: true },
-      { labelAr: 'أقصى قطر حفر', labelEn: 'Max Bore Dia', value: '1,500 mm (60")', highlight: false },
+      { labelAr: 'أقصى قطر حفر', labelEn: 'Max Bore Dia', value: 'حسب طلب العميل', highlight: false },
       { labelAr: 'مسافة دفع أحادية', labelEn: 'Single Reach', value: '1,200+ m', highlight: false },
       { labelAr: 'سجل السلامة المهنية', labelEn: 'Safety Record', value: '100% Zero LTI', highlight: true },
     ]
