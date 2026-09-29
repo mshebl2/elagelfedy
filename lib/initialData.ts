@@ -634,6 +634,36 @@ export const INITIAL_EQUIPMENT: EquipmentType[] = [
     plateImage: '/images/equipment/hdpe_butt_fusion.jpg',
     featured: true,
     order: 4
+  },
+  {
+    nameAr: 'ماكينة لحام أنابيب البولي إيثيلين هيدروليكياً',
+    nameEn: 'Hydraulic HDPE Pipe Butt Fusion Welding Machine',
+    categoryAr: 'معدات وآلات التلحيم والتجهيز الميداني',
+    categoryEn: 'Butt Fusion & Field Pipe Tooling',
+    tagAr: 'لحام هيدروليكي لأنابيب 315 مم',
+    tagEn: '315 mm HDPE Hydraulic Butt Fusion',
+    descriptionAr: 'تُستخدم للحام التناكبي (الدوران الحراري) لدمج أنابيب البلاستيك والبولي إيثيلين السميكة ببعضها لتصبح خطاً واحداً متصلاً بدون تسريب، مع ضغط هيدروليكي رباعي الفكوك ولوح تسخين كهربائي مخصص.',
+    descriptionEn: 'High-precision hydraulic butt fusion welding unit equipped with 4-jaw clamp alignment chassis and thermostatically controlled heating plate for leak-proof PE100 / HDPE pipeline joints up to 315 mm.',
+    specsAr: [
+      { label: 'قطر الأنبوب الموضح', value: '315 مم (Welding 315 mm plastic pipes)' },
+      { label: 'نطاق الأقطار التشغيلية', value: '90 مم - 315 مم (حتى 500 مم)' },
+      { label: 'آلية الضغط', value: 'نظام هيدروليكي رباعي الفكوك' },
+      { label: 'نظام التسخين', value: 'لوح تسخين حراري كهربائي مخصص' },
+      { label: 'الاعتماد الميداني', value: 'وصلات متصلة 100% بدون تسريب' }
+    ],
+    specsEn: [
+      { label: 'Welding Pipe Dia', value: '315 mm (Plastic Pipes)' },
+      { label: 'Operational Range', value: '90 mm - 315 mm (Up to 500 mm)' },
+      { label: 'Clamping Mechanism', value: '4-Jaw Hydraulic Pressure Unit' },
+      { label: 'Heating Element', value: 'Thermostatic Electric Heating Plate' },
+      { label: 'Joint Integrity', value: '100% Leak-Proof Monolithic Line' }
+    ],
+    footerNoteAr: 'معتمدة للحام وصلات PE100 SDR11 وفق اشتراطات أرامكو والشركة السعودية للكهرباء',
+    footerNoteEn: 'Approved for PE100 SDR11 pipeline fusion under Aramco & SEC specs',
+    image: '/images/projects/field_315mm_welding.jpg',
+    plateImage: '/images/equipment/hdpe_butt_fusion.jpg',
+    featured: true,
+    order: 5
   }
 ];
 
