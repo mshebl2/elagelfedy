@@ -1449,6 +1449,74 @@
       "plateImage": "/images/equipment/hdpe_butt_fusion.jpg",
       "featured": true,
       "order": 5
+    },
+    {
+      "nameAr": "رؤوس التوسيع الصخرية للحفر الأفقي (HDD Rock Reamers)",
+      "nameEn": "Heavy-Duty HDD Rock Hole Openers & Barrel Cone Reamers",
+      "categoryAr": "أدوات الحفر الصخري ورؤوس التوسيع التخصصية",
+      "categoryEn": "Rock Drilling & Hole Opening Tooling",
+      "tagAr": "أقطار توسيع من 12 إلى 36 بوصة",
+      "tagEn": "12\" to 36\" Hole Opening Range",
+      "descriptionAr": "تُركب هذه الرؤوس الصخرية الصلبة على ماكينات الحفر الأفقي الموجه (HDD) لتوسيع القطر الداخلي للمسار المحفور في التربة الصخرية والتكوينات القاسية بمراحل متدرجة تبدأ من 12 بوصة وتصل حتى 36 بوصة (914 مم)، لتجهيز المسار لتمرير خطوط الأنابيب الكبرى بدون انسداد.",
+      "descriptionEn": "Engineered TCI cone and roller reamer assemblies for stepped hole opening in solid rock, basalt, and abrasive formations. Expands pilot bores incrementally from 12\" (305 mm) up to 36\" (914 mm) for smooth pipeline pull-backs.",
+      "specsAr": [
+        {
+          "label": "الرأس الأول (الأكبر)",
+          "value": "36 بوصة (\"36 - 914 مم)"
+        },
+        {
+          "label": "الرأس الثاني",
+          "value": "30 بوصة (\"30 - 762 مم)"
+        },
+        {
+          "label": "الرأس الثالث",
+          "value": "24 بوصة (\"24 - 610 مم)"
+        },
+        {
+          "label": "الرأس الرابع",
+          "value": "18 بوصة (\"18 - 457 مم)"
+        },
+        {
+          "label": "الرأس الخامس (الأصغر)",
+          "value": "12 بوصة (\"12 - 305 مم)"
+        },
+        {
+          "label": "نوع المسننات والقطع",
+          "value": "مسننات كربيد التنجستن الصخرية (TCI Rock Cutters)"
+        }
+      ],
+      "specsEn": [
+        {
+          "label": "Primary Reamer (Top)",
+          "value": "36\" Diameter (914 mm)"
+        },
+        {
+          "label": "Second Reamer",
+          "value": "30\" Diameter (762 mm)"
+        },
+        {
+          "label": "Third Reamer",
+          "value": "24\" Diameter (610 mm)"
+        },
+        {
+          "label": "Fourth Reamer",
+          "value": "18\" Diameter (457 mm)"
+        },
+        {
+          "label": "Fifth Reamer (Bottom)",
+          "value": "12\" Diameter (305 mm)"
+        },
+        {
+          "label": "Cutter Structure",
+          "value": "Tungsten Carbide Insert (TCI) Rock Rollers"
+        }
+      ],
+      "footerNoteAr": "متوافقة مع أسطول Ditch Witch و Vermeer للعمل في التكوينات الصخرية بالمملكة",
+      "footerNoteEn": "Compatible with Ditch Witch & Vermeer rigs across KSA rock formations",
+      "image": "/images/equipment/rock_reamers.jpg",
+      "plateImage": "/images/equipment/zlconn_metal_plate.jpg",
+      "featured": true,
+      "order": 6
     }
   ],
   "certifications": [
