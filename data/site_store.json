@@ -1159,8 +1159,9 @@
   ],
   "equipment": [
     {
-      "nameAr": "حفارة موجهة فيرمير D100x120 Series II Navigator",
-      "nameEn": "Vermeer D100x120 Series II Navigator HDD Rig",
+      "_id": "6abb634a3028131e45cf54b0",
+      "nameAr": "حفارة موجهة ديتتش ويشت detch witch",
+      "nameEn": "detch witch",
       "categoryAr": "حفارات هيدروليكية ثقيلة",
       "categoryEn": "Heavy Hydraulic HDD Rigs",
       "tagAr": "100,000 رطل قوة دفع وسحب",
@@ -1170,53 +1171,65 @@
       "specsAr": [
         {
           "label": "قوة السحب والدفع",
-          "value": "100,000 lbs (444.8 kN)"
+          "value": "100,000 lbs (444.8 kN)",
+          "_id": "6ab9f2fc859bdb070a7d65c2"
         },
         {
           "label": "أقصى عزم دوران",
-          "value": "16,270 Nm (12,000 ft-lb)"
+          "value": "16,270 Nm (12,000 ft-lb)",
+          "_id": "6ab9f2fc859bdb070a7d65c3"
         },
         {
           "label": "أقصى قطر توسيع",
-          "value": "1,500 mm (60\")"
+          "value": "1,500 mm (60\")",
+          "_id": "6ab9f2fc859bdb070a7d65c4"
         },
         {
           "label": "المحرك والقوة",
-          "value": "Cummins QSC8.3 Turbo Diesel (225 HP)"
+          "value": "Cummins QSC8.3 Turbo Diesel (225 HP)",
+          "_id": "6ab9f2fc859bdb070a7d65c5"
         },
         {
           "label": "أقصى مسافة حفر أحادية",
-          "value": "1,200+ m"
+          "value": "1,200+ m",
+          "_id": "6ab9f2fc859bdb070a7d65c6"
         },
         {
           "label": "نظام التوجيه المتوافق",
-          "value": "DCI Falcon F5 / Aurora Display"
+          "value": "DCI Falcon F5 / Aurora Display",
+          "_id": "6ab9f2fc859bdb070a7d65c7"
         }
       ],
       "specsEn": [
         {
           "label": "Thrust / Pullback",
-          "value": "100,000 lbs (444.8 kN)"
+          "value": "100,000 lbs (444.8 kN)",
+          "_id": "6ab9f2fc859bdb070a7d65c8"
         },
         {
           "label": "Max Spindle Torque",
-          "value": "16,270 Nm (12,000 ft-lb)"
+          "value": "16,270 Nm (12,000 ft-lb)",
+          "_id": "6ab9f2fc859bdb070a7d65c9"
         },
         {
           "label": "Max Reaming Diameter",
-          "value": "1,500 mm (60\")"
+          "value": "1,500 mm (60\")",
+          "_id": "6ab9f2fc859bdb070a7d65ca"
         },
         {
           "label": "Engine & Output",
-          "value": "Cummins QSC8.3 Turbo Diesel (225 HP)"
+          "value": "Cummins QSC8.3 Turbo Diesel (225 HP)",
+          "_id": "6ab9f2fc859bdb070a7d65cb"
         },
         {
           "label": "Max Single Bore Reach",
-          "value": "1,200+ m"
+          "value": "1,200+ m",
+          "_id": "6ab9f2fc859bdb070a7d65cc"
         },
         {
           "label": "Compatible Guidance",
-          "value": "DCI Falcon F5 / Aurora Display"
+          "value": "DCI Falcon F5 / Aurora Display",
+          "_id": "6ab9f2fc859bdb070a7d65cd"
         }
       ],
       "footerNoteAr": "جاهزة للتشغيل الفوري في المشاريع الكبرى بالمملكة",
@@ -1224,111 +1237,137 @@
       "image": "/images/equipment/ditch_witch_jt100.jpg",
       "plateImage": "/images/equipment/zlconn_metal_plate.jpg",
       "featured": true,
-      "order": 1
+      "order": 1,
+      "createdAt": "2026-09-28T04:54:20.482Z",
+      "updatedAt": "2026-09-29T07:31:36.407Z",
+      "__v": 0
     },
     {
-      "nameAr": "حفارة موجهة فيرمير D36x50 Series II Navigator",
+      "_id": "6abb634a3028131e45cf54bd",
+      "nameAr": " ÙØ§ÙÙÙØ© Ø­ÙØ± Ø£ÙÙÙ ÙÙØ¬Ù Ø§Ø­ØªØ±Ø§ÙÙØ© ",
       "nameEn": "Vermeer D36x50 Series II Navigator HDD Rig",
-      "categoryAr": "حفارات متوسطة للمناطق الحضرية",
+      "categoryAr": "Ø­ÙØ§Ø±Ø§Øª ÙØªÙØ³Ø·Ø© ÙÙÙÙØ§Ø·Ù Ø§ÙØ­Ø¶Ø±ÙØ©",
       "categoryEn": "Mid-Range Urban & Highway Rigs",
-      "tagAr": "36,000 رطل قوة سحب",
+      "tagAr": "36,000 Ø±Ø·Ù ÙÙØ© Ø³Ø­Ø¨",
       "tagEn": "36,000 lbs Pullback",
-      "descriptionAr": "حفارة متطورة متعددة الاستخدامات مخصصة للمناطق الحضرية وتقاطعات الطرق السريعة المزدحمة، بقوة سحب 36,000 رطل وعزم دوران 6,772 نيوتن.متر لتمرير خطوط الخدمات بدقة متناهية وسرعة فائقة.",
-      "descriptionEn": "High-agility mid-sized drill rig optimized for tight urban rights-of-way and arterial highway underpasses. Delivers 36,000 lbs pullback and 6,772 Nm torque for rapid, highly precise utility conduit installations.",
+      "descriptionAr": "ØªØªÙÙØ² Ø§ÙÙØ§ÙÙÙØ© Ø¨Ø§Ø¹ØªÙØ§Ø¯ÙØ§ Ø¹ÙÙ ÙØ¸Ø§Ù ÙÙØ¯Ø±ÙÙÙÙÙ ÙØºÙÙ Ø§ÙØ¯Ø§Ø¦Ø±Ø© ÙÙØ¸Ø§Ù ØªØ­ÙÙ Ø°ÙÙ ÙØ³ØªØ´Ø¹Ø± Ø§ÙØ£Ø­ÙØ§Ù ÙØªÙÙÙØ± Ø£Ø¹ÙÙ Ø¯Ø±Ø¬Ø§Øª Ø§ÙØ«Ø¨Ø§Øª ÙØ§ÙÙÙØ§Ø¡Ø© Ø£Ø«ÙØ§Ø¡ ÙØ´Ø§Ø±ÙØ¹ Ø§ÙØ¨ÙÙØ© Ø§ÙØªØ­ØªÙØ© ÙØªÙØ¯ÙØ¯ Ø§ÙØ£ÙØ§Ø¨ÙØ¨.",
+      "descriptionEn": "The machine features a closed-loop hydraulic system and an intelligent load-sensing control system, ensuring superior stability and efficiency during infrastructure and pipeline-laying projects.",
       "specsAr": [
         {
           "label": "قوة السحب والدفع",
-          "value": "36,000 lbs (160.1 kN)"
+          "value": "36,000 lbs (160.1 kN)",
+          "_id": "6abb69588e17202d3c54e37b"
         },
         {
           "label": "أقصى عزم دوران",
-          "value": "6,772 Nm (4,995 ft-lb)"
+          "value": "6,772 Nm (4,995 ft-lb)",
+          "_id": "6abb69588e17202d3c54e37c"
         },
         {
           "label": "أقطار الحفر النموذجية",
-          "value": "110 mm - 630 mm"
+          "value": "110 mm - 630 mm",
+          "_id": "6abb69588e17202d3c54e37d"
         },
         {
           "label": "المحرك",
-          "value": "John Deere PowerTech Diesel (140 HP)"
+          "value": "John Deere PowerTech Diesel (140 HP)",
+          "_id": "6abb69588e17202d3c54e37e"
         },
         {
           "label": "السرعة الإنتاجية",
-          "value": "حتى 180 م / يوم عمل"
+          "value": "حتى 180 م / يوم عمل",
+          "_id": "6abb69588e17202d3c54e37f"
         }
       ],
       "specsEn": [
         {
           "label": "Thrust / Pullback",
-          "value": "36,000 lbs (160.1 kN)"
+          "value": "36,000 lbs (160.1 kN)",
+          "_id": "6abb69588e17202d3c54e380"
         },
         {
           "label": "Max Spindle Torque",
-          "value": "6,772 Nm (4,995 ft-lb)"
+          "value": "6,772 Nm (4,995 ft-lb)",
+          "_id": "6abb69588e17202d3c54e381"
         },
         {
           "label": "Bore Range",
-          "value": "110 mm - 630 mm"
+          "value": "110 mm - 630 mm",
+          "_id": "6abb69588e17202d3c54e382"
         },
         {
           "label": "Engine",
-          "value": "John Deere PowerTech Diesel (140 HP)"
+          "value": "John Deere PowerTech Diesel (140 HP)",
+          "_id": "6abb69588e17202d3c54e383"
         },
         {
           "label": "Daily Production Rate",
-          "value": "Up to 180 m / shift"
+          "value": "Up to 180 m / shift",
+          "_id": "6abb69588e17202d3c54e384"
         }
       ],
-      "footerNoteAr": "مثالية لمشاريع المدن الذكية والأحياء السكنية",
+      "footerNoteAr": "ÙØ«Ø§ÙÙØ© ÙÙØ´Ø§Ø±ÙØ¹ Ø§ÙÙØ¯Ù Ø§ÙØ°ÙÙØ© ÙØ§ÙØ£Ø­ÙØ§Ø¡ Ø§ÙØ³ÙÙÙØ©",
       "footerNoteEn": "Ideal for smart-city utilities & residential corridors",
       "image": "/images/equipment/drillto_zt75.jpg",
       "plateImage": "/images/equipment/zlconn_metal_plate.jpg",
       "featured": true,
-      "order": 2
+      "order": 2,
+      "createdAt": "2026-09-28T04:54:20.482Z",
+      "updatedAt": "2026-09-29T07:31:36.704Z",
+      "__v": 0
     },
     {
-      "nameAr": "نظام التوجيه اللاسلكي الرقمي DCI Falcon F5 Telemetry",
-      "nameEn": "Digital Control Inc. Falcon F5 Telemetry Guidance System",
+      "_id": "6abb634a3028131e45cf54c8",
+      "nameAr": "ZL900A/1350",
+      "nameEn": "ZL900A/1350",
       "categoryAr": "أنظمة الملاحة والتوجيه تحت السطحي",
       "categoryEn": "Subterranean Navigation & Guidance Systems",
       "tagAr": "دقة توجيه ملليمترية في الترددات الصعبة",
       "tagEn": "Sub-Millimeter Real-Time Guidance",
-      "descriptionAr": "النظام الرائد عالمياً في التوجيه تحت السطحي والتغلب على التداخل الكهرومغناطيسي النشط أسفل الطرق السريعة وخطوط السكك الحديدية وشبكات الجهد الفائق، مع قراءة فورية للعمق والميلان وزاوية التوجيه.",
-      "descriptionEn": "The global benchmark for underground drill-head tracking, featuring wideband multi-frequency signal technology that defeats active passive interference under highways, railways, and 380kV high-voltage lines.",
+      "descriptionAr": "• الموديل (Model): ZL900A/1350.\n• الشركة المصنعة: HUNAN ZLCONN MACHINERY CO., LTD.\n• تاريخ الصنع (Date): مارس 2025 (2025-3).\n• الرقم التسلسلي للماكينة (Machine Serial No): LZL090025S0030601.\n",
+      "descriptionEn": "• Model: ZL900A/1350.\n• Manufacturer: HUNAN ZLCONN MACHINERY CO., LTD.\n• Date of Manufacture: March 2025 (2025-3).\n• Machine Serial Number: LZL090025S0030601.",
       "specsAr": [
         {
           "label": "نطاق الترددات",
-          "value": "Multi-Power Wideband (0.33 kHz - 45.0 kHz)"
+          "value": "Multi-Power Wideband (0.33 kHz - 45.0 kHz)",
+          "_id": "6ab9f2fc859bdb070a7d65da"
         },
         {
           "label": "أقصى عمق تتبع",
-          "value": "38+ meters (125+ ft)"
+          "value": "38+ meters (125+ ft)",
+          "_id": "6ab9f2fc859bdb070a7d65db"
         },
         {
           "label": "دقة قراءة الميلان",
-          "value": "0.1% Pitch Resolution"
+          "value": "0.1% Pitch Resolution",
+          "_id": "6ab9f2fc859bdb070a7d65dc"
         },
         {
           "label": "شاشة العرض الميدانية",
-          "value": "DCI Aurora Touchscreen Color Display"
+          "value": "DCI Aurora Touchscreen Color Display",
+          "_id": "6ab9f2fc859bdb070a7d65dd"
         }
       ],
       "specsEn": [
         {
           "label": "Frequency Spectrum",
-          "value": "Multi-Power Wideband (0.33 kHz - 45.0 kHz)"
+          "value": "Multi-Power Wideband (0.33 kHz - 45.0 kHz)",
+          "_id": "6ab9f2fc859bdb070a7d65de"
         },
         {
           "label": "Depth Tracking Range",
-          "value": "38+ meters (125+ ft)"
+          "value": "38+ meters (125+ ft)",
+          "_id": "6ab9f2fc859bdb070a7d65df"
         },
         {
           "label": "Pitch Precision",
-          "value": "0.1% Pitch Resolution"
+          "value": "0.1% Pitch Resolution",
+          "_id": "6ab9f2fc859bdb070a7d65e0"
         },
         {
           "label": "Driller Interface",
-          "value": "DCI Aurora Touchscreen Color Display"
+          "value": "DCI Aurora Touchscreen Color Display",
+          "_id": "6ab9f2fc859bdb070a7d65e1"
         }
       ],
       "footerNoteAr": "معتمد من أرامكو السعودية والشركة السعودية للكهرباء",
@@ -1336,9 +1375,13 @@
       "image": "/images/equipment/zlconn_zl900a.jpg",
       "plateImage": "/images/equipment/zlconn_metal_plate.jpg",
       "featured": true,
-      "order": 3
+      "order": 3,
+      "createdAt": "2026-09-28T04:54:20.483Z",
+      "updatedAt": "2026-09-29T07:31:37.002Z",
+      "__v": 0
     },
     {
+      "_id": "6abb634a3028131e45cf54d1",
       "nameAr": "محطة خلط وإعادة تدوير سوائل الحفر Vermeer Mud Recycling Unit",
       "nameEn": "Vermeer Closed-Loop Mud Mixing & Reclaimer System",
       "categoryAr": "أنظمة السوائل والبيئة",
@@ -1350,37 +1393,45 @@
       "specsAr": [
         {
           "label": "سعة المعالجة والتدوير",
-          "value": "500 GPM (1,892 L/min)"
+          "value": "500 GPM (1,892 L/min)",
+          "_id": "6ab9f2fc859bdb070a7d65e3"
         },
         {
           "label": "سعة خزان الخلط",
-          "value": "15,000 Liters"
+          "value": "15,000 Liters",
+          "_id": "6ab9f2fc859bdb070a7d65e4"
         },
         {
           "label": "غربال فصل الصخور",
-          "value": "Dual Linear Shaker Screens"
+          "value": "Dual Linear Shaker Screens",
+          "_id": "6ab9f2fc859bdb070a7d65e5"
         },
         {
           "label": "التوافق البيئي",
-          "value": "Zero Surface Discharge (ISO 14001)"
+          "value": "Zero Surface Discharge (ISO 14001)",
+          "_id": "6ab9f2fc859bdb070a7d65e6"
         }
       ],
       "specsEn": [
         {
           "label": "Processing Capacity",
-          "value": "500 GPM (1,892 L/min)"
+          "value": "500 GPM (1,892 L/min)",
+          "_id": "6ab9f2fc859bdb070a7d65e7"
         },
         {
           "label": "Mixing Tank Volume",
-          "value": "15,000 Liters"
+          "value": "15,000 Liters",
+          "_id": "6ab9f2fc859bdb070a7d65e8"
         },
         {
           "label": "Separation Screens",
-          "value": "Dual Linear Shaker Screens"
+          "value": "Dual Linear Shaker Screens",
+          "_id": "6ab9f2fc859bdb070a7d65e9"
         },
         {
           "label": "Eco Compliance",
-          "value": "Zero Surface Discharge (ISO 14001)"
+          "value": "Zero Surface Discharge (ISO 14001)",
+          "_id": "6ab9f2fc859bdb070a7d65ea"
         }
       ],
       "footerNoteAr": "مطابقة لمعايير الاستدامة البيئية لمشاريع البحر الأحمر ونيوم",
@@ -1388,7 +1439,10 @@
       "image": "/images/equipment/rock_reamers.jpg",
       "plateImage": "/images/equipment/hdpe_butt_fusion.jpg",
       "featured": true,
-      "order": 4
+      "order": 4,
+      "createdAt": "2026-09-28T04:54:20.483Z",
+      "updatedAt": "2026-09-29T07:31:37.303Z",
+      "__v": 0
     }
   ],
   "certifications": [

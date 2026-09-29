@@ -76,7 +76,7 @@ export default function EquipmentSection({ equipmentList = [] }: EquipmentSectio
                   </p>
 
                   <div className="grid grid-cols-2 gap-2 text-xs border-t border-slate-200 dark:border-[#2a313a] pt-3 font-technical">
-                    {(lang === 'ar' ? rig.specsAr : rig.specsEn).map((spec, sIdx) => (
+                    {(((lang === 'ar' ? rig.specsAr : rig.specsEn) || rig.specsAr || rig.specsEn) || []).map((spec, sIdx) => (
                       <div key={sIdx}>
                         <span className="text-slate-500 dark:text-zinc-400 block">{spec.label}:</span>
                         <strong className="text-slate-900 dark:text-white">{spec.value}</strong>
@@ -133,11 +133,17 @@ export default function EquipmentSection({ equipmentList = [] }: EquipmentSectio
                   </div>
                 ) : (
                   <div className="text-[10px] font-technical text-slate-600 dark:text-zinc-400 border-t border-slate-200 dark:border-[#2a313a] pt-2">
-                    {(lang === 'ar' ? item.specsAr : item.specsEn).map((sp, i) => (
+                    {(((lang === 'ar' ? item.specsAr : item.specsEn) || item.specsAr || item.specsEn) || []).map((sp, i) => (
                       <div key={i}>
                         {sp.label}: <strong className="text-slate-900 dark:text-white">{sp.value}</strong>
                       </div>
                     ))}
+                  </div>
+                )}
+
+                {(item.footerNoteAr || item.footerNoteEn) && (
+                  <div className="p-2 bg-slate-50 dark:bg-[#0c0e10] border-t border-slate-200 dark:border-[#2a313a] text-[10px] font-technical text-slate-600 dark:text-zinc-400 mt-2 rounded">
+                    {lang === 'ar' ? item.footerNoteAr : item.footerNoteEn}
                   </div>
                 )}
               </div>
