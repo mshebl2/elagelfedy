@@ -4,8 +4,16 @@ import { getProjects, getServices } from '@/lib/dataService';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+const getBaseUrl = () => {
+  const envUrl = process.env.NEXT_PUBLIC_APP_URL;
+  if (envUrl && !envUrl.includes('localhost')) {
+    return envUrl.replace(/\/$/, '');
+  }
+  return 'https://www.alaajsa.com';
+};
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.alaajsa.com';
+  const baseUrl = getBaseUrl();
   const projects = await getProjects();
   const services = await getServices();
 
