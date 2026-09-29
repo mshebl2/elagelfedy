@@ -696,6 +696,36 @@ export const INITIAL_EQUIPMENT: EquipmentType[] = [
     plateImage: '/images/equipment/zlconn_metal_plate.jpg',
     featured: true,
     order: 6
+  },
+  {
+    nameAr: 'جهاز تنقية وفصل طين الحفر من المواد الصلبة (Drilling Mud Cleaner / Desilter)',
+    nameEn: 'Drilling Mud Cleaner & Hydrocyclone Desilter System',
+    categoryAr: 'أنظمة التحكم بالمواد الصلبة وإعادة تدوير البنتونايت',
+    categoryEn: 'Solids Control & Mud Recycling Systems',
+    tagAr: 'فصل الجزيئات الدقيقة 15 - 44 ميكرون',
+    tagEn: '15-44 Micron Fine Solids Separation',
+    descriptionAr: 'تُعد هذه الماكينة المدمجة جزءاً رئيسياً لا غنى عنه في نظام التحكم في المواد الصلبة (Solids Control System) المصاحب للحفر الأفقي الموجه (HDD)، حيث تعمل على إعادة تدوير وتنقية طين الحفر (البنتونيت) وفصل الرمال والركام الصخري الدقيق لضخ طين نظيف وحماية المضخات من التآكل.',
+    descriptionEn: 'Essential Solids Control System component for HDD drilling operations. Recycles drilling fluid (bentonite mud) by extracting fine sand, silt, and rock cuttings, protecting high-pressure mud pumps and reducing freshwater intake.',
+    specsAr: [
+      { label: 'معدل التدفق والسعة', value: '120 - 240 متر مكعب / ساعة (120-240 m³/h)' },
+      { label: 'مجموعة الفراسات المخروطية', value: '8 مخاريط تنقية دقيقة مقاس 4 بوصة (Desilter Cones)' },
+      { label: 'دقة فصل الجزيئات', value: 'فصل الجزيئات الدقيقة من 15 إلى 44 ميكرون' },
+      { label: 'منظومة المنخل الاهتزازي', value: 'سرير اهتزازي سفلي (Shale Shakers) بمحركين خطيين' },
+      { label: 'الوظيفة البيئية والمالية', value: 'إعادة تدوير الطين وتقليل تكلفة البنتونيت وحماية المضخات' }
+    ],
+    specsEn: [
+      { label: 'Processing Flow Rate', value: '120 - 240 m³/h (120-240 m³/hr)' },
+      { label: 'Hydrocyclone Assembly', value: '8 x 4" Polyurethane Desilter Cones' },
+      { label: 'Cut-Point Precision', value: '15 to 44 Micron Solids Separation' },
+      { label: 'Shale Shaker Unit', value: 'High-G Linear Motion Bottom Deck Shaker' },
+      { label: 'Eco & Financial Benefit', value: 'Closed-Loop Mud Recovery & Pump Protection' }
+    ],
+    footerNoteAr: 'مرحلتان مدمجتان (أقماع طرد مركزي + منخل اهتزازي سفلي) لضمان أعلى كفاءة تنقية ميدانية',
+    footerNoteEn: '2-Stage integrated clarification (Hydrocyclones + Bottom Deck Shale Shaker)',
+    image: '/images/equipment/mud_cleaner_desilter.png',
+    plateImage: '/images/equipment/equipment_04_mud_recycling.jpg',
+    featured: true,
+    order: 7
   }
 ];
 
