@@ -622,7 +622,8 @@ export async function getEquipmentList(): Promise<EquipmentType[]> {
 
 export async function saveEquipment(equipment: EquipmentType[]): Promise<EquipmentType[]> {
   invalidateCache('equipment');
-  writeStore({ equipment });
+  const updatedStore = writeStore({ equipment });
+  let resultList = updatedStore.equipment || equipment;
 
   const db = await connectDB();
   if (db) {
@@ -633,6 +634,8 @@ export async function saveEquipment(equipment: EquipmentType[]): Promise<Equipme
         let query: any = null;
         if (_id && mongoose.isValidObjectId(_id)) {
           query = { _id };
+        } else if (eq.order !== undefined) {
+          query = { order: eq.order };
         } else if (eq.nameAr) {
           query = { nameAr: eq.nameAr };
         } else {
@@ -643,23 +646,27 @@ export async function saveEquipment(equipment: EquipmentType[]): Promise<Equipme
         if (savedDoc) activeIds.push(savedDoc._id);
       }
 
-      if (activeIds.length > 0) {
+      if (activeIds.length > 0 && activeIds.length === equipment.length) {
         await Equipment.deleteMany({ _id: { $nin: activeIds } });
       }
 
       const fresh = await Equipment.find().sort({ order: 1 }).lean();
-      const parsed = JSON.parse(JSON.stringify(fresh));
-      setCache('equipment', parsed);
-      writeStore({ equipment: parsed });
-      triggerRevalidation(['/', '/equipment', '/admin/equipment']);
-      return parsed;
+      if (fresh && fresh.length > 0) {
+        const parsed = JSON.parse(JSON.stringify(fresh));
+        setCache('equipment', parsed);
+        writeStore({ equipment: parsed });
+        resultList = parsed;
+      }
     } catch (e) {
       console.warn('Error persisting equipment to MongoDB:', e);
     }
+  } else {
+    setCache('equipment', resultList);
   }
 
   triggerRevalidation(['/', '/equipment', '/admin/equipment']);
-  return equipment;
+  pingSearchEngines();
+  return resultList;
 }
 
 export const getEquipment = getEquipmentList;

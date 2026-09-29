@@ -28,16 +28,27 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
+
+    if (Array.isArray(body)) {
+      const saved = await saveEquipment(body);
+      return NextResponse.json({ success: true, data: saved, message: 'تم حفظ قائمة المعدات بنجاح' });
+    }
+
     const equipment = await getEquipmentList();
     const id = body._id || body.id;
+    const bodyOrder = body.order !== undefined ? Number(body.order) : null;
 
     let matched = false;
     const updated = equipment.map((item: any) => {
-      const isMatch =
-        (id && (String(item._id) === String(id) || String(item.id) === String(id))) ||
-        (body.nameAr && String(item.nameAr) === String(body.nameAr));
+      const itemId = item._id || item.id;
+      const itemOrder = item.order !== undefined ? Number(item.order) : null;
 
-      if (isMatch) {
+      const isMatch =
+        (id && itemId && String(itemId) === String(id)) ||
+        (bodyOrder !== null && itemOrder !== null && itemOrder === bodyOrder) ||
+        (body.nameAr && item.nameAr && String(item.nameAr).trim() === String(body.nameAr).trim());
+
+      if (isMatch && !matched) {
         matched = true;
         return { ...item, ...body };
       }
@@ -47,7 +58,7 @@ export async function POST(req: NextRequest) {
     if (!matched) {
       const newItem = {
         ...body,
-        order: equipment.length + 1,
+        order: body.order || equipment.length + 1,
       };
       updated.push(newItem);
     }
@@ -77,11 +88,20 @@ export async function DELETE(req: NextRequest) {
     }
 
     const equipment = await getEquipmentList();
-    const updated = equipment.filter((item: any) => String(item._id) !== String(id) && String(item.id) !== String(id));
-    const saved = await saveEquipment(updated);
+    const updated = equipment.filter(
+      (item: any) =>
+        String(item._id) !== String(id) &&
+        String(item.id) !== String(id) &&
+        String(item.order) !== String(id) &&
+        String(item.nameAr) !== String(id)
+    );
+
+    const reordered = updated.map((item, idx) => ({ ...item, order: idx + 1 }));
+    const saved = await saveEquipment(reordered);
     return NextResponse.json({ success: true, data: saved, message: 'تم حذف المعدة بنجاح' });
   } catch (error: any) {
     return NextResponse.json({ success: false, message: error.message }, { status: 500 });
   }
 }
+
 

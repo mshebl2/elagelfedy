@@ -261,7 +261,11 @@ export default function AdminEquipmentPage() {
       if (data.success) {
         showToast('success', data.message || 'تم حفظ بيانات المعدة بنجاح');
         setModalOpen(false);
-        await loadEquipment();
+        if (Array.isArray(data.data)) {
+          setEquipment(data.data);
+        } else {
+          await loadEquipment();
+        }
       } else {
         showToast('error', data.message || 'فشل حفظ المعدة');
       }
@@ -274,17 +278,21 @@ export default function AdminEquipmentPage() {
 
   // Delete handler
   const handleDelete = async (item: EquipmentType) => {
-    const id = item._id;
+    const id = item._id || item.order || item.nameAr;
     if (!confirm(`هل أنت متأكد من حذف المعدة "${item.nameAr}" نهائياً من الأسطول؟`)) return;
 
     try {
-      const res = await fetch(`/api/admin/equipment?id=${id || item.nameAr}`, {
+      const res = await fetch(`/api/admin/equipment?id=${encodeURIComponent(String(id))}`, {
         method: 'DELETE',
       });
       const data = await res.json();
       if (data.success) {
         showToast('success', 'تم حذف المعدة بنجاح');
-        await loadEquipment();
+        if (Array.isArray(data.data)) {
+          setEquipment(data.data);
+        } else {
+          await loadEquipment();
+        }
       } else {
         showToast('error', data.message || 'فشل حذف المعدة');
       }
