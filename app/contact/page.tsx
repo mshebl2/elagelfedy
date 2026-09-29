@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'طلب عرض سعر ودراسة هندسية | AACC HDD-MT',
     description: 'تواصل مباشر مع الإدارة الهندسية وطلب دراسات جيوتقنية وعروض أسعار دقيقة لمشاريعك.',
-    url: 'https://aacc-ksa.vercel.app/contact',
+    url: 'https://www.alaajsa.com/contact',
   },
 };
 
@@ -46,20 +46,20 @@ export default async function ContactPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'الرئيسية',
-            item: 'https://aacc-ksa.vercel.app',
+            item: 'https://www.alaajsa.com',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'تواصل معنا وطلب عرض سعر',
-            item: 'https://aacc-ksa.vercel.app/contact',
+            item: 'https://www.alaajsa.com/contact',
           },
         ],
       },
       {
         '@type': 'ContactPage',
-        '@id': 'https://aacc-ksa.vercel.app/contact#webpage',
-        url: 'https://aacc-ksa.vercel.app/contact',
+        '@id': 'https://www.alaajsa.com/contact#webpage',
+        url: 'https://www.alaajsa.com/contact',
         name: 'صفحة التواصل والمناقصات - شركة العاج الفضي للمقاولات',
         description: 'قنوات التواصل المباشر وطلب دراسات الحفر الموجه والمناقصات الهندسية.',
       },

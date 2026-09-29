@@ -511,7 +511,7 @@ async function generateProfilePdf() {
     <div class="page-footer">
       <span>شركة العاج الفضي للتجارة والمقاولات (AACC)</span>
       <span>صفحة 2</span>
-      <span>www.aacc-ksa.vercel.app</span>
+      <span>www.alaajsa.com</span>
     </div>
   </div>
 
@@ -577,7 +577,7 @@ async function generateProfilePdf() {
     <div class="page-footer">
       <span>شركة العاج الفضي للتجارة والمقاولات (AACC)</span>
       <span>صفحة 3</span>
-      <span>www.aacc-ksa.vercel.app</span>
+      <span>www.alaajsa.com</span>
     </div>
   </div>
 
@@ -645,7 +645,7 @@ async function generateProfilePdf() {
     <div class="page-footer">
       <span>شركة العاج الفضي للتجارة والمقاولات (AACC)</span>
       <span>صفحة 4</span>
-      <span>www.aacc-ksa.vercel.app</span>
+      <span>www.alaajsa.com</span>
     </div>
   </div>
 
@@ -746,7 +746,7 @@ async function generateProfilePdf() {
     <div class="page-footer">
       <span>شركة العاج الفضي للتجارة والمقاولات (AACC)</span>
       <span>صفحة 5</span>
-      <span>www.aacc-ksa.vercel.app</span>
+      <span>www.alaajsa.com</span>
     </div>
   </div>
 
@@ -840,7 +840,7 @@ async function generateProfilePdf() {
     <div class="page-footer">
       <span>شركة العاج الفضي للتجارة والمقاولات (AACC)</span>
       <span>صفحة 6</span>
-      <span>www.aacc-ksa.vercel.app</span>
+      <span>www.alaajsa.com</span>
     </div>
   </div>
 
@@ -937,7 +937,7 @@ async function generateProfilePdf() {
     <div class="page-footer">
       <span>شركة العاج الفضي للتجارة والمقاولات (AACC)</span>
       <span>صفحة 7</span>
-      <span>www.aacc-ksa.vercel.app</span>
+      <span>www.alaajsa.com</span>
     </div>
   </div>
 
@@ -1034,7 +1034,7 @@ async function generateProfilePdf() {
     <div class="page-footer">
       <span>شركة العاج الفضي للتجارة والمقاولات (AACC)</span>
       <span>صفحة 8</span>
-      <span>www.aacc-ksa.vercel.app</span>
+      <span>www.alaajsa.com</span>
     </div>
   </div>
 
@@ -1093,7 +1093,7 @@ async function generateProfilePdf() {
     <div class="page-footer">
       <span>شركة العاج الفضي للتجارة والمقاولات (AACC)</span>
       <span>صفحة 9</span>
-      <span>www.aacc-ksa.vercel.app</span>
+      <span>www.alaajsa.com</span>
     </div>
   </div>
 
@@ -1167,12 +1167,12 @@ async function generateProfilePdf() {
             <div style="color: #e2e8f0;" dir="ltr">+966 50 942 4820 | +966 13 800 0000</div>
           </div>
           <div>
-            <div style="color: #c5a869; font-weight: 800; margin-bottom: 2px;">✉️ البريد الإلكتروني للمناقصات والمشاريع:</div>
-            <div style="color: #e2e8f0;">tenders@aacc-ksa.com | mo.hdd@hotmail.com</div>
+            <div style="color: #c5a869; font-weight: 800; margin-bottom: 2px;">✉️ البريد الإلكتروني الرسمي (الطلبات والمناقصات والإدارة):</div>
+            <div style="color: #e2e8f0;">info@alaajsa.com | mohdd@alaajsa.com | Moayad@alaajsa.com</div>
           </div>
           <div>
             <div style="color: #c5a869; font-weight: 800; margin-bottom: 2px;">🌐 البوابة الإلكترونية الرسمية:</div>
-            <div style="color: #e2e8f0;">https://aacc-ksa.vercel.app</div>
+            <div style="color: #e2e8f0;">https://www.alaajsa.com</div>
           </div>
         </div>
 
@@ -1184,7 +1184,7 @@ async function generateProfilePdf() {
     <div class="page-footer">
       <span>شركة العاج الفضي للتجارة والمقاولات (AACC)</span>
       <span>صفحة 10</span>
-      <span>www.aacc-ksa.vercel.app</span>
+      <span>www.alaajsa.com</span>
     </div>
   </div>
 

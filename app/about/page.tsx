@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'عن الشركة والقيادة التنفيذية | شركة العاج الفضي للمقاولات',
     description: '18+ سنة خبرة في الحفر الأفقي الموجه (HDD) والأنفاق الدقيقة ومشاريع البنية التحتية الاستراتيجية بالمملكة.',
-    url: 'https://aacc-ksa.vercel.app/about',
+    url: 'https://www.alaajsa.com/about',
   },
 };
 
@@ -44,13 +44,13 @@ export default async function AboutPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'الرئيسية',
-        item: 'https://aacc-ksa.vercel.app',
+        item: 'https://www.alaajsa.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'عن الشركة والقيادة',
-        item: 'https://aacc-ksa.vercel.app/about',
+        item: 'https://www.alaajsa.com/about',
       },
     ],
   };

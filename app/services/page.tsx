@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'الأنشطة المعتمدة والخدمات الهندسية | AACC HDD-MT',
     description: 'تنفيذ حلول الحفر الأفقي الموجه والأنفاق الدقيقة ومشاريع البنية التحتية حتى قطر 1500 ملم.',
-    url: 'https://aacc-ksa.vercel.app/services',
+    url: 'https://www.alaajsa.com/services',
   },
 };
 
@@ -48,13 +48,13 @@ export default async function ServicesPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'الرئيسية',
-        item: 'https://aacc-ksa.vercel.app',
+        item: 'https://www.alaajsa.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'الأنشطة والخدمات المعتمدة',
-        item: 'https://aacc-ksa.vercel.app/services',
+        item: 'https://www.alaajsa.com/services',
       },
     ],
   };

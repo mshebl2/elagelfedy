@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'العملاء والشركاء الإستراتيجيون | AACC HDD-MT',
     description: 'شراكات تنفيذية موثوقة مع كبرى الهيئات والمؤسسات الحكومية وشركات التطوير بالمملكة.',
-    url: 'https://aacc-ksa.vercel.app/clients',
+    url: 'https://www.alaajsa.com/clients',
   },
 };
 
@@ -44,13 +44,13 @@ export default async function ClientsPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'الرئيسية',
-        item: 'https://aacc-ksa.vercel.app',
+        item: 'https://www.alaajsa.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'العملاء والشركاء الإستراتيجيون',
-        item: 'https://aacc-ksa.vercel.app/clients',
+        item: 'https://www.alaajsa.com/clients',
       },
     ],
   };

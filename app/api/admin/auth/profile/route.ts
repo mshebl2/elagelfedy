@@ -11,7 +11,7 @@ export async function GET() {
     }
 
     const db = await connectDB();
-    let email = 'admin@aacc-ksa.com';
+    let email = 'admin@alaajsa.com';
     let username = session.username;
 
     if (db) {

@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     openGraph: {
       title,
       description: desc,
-      url: `https://aacc-ksa.vercel.app/projects/${slug}`,
+      url: `https://www.alaajsa.com/projects/${slug}`,
       images: [
         {
           url: project.mainImage,
@@ -93,25 +93,25 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             '@type': 'ListItem',
             position: 1,
             name: 'الرئيسية',
-            item: 'https://aacc-ksa.vercel.app',
+            item: 'https://www.alaajsa.com',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'سجل المشاريع المعتمدة',
-            item: 'https://aacc-ksa.vercel.app/projects',
+            item: 'https://www.alaajsa.com/projects',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: project.titleAr,
-            item: `https://aacc-ksa.vercel.app/projects/${slug}`,
+            item: `https://www.alaajsa.com/projects/${slug}`,
           },
         ],
       },
       {
         '@type': 'Project',
-        '@id': `https://aacc-ksa.vercel.app/projects/${slug}#project`,
+        '@id': `https://www.alaajsa.com/projects/${slug}#project`,
         name: project.titleAr,
         alternateName: project.titleEn,
         description: project.descriptionAr || project.descriptionEn,
@@ -123,7 +123,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         provider: {
           '@type': 'Corporation',
           name: 'شركة العاج الفضي للمقاولات (AACC HDD-MT)',
-          url: 'https://aacc-ksa.vercel.app',
+          url: 'https://www.alaajsa.com',
         },
       },
     ],

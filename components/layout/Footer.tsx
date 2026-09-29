@@ -274,23 +274,47 @@ export default function Footer() {
                   </div>
                 </a>
 
-                {/* 3. Official Email Row */}
-                <a
-                  href="mailto:mo.hdd@hotmail.com"
-                  className="flex items-center gap-3 group/link hover:bg-emerald-950/40 p-2.5 rounded-xl border border-transparent hover:border-emerald-700/50 transition-all"
-                >
-                  <div className="w-9 h-9 rounded-xl bg-emerald-950/90 border border-emerald-600/70 flex items-center justify-center text-[#c5a869] group-hover/link:text-[#fde047] group-hover/link:scale-110 transition-all shrink-0 shadow-xs">
-                    <Mail className="w-4.5 h-4.5" />
+                {/* 3. Official Email Rows */}
+                <div className="space-y-1.5 pt-1">
+                  <div className="flex items-center justify-between text-xs px-2 text-emerald-300/80 font-medium">
+                    <span>{lang === 'ar' ? 'الإيميلات الرسمية:' : 'Official Emails:'}</span>
                   </div>
-                  <div className="flex-1 flex items-center justify-between">
-                    <span className="text-xs text-emerald-300/80 font-medium">
-                      {lang === 'ar' ? 'البريد الرسمي:' : 'Official Email:'}
-                    </span>
-                    <span className="text-white font-bold text-xs sm:text-sm group-hover/link:text-[#c5a869] transition-colors">
-                      mo.hdd@hotmail.com
-                    </span>
+                  <div className="space-y-1">
+                    <a
+                      href="mailto:info@alaajsa.com"
+                      className="flex items-center gap-2.5 hover:bg-emerald-950/40 p-2 rounded-xl border border-transparent hover:border-emerald-700/50 transition-all text-xs"
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-emerald-950/90 border border-emerald-600/70 flex items-center justify-center text-[#c5a869] shrink-0">
+                        <Mail className="w-3.5 h-3.5" />
+                      </div>
+                      <span className="text-white font-bold group-hover/link:text-[#c5a869] transition-colors">
+                        info@alaajsa.com
+                      </span>
+                    </a>
+                    <a
+                      href="mailto:mohdd@alaajsa.com"
+                      className="flex items-center gap-2.5 hover:bg-emerald-950/40 p-2 rounded-xl border border-transparent hover:border-emerald-700/50 transition-all text-xs"
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-emerald-950/90 border border-emerald-600/70 flex items-center justify-center text-[#c5a869] shrink-0">
+                        <Mail className="w-3.5 h-3.5" />
+                      </div>
+                      <span className="text-white font-bold group-hover/link:text-[#c5a869] transition-colors">
+                        mohdd@alaajsa.com
+                      </span>
+                    </a>
+                    <a
+                      href="mailto:Moayad@alaajsa.com"
+                      className="flex items-center gap-2.5 hover:bg-emerald-950/40 p-2 rounded-xl border border-transparent hover:border-emerald-700/50 transition-all text-xs"
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-emerald-950/90 border border-emerald-600/70 flex items-center justify-center text-[#c5a869] shrink-0">
+                        <Mail className="w-3.5 h-3.5" />
+                      </div>
+                      <span className="text-white font-bold group-hover/link:text-[#c5a869] transition-colors">
+                        Moayad@alaajsa.com
+                      </span>
+                    </a>
                   </div>
-                </a>
+                </div>
               </div>
 
               {/* Bottom Sovereign Numbers Row */}

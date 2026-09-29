@@ -93,7 +93,12 @@ export default function ContactRfqSection({ contactInfo, services = [] }: Contac
   };
 
   const phone = contactInfo?.phone || '+966 509424820';
-  const email = contactInfo?.email || 'mo.hdd@hotmail.com';
+  const primaryEmail = contactInfo?.email || 'info@alaajsa.com';
+  const officialEmails = [
+    { email: 'info@alaajsa.com', labelAr: 'البريد العام والخدمات', labelEn: 'General Inquiries' },
+    { email: 'mohdd@alaajsa.com', labelAr: 'إدارة المناقصات والتنفيذ', labelEn: 'Tenders & Operations' },
+    { email: 'Moayad@alaajsa.com', labelAr: 'الإدارة والتواصل الرسمي', labelEn: 'Executive Management' },
+  ];
   const address =
     lang === 'ar'
       ? contactInfo?.addressAr || 'مبنى 3315، شارع حفصة بنت عمر، حي الأندلس، الرياض 13212، المملكة العربية السعودية'
@@ -139,20 +144,29 @@ export default function ContactRfqSection({ contactInfo, services = [] }: Contac
                 </div>
               </div>
 
-              <div className="p-3.5 border border-slate-200 dark:border-[#2a313a] bg-slate-50 dark:bg-[#13171b] rounded flex items-center gap-3">
-                <div className="p-2 bg-white dark:bg-[#0c0e10] rounded border border-slate-200 dark:border-[#2a313a]">
+              <div className="p-3.5 border border-slate-200 dark:border-[#2a313a] bg-slate-50 dark:bg-[#13171b] rounded flex items-start gap-3">
+                <div className="p-2 bg-white dark:bg-[#0c0e10] rounded border border-slate-200 dark:border-[#2a313a] mt-0.5">
                   <Mail className="w-4 h-4 text-[#0f382a] dark:text-[#c5a869]" />
                 </div>
-                <div>
-                  <span className="text-slate-500 dark:text-zinc-400 block text-[10px]">
-                    {dict.contact.tendersEmail}
+                <div className="w-full">
+                  <span className="text-slate-500 dark:text-zinc-400 block text-[10px] mb-1.5 font-bold">
+                    {lang === 'ar' ? 'الإيميلات الرسمية للشركة:' : 'Official Company Emails:'}
                   </span>
-                  <a
-                    href={`mailto:${email}`}
-                    className="text-slate-900 dark:text-white font-bold hover:text-[#0f382a] dark:hover:text-[#c5a869] transition-colors"
-                  >
-                    {email}
-                  </a>
+                  <div className="space-y-1.5">
+                    {officialEmails.map((item, idx) => (
+                      <div key={idx} className="flex flex-wrap items-center justify-between gap-1 text-xs">
+                        <span className="text-slate-500 dark:text-zinc-400 text-[11px]">
+                          {lang === 'ar' ? item.labelAr : item.labelEn}:
+                        </span>
+                        <a
+                          href={`mailto:${item.email}`}
+                          className="text-slate-900 dark:text-white font-bold hover:text-[#0f382a] dark:hover:text-[#c5a869] transition-colors"
+                        >
+                          {item.email}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 

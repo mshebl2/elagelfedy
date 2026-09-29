@@ -72,7 +72,7 @@ function triggerRevalidation(paths: string[] = ['/', '/services', '/projects', '
 
 async function pingSearchEngines() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://aacc-ksa.vercel.app';
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.alaajsa.com';
     const sitemapUrl = encodeURIComponent(`${baseUrl}/sitemap.xml`);
     fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`).catch(() => {});
     fetch(`https://www.bing.com/ping?sitemap=${sitemapUrl}`).catch(() => {});
@@ -99,7 +99,7 @@ export async function ensureDatabaseSeeded() {
           const passwordHash = await hashPassword(defaultPass);
           await AdminUser.create({
             username: defaultUser,
-            email: 'admin@aacc-ksa.com',
+            email: 'admin@alaajsa.com',
             passwordHash,
             role: 'superadmin',
           });

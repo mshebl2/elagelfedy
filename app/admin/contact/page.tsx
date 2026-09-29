@@ -21,8 +21,8 @@ export default function AdminContactPage() {
     phone: '+966 55 522 7109',
     secondaryPhone: '+966 50 123 4567',
     whatsapp: '+966555227109',
-    email: 'info@aacc-ksa.com',
-    tendersEmail: 'tenders@aacc-ksa.com',
+    email: 'info@alaajsa.com',
+    tendersEmail: 'mohdd@alaajsa.com',
     addressAr: 'المملكة العربية السعودية - الرياض - حي الملقا - طريق أنس بن مالك',
     addressEn: 'Anas Bin Malik Road, Al-Malqa District, Riyadh, Kingdom of Saudi Arabia',
     cr: '1010892415',
@@ -213,7 +213,7 @@ export default function AdminContactPage() {
                 dir="ltr"
                 value={settings.email}
                 onChange={(e) => setSettings({ ...settings, email: e.target.value })}
-                placeholder="info@aacc-ksa.com"
+                placeholder="info@alaajsa.com"
                 className="w-full bg-slate-50 border border-slate-200 rounded px-3 py-2 text-xs text-slate-900"
               />
             </div>
@@ -227,7 +227,7 @@ export default function AdminContactPage() {
                 dir="ltr"
                 value={settings.tendersEmail || ''}
                 onChange={(e) => setSettings({ ...settings, tendersEmail: e.target.value })}
-                placeholder="tenders@aacc-ksa.com"
+                placeholder="mohdd@alaajsa.com"
                 className="w-full bg-slate-50 border border-slate-200 rounded px-3 py-2 text-xs text-slate-900"
               />
             </div>

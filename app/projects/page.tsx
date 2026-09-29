@@ -47,13 +47,13 @@ export default async function ProjectsPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'الرئيسية',
-        item: 'https://aacc-ksa.vercel.app',
+        item: 'https://www.alaajsa.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'سجل المشاريع المعتمدة',
-        item: 'https://aacc-ksa.vercel.app/projects',
+        item: 'https://www.alaajsa.com/projects',
       },
     ],
   };

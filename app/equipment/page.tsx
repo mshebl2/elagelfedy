@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'الأسطول والمعدات الثقيلة المتخصصة | AACC HDD-MT',
     description: 'أسطول متقدم بقدرات سحب تصل إلى 100,000 رطل لحفر المعابر الصخرية المعقدة بكفاءة وسرعة فائقة.',
-    url: 'https://aacc-ksa.vercel.app/equipment',
+    url: 'https://www.alaajsa.com/equipment',
   },
 };
 
@@ -46,13 +46,13 @@ export default async function EquipmentPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'الرئيسية',
-        item: 'https://aacc-ksa.vercel.app',
+        item: 'https://www.alaajsa.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'الأسطول والمعدات التخصصية',
-        item: 'https://aacc-ksa.vercel.app/equipment',
+        item: 'https://www.alaajsa.com/equipment',
       },
     ],
   };

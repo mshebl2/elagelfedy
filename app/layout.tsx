@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     'شركة العاج الفضي للمقاولات (AACC HDD-MT) - المقاول المعتمد والمتخصص في الحفر الأفقي الموجه (HDD) حتى 1500 ملم، والأنفاق الدقيقة (Microtunneling)، وشبكات البنية التحتية الإستراتيجية بالمملكة العربية السعودية وفق معايير أرامكو وISO.',
   applicationName: 'شركة العاج الفضي للمقاولات',
-  authors: [{ name: 'AACC Engineering Team', url: 'https://elagelfedy.vercel.app' }],
+  authors: [{ name: 'AACC Engineering Team', url: 'https://www.alaajsa.com' }],
   generator: 'Next.js',
   keywords: [
     'الحفر الأفقي الموجه',
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     'Microtunneling KSA',
     'أنفاق دقيقة',
     'شركة العاج الفضي للمقاولات',
+    'alaajsa',
+    'alaajsa.com',
     'AACC HDD-MT',
     'مقاول حفر موجه معتمد أرامكو',
     'مقاول معتمد الشركة السعودية للكهرباء',
@@ -46,19 +48,19 @@ export const metadata: Metadata = {
   ],
   creator: 'شركة العاج الفضي للمقاولات',
   publisher: 'Alaaj Alfedhi Contracting Company',
-  metadataBase: new URL('https://elagelfedy.vercel.app'),
+  metadataBase: new URL('https://www.alaajsa.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.alaajsa.com',
     languages: {
-      'ar-SA': '/',
-      'en-US': '/?lang=en',
+      'ar-SA': 'https://www.alaajsa.com',
+      'en-US': 'https://www.alaajsa.com/?lang=en',
     },
   },
   openGraph: {
     title: 'شركة العاج الفضي للمقاولات | AACC HDD-MT',
     description:
       'رواد الحفر الأفقي الموجه والأنفاق الدقيقة وشبكات البنية التحتية في المملكة العربية السعودية مع سجل إنجاز يتجاوز 12,136+ متراً طولياً.',
-    url: 'https://elagelfedy.vercel.app',
+    url: 'https://www.alaajsa.com',
     siteName: 'شركة العاج الفضي للمقاولات (AACC HDD-MT)',
     locale: 'ar_SA',
     alternateLocale: ['en_US'],

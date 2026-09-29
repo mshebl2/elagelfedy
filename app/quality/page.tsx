@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'سياسات الجودة والسلامة والبيئة | AACC HDD-MT',
     description: 'التزام غير مشروط بمعايير ISO الدولية لحماية الأرواح والمنشآت مع تحقيق سجل 100% بدون أي إصابات هادرة للوقت.',
-    url: 'https://aacc-ksa.vercel.app/quality',
+    url: 'https://www.alaajsa.com/quality',
   },
 };
 
@@ -44,13 +44,13 @@ export default async function QualityPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'الرئيسية',
-        item: 'https://aacc-ksa.vercel.app',
+        item: 'https://www.alaajsa.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'سياسات الجودة والسلامة (QHSE)',
-        item: 'https://aacc-ksa.vercel.app/quality',
+        item: 'https://www.alaajsa.com/quality',
       },
     ],
   };

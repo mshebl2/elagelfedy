@@ -40,19 +40,19 @@ export default async function HomePage() {
     '@graph': [
       {
         '@type': ['Corporation', 'GeneralContractor'],
-        '@id': 'https://aacc-ksa.vercel.app/#corporation',
+        '@id': 'https://www.alaajsa.com/#corporation',
         name: 'شركة العاج الفضي للمقاولات',
         alternateName: 'Alaaj Alfedhi Contracting Company (AACC HDD-MT)',
         legalName: 'شركة العاج الفضي للمقاولات',
-        url: 'https://aacc-ksa.vercel.app',
+        url: 'https://www.alaajsa.com',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://aacc-ksa.vercel.app/images/logo/aacc_official_logo.png',
+          url: 'https://www.alaajsa.com/images/logo/aacc_official_logo.png',
           caption: 'شعار شركة العاج الفضي للمقاولات',
         },
-        image: 'https://aacc-ksa.vercel.app/images/hero/hero_slide_1.jpg',
+        image: 'https://www.alaajsa.com/images/hero/hero_slide_1.jpg',
         telephone: '+966509424820',
-        email: 'mo.hdd@hotmail.com',
+        email: 'info@alaajsa.com',
         priceRange: '$$$$',
         address: {
           '@type': 'PostalAddress',
@@ -142,12 +142,12 @@ export default async function HomePage() {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://aacc-ksa.vercel.app/#website',
-        url: 'https://aacc-ksa.vercel.app',
+        '@id': 'https://www.alaajsa.com/#website',
+        url: 'https://www.alaajsa.com',
         name: 'شركة العاج الفضي للمقاولات (AACC HDD-MT)',
         description: 'رواد الحفر الأفقي الموجه والأنفاق الدقيقة وشبكات البنية التحتية في المملكة العربية السعودية.',
         publisher: {
-          '@id': 'https://aacc-ksa.vercel.app/#corporation',
+          '@id': 'https://www.alaajsa.com/#corporation',
         },
         inLanguage: ['ar-SA', 'en-US'],
       },

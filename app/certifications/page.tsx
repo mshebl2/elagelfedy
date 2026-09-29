@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'منظومة الجودة والاعتمادات الرسمية | AACC HDD-MT',
     description: 'شهادات الآيزو الثلاثية المعتمدة والتراخيص الحكومية الموثقة لشركة العاج الفضي للمقاولات.',
-    url: 'https://aacc-ksa.vercel.app/certifications',
+    url: 'https://www.alaajsa.com/certifications',
   },
 };
 
@@ -45,13 +45,13 @@ export default async function CertificationsPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'الرئيسية',
-        item: 'https://aacc-ksa.vercel.app',
+        item: 'https://www.alaajsa.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'الجودة والاعتمادات والتراخيص',
-        item: 'https://aacc-ksa.vercel.app/certifications',
+        item: 'https://www.alaajsa.com/certifications',
       },
     ],
   };

@@ -39,11 +39,11 @@ export default function CorporateTopBar() {
           </a>
           <span className="text-slate-600 dark:text-zinc-700 hidden sm:inline">|</span>
           <a
-            href="mailto:mo.hdd@hotmail.com"
+            href="mailto:info@alaajsa.com"
             className="hidden sm:flex items-center gap-1.5 text-slate-200 hover:text-white dark:text-zinc-200 dark:hover:text-[#c5a869] transition-colors whitespace-nowrap group"
           >
             <Mail className="w-3.5 h-3.5 text-[#b89758] dark:text-[#c5a869] group-hover:scale-110 transition-transform shrink-0" />
-            <span className="font-bold">mo.hdd@hotmail.com</span>
+            <span className="font-bold">info@alaajsa.com</span>
           </a>
         </div>
       </div>
