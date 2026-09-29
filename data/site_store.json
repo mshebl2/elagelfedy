@@ -1,141 +1,131 @@
 {
   "siteContent": {
     "hero": {
-      "badgeAr": "Ø´Ø±ÙØ© Ø³Ø¹ÙØ¯ÙØ© ÙØ¹ØªÙØ¯Ø© â¢ AACC HDD-MT",
-      "badgeEn": "CERTIFIED SAUDI CONTRACTOR â¢ AACC HDD-MT",
-      "titleAr": "Ø­ÙÙÙ Ø§ÙØ­ÙØ± Ø§ÙØ£ÙÙÙ Ø§ÙÙÙØ¬Ù ÙØ§ÙØ£ÙÙØ§Ù Ø§ÙØ¯ÙÙÙØ©",
+      "badgeAr": "شركة سعودية معتمدة • AACC HDD-MT",
+      "badgeEn": "CERTIFIED SAUDI CONTRACTOR • AACC HDD-MT",
+      "titleAr": "حلول الحفر الأفقي الموجه والأنفاق الدقيقة",
       "titleEn": "HORIZONTAL DIRECTIONAL DRILLING & MICROTUNNELING",
-      "highlightAr": "ÙÙØ¨ÙÙØ© Ø§ÙØªØ­ØªÙØ© ÙØ´Ø¨ÙØ§Øª Ø§ÙÙØ±Ø§ÙÙ Ø¨Ø§ÙÙÙÙÙØ©",
+      "highlightAr": "للبنية التحتية وشبكات المرافق بالمملكة",
       "highlightEn": "STRATEGIC INFRASTRUCTURE IN SAUDI ARABIA",
       "subtitleAr": "شركة العاج الفضي للمقاولات (AACC) — المقاول المتخصص في تنفيذ معابر الحفر الأفقي الموجه (HDD) حسب طلب العميل، وحفر الأنفاق الدقيقة (Microtunneling)، وتمديد شبكات الطاقة والمياه والغاز الإستراتيجية بالمملكة وفق معايير أرامكو وISO.",
       "subtitleEn": "Alaaj Alfedhi Contracting Co. (AACC HDD-MT) provides specialized trenchless drilling (per client request), microtunneling, and regional utility lifelines across the Kingdom of Saudi Arabia under certified Aramco and ISO quality standards.",
       "metrics": [
         {
-          "labelAr": "Ø£ÙØµÙ ÙÙØ© Ø³Ø­Ø¨",
+          "labelAr": "أقصى قوة سحب",
           "labelEn": "Max Pullback",
           "value": "100,000 lbs",
-          "highlight": true,
-          "_id": "6ab9f2fa859bdb070a7d6596"
+          "highlight": true
         },
         {
-          "labelAr": "Ø£ÙØµÙ ÙØ·Ø± Ø­ÙØ±",
+          "labelAr": "أقصى قطر حفر",
           "labelEn": "Max Bore Dia",
           "value": "حسب طلب العميل",
-          "highlight": false,
-          "_id": "6ab9f2fa859bdb070a7d6597"
+          "highlight": false
         },
         {
-          "labelAr": "ÙØ³Ø§ÙØ© Ø¯ÙØ¹ Ø£Ø­Ø§Ø¯ÙØ©",
+          "labelAr": "مسافة دفع أحادية",
           "labelEn": "Single Reach",
           "value": "1,200+ m",
-          "highlight": false,
-          "_id": "6ab9f2fa859bdb070a7d6598"
+          "highlight": false
         },
         {
-          "labelAr": "Ø³Ø¬Ù Ø§ÙØ³ÙØ§ÙØ© Ø§ÙÙÙÙÙØ©",
+          "labelAr": "سجل السلامة المهنية",
           "labelEn": "Safety Record",
           "value": "100% Zero LTI",
-          "highlight": true,
-          "_id": "6ab9f2fa859bdb070a7d6599"
+          "highlight": true
         }
       ]
     },
     "about": {
-      "badgeAr": "Ø¹Ù Ø´Ø±ÙØ© Ø§ÙØ¹Ø§Ø¬ Ø§ÙÙØ¶Ù ÙÙÙÙØ§ÙÙØ§Øª",
+      "badgeAr": "عن شركة العاج الفضي للمقاولات",
       "badgeEn": "About Alaaj Alfedhi Contracting Company",
-      "titleAr": "ÙÙØ¯Ø³Ø© ØªØªØ¬Ø§ÙØ² Ø§ÙØªÙÙØ¹Ø§Øª.",
+      "titleAr": "هندسة تتجاوز التوقعات.",
       "titleEn": "ENGINEERING BEYOND EXPECTATIONS.",
-      "descriptionAr": "ØªØ£Ø³Ø³Øª Ø´Ø±ÙØ© Ø§ÙØ¹Ø§Ø¬ Ø§ÙÙØ¶Ù ÙÙÙÙØ§ÙÙØ§Øª (AACC HDD-MT) Ø¨ÙØ¯Ø±Ø§Øª ØªØ®ØµØµÙØ© Ø¹Ø§ÙÙØ© ÙÙ Ø§ÙØ­ÙØ± Ø§ÙØ£ÙÙÙ Ø§ÙÙÙØ¬Ù ÙØ§ÙØ¨ÙÙØ© Ø§ÙØªØ­ØªÙØ© Ø§ÙÙØ¯ÙÙØ©Ø ÙØªÙÙØ¯ ØªÙÙÙØ° Ø£ÙØ«Ø± Ø§ÙÙØ¹Ø§Ø¨Ø± Ø§ÙØ£Ø±Ø¶ÙØ© ØªØ¹ÙÙØ¯Ø§ÙØ ÙØªÙØ¯ÙØ¯ Ø®Ø·ÙØ· Ø§ÙÙØ±Ø§ÙÙ Ø§ÙØ­ÙÙÙØ© ÙÙÙØ´Ø§Ø±ÙØ¹ Ø§ÙØ¹ÙÙØ§ÙØ© ÙÙ Ø§ÙÙÙÙÙØ©.",
+      "descriptionAr": "تأسست شركة العاج الفضي للمقاولات (AACC HDD-MT) بقدرات تخصصية عالية في الحفر الأفقي الموجه والبنية التحتية المدنية، وتقود تنفيذ أكثر المعابر الأرضية تعقيداً، وتمديد خطوط المرافق الحيوية للمشاريع العملاقة في المملكة.",
       "descriptionEn": "Founded with specialized horizontal directional boring and civil infrastructure capabilities, Alaaj Alfedhi Contracting Company (AACC HDD-MT) leads complex subterranean crossings, utility installations, and mega infrastructure across the Kingdom.",
       "leadership": [
         {
-          "nameAr": "Ù. ÙØ­ÙÙØ¯ Ø¹Ø¨ÙØ¯ Ø§ÙØ´ÙØ®",
+          "nameAr": "م. محمود عبيد الشيخ",
           "nameEn": "Mahmoud Obead Alsheakh",
-          "roleAr": "Ø§ÙÙØ¤Ø³Ø³ Ø§ÙÙØ´Ø§Ø±Ù ÙØ§ÙØ±Ø¦ÙØ³ Ø§ÙØªÙÙÙØ°Ù",
+          "roleAr": "المؤسس المشارك والرئيس التنفيذي",
           "roleEn": "Co-Founder & Chief Executive Officer",
-          "experienceAr": "18+ Ø³ÙØ© Ø®Ø¨Ø±Ø© ÙÙ Ø§ÙØ­ÙØ± Ø§ÙÙÙØ¬Ù",
+          "experienceAr": "18+ سنة خبرة في الحفر الموجه",
           "experienceEn": "18+ Yrs HDD",
-          "subRoleAr": "Ø³Ø§Ø¨ÙØ§Ù ÙÙØ± ÙÙØ§ØªØµØ§ÙØ§Øª ÙØ§ÙØ£ÙÙØ±Ù â¢ ÙØ´Ø±Ù Ø£ÙÙ Ø¹ÙÙÙØ§Øª HDD",
-          "subRoleEn": "Former Noor Telecom & Al-Angari â¢ Senior HDD Superintendent",
-          "quoteAr": "Â«ÙÙ Ø®ÙØ§Ù 18 Ø¹Ø§ÙØ§Ù ÙÙ Ø§ÙØ®Ø¨Ø±Ø© ÙÙ Ø§ÙØ­ÙØ± Ø§ÙØ£ÙÙÙ Ø§ÙÙÙØ¬ÙØ Ø§ÙØªØ³Ø¨ÙØ§ ÙÙÙØ§Ù ÙÙØ¯Ø³ÙØ§Ù Ø¹ÙÙÙØ§Ù ÙÙØ°Ù Ø§ÙØªÙÙÙØ© Ø§ÙÙØªÙØ¯ÙØ©. ÙÙÙØ° Ø§ÙÙØ¹Ø§Ø¨Ø± Ø§ÙÙØ¹ÙØ¯Ø© â ÙÙ Ø§ÙØ·Ø±Ù Ø§ÙØ³Ø±ÙØ¹Ø© ÙØ®Ø·ÙØ· Ø§ÙØ³ÙÙ Ø§ÙØ­Ø¯ÙØ¯ÙØ© Ø¥ÙÙ Ø§ÙÙØ¹Ø§Ø¨Ø± ØªØ­Øª Ø§ÙÙØ§Ø¦ÙØ© â ÙØ¨ØªÙØ±ÙÙ Ø­ÙÙÙØ§Ù ÙÙØ¯Ø³ÙØ© ÙÙÙ ØªØ­Ø¯Ù Ø¬ÙÙÙÙØ¬Ù.Â»",
-          "quoteEn": "âWith 18 years of experience in horizontal directional boring, I gained deep understanding of this advanced technology. We implement complex crossingsâfrom multi-lane highways and rail corridors to underwater linesâdeveloping innovative solutions to every geological challenge.â",
+          "subRoleAr": "سابقاً نور للاتصالات والأنقري • مشرف أول عمليات HDD",
+          "subRoleEn": "Former Noor Telecom & Al-Angari • Senior HDD Superintendent",
+          "quoteAr": "«من خلال 18 عاماً من الخبرة في الحفر الأفقي الموجه، اكتسبنا فهماً هندسياً عميقاً لهذه التقنية المتقدمة. ننفذ المعابر المعقدة — من الطرق السريعة وخطوط السكك الحديدية إلى المعابر تحت المائية — مبتكرين حلولاً هندسية لكل تحدٍ جيولوجي.»",
+          "quoteEn": "“With 18 years of experience in horizontal directional boring, I gained deep understanding of this advanced technology. We implement complex crossings—from multi-lane highways and rail corridors to underwater lines—developing innovative solutions to every geological challenge.”",
           "image": "/images/leadership/mahmoud_alsheakh.jpg",
           "badges": [
             "Aramco PTW Certified",
             "Vermeer & DCI Specialist"
-          ],
-          "_id": "6ab9f2fa859bdb070a7d659a"
+          ]
         },
         {
-          "nameAr": "ÙØ¤ÙØ¯ Ø­Ø§Ø¬ ÙØ³Ø¹ÙØ¯",
+          "nameAr": "مؤيد حاج مسعود",
           "nameEn": "Mouayed Haj Masoud",
-          "roleAr": "Ø§ÙÙØ¤Ø³Ø³ Ø§ÙÙØ´Ø§Ø±Ù ÙØ§ÙÙØ¯ÙØ± Ø§ÙØ´Ø±ÙÙ",
+          "roleAr": "المؤسس المشارك والمدير الشريك",
           "roleEn": "Co-Founder & Managing Partner",
-          "experienceAr": "20+ Ø³ÙØ© ÙÙ ÙØ·Ø§Ø¹ Ø§ÙØ·Ø§ÙØ© ÙØ§ÙØ¨ÙÙØ© Ø§ÙØªØ­ØªÙØ©",
+          "experienceAr": "20+ سنة في قطاع الطاقة والبنية التحتية",
           "experienceEn": "20+ Yrs Energy",
-          "subRoleAr": "ÙØ¤Ø³Ø³ Ø´Ø±ÙØ© SICC â¢ ÙÙØ§Ø¯Ù ØªÙÙÙØ°Ù ÙÙ ÙØ´Ø§Ø±ÙØ¹ Ø§ÙØ¬ÙØ¯ Ø§ÙØ¹Ø§ÙÙ ÙØ§ÙÙÙØ§Ø±Ø¯ Ø§ÙØ§Ø³ØªØ±Ø§ØªÙØ¬ÙØ©",
-          "subRoleEn": "Founder of SICC â¢ Strategic Energy, High-Voltage & Resource Executive",
-          "quoteAr": "Â«ÙØ¹ Ø£ÙØ«Ø± ÙÙ 20 Ø¹Ø§ÙØ§Ù ÙÙ Ø§ÙØ®Ø¨Ø±Ø© ÙÙ ÙØ·Ø§Ø¹Ø§Øª Ø§ÙØ·Ø§ÙØ© ÙØ§ÙØµÙØ§Ø¹Ø©Ø ÙØ§Ù ØªØ±ÙÙØ²Ù Ø¯Ø§Ø¦ÙØ§Ù Ø¹ÙÙ ØªØ·ÙÙØ± Ø­ÙÙÙ ÙØ¨ØªÙØ±Ø© ÙÙØ¹Ø§ÙØ© ÙÙ Ø­ÙØ« Ø§ÙØªÙÙÙØ© ÙØ±ÙØ¹ Ø§ÙÙÙØ§Ø¡Ø© Ø§ÙØªØ´ØºÙÙÙØ© ÙØ¹ Ø§ÙØ­ÙØ§Ø¸ Ø§ÙØµØ§Ø±Ù Ø¹ÙÙ Ø£Ø¹ÙÙ ÙØ¹Ø§ÙÙØ± Ø§ÙØ³ÙØ§ÙØ© Ø§ÙÙÙÙÙØ©.Â»",
-          "quoteEn": "âWith over 20 years of experience in the energy and industrial sectors, my focus has always been developing innovative, cost-effective solutions to enhance operational efficiency while maintaining uncompromising safety discipline.â",
+          "subRoleAr": "مؤسس شركة SICC • قيادي تنفيذي في مشاريع الجهد العالي والموارد الاستراتيجية",
+          "subRoleEn": "Founder of SICC • Strategic Energy, High-Voltage & Resource Executive",
+          "quoteAr": "«مع أكثر من 20 عاماً من الخبرة في قطاعات الطاقة والصناعة، كان تركيزي دائماً على تطوير حلول مبتكرة وفعالة من حيث التكلفة لرفع الكفاءة التشغيلية مع الحفاظ الصارم على أعلى معايير السلامة المهنية.»",
+          "quoteEn": "“With over 20 years of experience in the energy and industrial sectors, my focus has always been developing innovative, cost-effective solutions to enhance operational efficiency while maintaining uncompromising safety discipline.”",
           "image": "/images/leadership/mouayed_masoud.jpg",
           "badges": [
             "Industrial Operations",
             "Energy & Infrastructure"
-          ],
-          "_id": "6ab9f2fa859bdb070a7d659b"
+          ]
         }
       ],
       "vision": {
-        "titleAr": "Ø±ÙØ§Ø¯Ø© ÙÙØ¯Ø³ÙØ© Ø´Ø§ÙÙØ©",
+        "titleAr": "ريادة هندسية شاملة",
         "titleEn": "Comprehensive Engineering Leadership",
-        "textAr": "Â«ÙØ³Ø¹Ù ÙØ£Ù ÙÙÙÙ Ø§ÙØ±ÙØ§Ø¯ ÙÙ ÙØ¬Ø§Ù Ø§ÙØ­ÙØ± Ø§ÙØ£ÙÙÙ Ø§ÙÙÙØ¬Ù ÙØ­ÙØ± Ø§ÙØ£ÙÙØ§Ù Ø§ÙØ¯ÙÙÙØ© ÙÙ Ø§ÙÙÙÙÙØ© ÙØ§ÙÙÙØ·ÙØ©Ø ÙÙ Ø®ÙØ§Ù ØªÙØ¯ÙÙ Ø­ÙÙÙ ÙÙØ¯Ø³ÙØ© ÙØ¨ØªÙØ±Ø© ØªÙØ¨Ù ÙØªØ·ÙØ¨Ø§Øª Ø§ÙØ¨ÙÙØ© Ø§ÙØªØ­ØªÙØ© Ø§ÙÙØªÙØ§ÙÙØ© Ø¨Ø£Ø¹ÙÙ ÙØ¹Ø§ÙÙØ± Ø§ÙØ³ÙØ§ÙØ© ÙØ§ÙØ¬ÙØ¯Ø©.Â»",
-        "textEn": "âWe seek to be the leaders in horizontal drilling and tunneling across the Kingdom and region, providing innovative engineering solutions that meet growing infrastructure needs with the highest standards of safety and quality.â"
+        "textAr": "«نسعى لأن نكون الرواد في مجال الحفر الأفقي الموجه وحفر الأنفاق الدقيقة في المملكة والمنطقة، من خلال تقديم حلول هندسية مبتكرة تلبي متطلبات البنية التحتية المتنامية بأعلى معايير السلامة والجودة.»",
+        "textEn": "“We seek to be the leaders in horizontal drilling and tunneling across the Kingdom and region, providing innovative engineering solutions that meet growing infrastructure needs with the highest standards of safety and quality.”"
       },
       "mission": {
-        "titleAr": "ØªØ¨ÙÙ Ø£Ø­Ø¯Ø« Ø§ÙØªÙÙÙØ§Øª ÙØªØ¬Ø§ÙØ² Ø§ÙØªÙÙØ¹Ø§Øª",
+        "titleAr": "تبني أحدث التقنيات وتجاوز التوقعات",
         "titleEn": "Technology Adoption & Exceeding Expectations",
-        "textAr": "Â«ÙØªØ¨ÙÙ Ø£Ø­Ø¯Ø« Ø§ÙØªÙÙÙØ§Øª Ø§ÙØ¹Ø§ÙÙÙØ© ÙÙ Ø§ÙØ­ÙØ± Ø§ÙÙÙØ¬Ù ÙØ­ÙØ± Ø§ÙØ£ÙÙØ§Ù ÙØªÙØ¯ÙÙ Ø®Ø¯ÙØ§Øª ÙØ§Ø¦ÙØ© Ø§ÙØ¯ÙØ© ÙØ§ÙØ³Ø±Ø¹Ø©Ø ÙØªØ¬Ø§ÙØ²ÙÙ ØªÙÙØ¹Ø§Øª Ø¹ÙÙØ§Ø¦ÙØ§Ø ÙÙØ§ØªØ­ÙÙ Ø¢ÙØ§ÙØ§Ù Ø¬Ø¯ÙØ¯Ø© ÙÙ ØªØ·ÙÙØ± Ø§ÙØ¨ÙÙØ© Ø§ÙØªØ­ØªÙØ© ÙØ¹ Ø§ÙØ§ÙØªØ²Ø§Ù Ø§ÙØªØ§Ù Ø¨Ø§ÙÙØ³Ø¤ÙÙÙØ© Ø§ÙÙØ¬ØªÙØ¹ÙØ© ÙØ§ÙØ¨ÙØ¦ÙØ©.Â»",
-        "textEn": "âWe adopt the latest technologies in horizontal directional drilling and tunneling to provide fast, efficient services, exceed client expectations, and open new horizons in infrastructure development while committing to social and environmental responsibility.â"
+        "textAr": "«نتبنى أحدث التقنيات العالمية في الحفر الموجه وحفر الأنفاق لتقديم خدمات فائقة الدقة والسرعة، متجاوزين توقعات عملائنا، وفاتحين آفاقاً جديدة في تطوير البنية التحتية مع الالتزام التام بالمسؤولية المجتمعية والبيئية.»",
+        "textEn": "“We adopt the latest technologies in horizontal directional drilling and tunneling to provide fast, efficient services, exceed client expectations, and open new horizons in infrastructure development while committing to social and environmental responsibility.”"
       },
       "values": [
         {
           "number": "01",
-          "titleAr": "Ø§ÙØ¯ÙØ© Ø§ÙÙÙØ¯Ø³ÙØ©",
+          "titleAr": "الدقة الهندسية",
           "titleEn": "Engineering Precision",
-          "descriptionAr": "ØªÙØ¬ÙÙ telemetry ØªØ­Øª Ø³Ø·Ø­Ù Ø¹Ø§ÙÙ Ø§ÙØ¯ÙØ© Ø¨ÙØ¸Ø§Ù DCI Falcon ÙØ¹ ÙØ­Ø§Ù ÙØªÙØ§Ø³Ù ÙØ¹ØªÙØ¯ ÙØ£ÙØ§Ø¨ÙØ¨ Ø§ÙØ¨ÙÙÙ Ø¥ÙØ«ÙÙÙÙ ÙØ§ÙØµÙØ¨.",
-          "descriptionEn": "Sub-millimeter DCI Falcon guidance telemetry and certified butt-fusion joint integrity.",
-          "_id": "6ab9f2fa859bdb070a7d659c"
+          "descriptionAr": "توجيه telemetry تحت سطحي عالي الدقة بنظام DCI Falcon مع لحام وتماسك معتمد لأنابيب البولي إيثيلين والصلب.",
+          "descriptionEn": "Sub-millimeter DCI Falcon guidance telemetry and certified butt-fusion joint integrity."
         },
         {
           "number": "02",
-          "titleAr": "Ø³ÙØ§ÙØ© Ø¨ÙØ§ Ø­ÙØ§Ø¯Ø« (Zero-Harm)",
+          "titleAr": "سلامة بلا حوادث (Zero-Harm)",
           "titleEn": "Zero-Harm Safety",
-          "descriptionAr": "Ø§ÙØªØ«Ø§Ù ØªØ§Ù ÙØªØµØ§Ø±ÙØ­ Ø¹ÙÙ Ø£Ø±Ø§ÙÙÙ Ø§ÙØ³Ø¹ÙØ¯ÙØ© (PTW)Ø ÙÙØ¹Ø§ÙÙØ± Kent HSSE Ø§ÙØ¹Ø§ÙÙÙØ©Ø ÙØªØ¯ÙÙÙ ÙÙÙÙ ÙÙ Ø§ÙÙÙØ¯Ø§Ù.",
-          "descriptionEn": "Aramco PTW compliance, Kent HSSE excellence benchmarks, and daily field audits.",
-          "_id": "6ab9f2fa859bdb070a7d659d"
+          "descriptionAr": "امتثال تام لتصاريح عمل أرامكو السعودية (PTW)، ومعايير Kent HSSE العالمية، وتدقيق يومي في الميدان.",
+          "descriptionEn": "Aramco PTW compliance, Kent HSSE excellence benchmarks, and daily field audits."
         },
         {
           "number": "03",
-          "titleAr": "Ø§ÙØ§ÙØªØ²Ø§Ù Ø§ÙØµØ§Ø±Ù Ø¨Ø§ÙÙÙØ§Ø¹ÙØ¯",
+          "titleAr": "الالتزام الصارم بالمواعيد",
           "titleEn": "On-Time Delivery",
-          "descriptionAr": "Ø³Ø±Ø¹Ø© Ø§Ø³ØªØ«ÙØ§Ø¦ÙØ© ÙØ«Ø¨ØªØ©Ø ÙØ«Ù Ø¥ÙØ¬Ø§Ø² ÙÙÙ ØµØ®Ø±Ù Ø¨ÙØ·Ø± 42 Ø¨ÙØµØ© ÙØ¨Ø·ÙÙ 110 Ø£ÙØªØ§Ø± Ø®ÙØ§Ù 7 Ø£ÙØ§Ù Ø¹ÙÙ ÙÙØ·.",
-          "descriptionEn": "Demonstrated speed, such as completing a 110m 42-inch rock tunnel in exactly 7 days.",
-          "_id": "6ab9f2fa859bdb070a7d659e"
+          "descriptionAr": "سرعة استثنائية مثبتة، مثل إنجاز نفق صخري بقطر 42 بوصة وبطول 110 أمتار خلال 7 أيام عمل فقط.",
+          "descriptionEn": "Demonstrated speed, such as completing a 110m 42-inch rock tunnel in exactly 7 days."
         },
         {
           "number": "04",
-          "titleAr": "Ø´Ø±Ø§ÙØ© ÙØ³ØªØ¯Ø§ÙØ©",
+          "titleAr": "شراكة مستدامة",
           "titleEn": "Sustainable Partnership",
-          "descriptionAr": "Ø£Ø¯ÙÙ ØªØ£Ø«ÙØ± Ø¨ÙØ¦Ù Ø¹ÙÙ Ø§ÙØ³Ø·Ø­Ø ÙØ¥Ø¹Ø§Ø¯Ø© ØªØ¯ÙÙØ± ÙØºÙÙØ© ÙØ³ÙØ§Ø¦Ù Ø§ÙØ­ÙØ±Ø ÙÙÙÙØ© ÙØ¶Ø§ÙØ© Ø·ÙÙÙØ© Ø§ÙØ£Ø¬Ù ÙÙÙÙØ§ÙÙÙÙ.",
-          "descriptionEn": "Minimal surface disturbance, closed-loop fluid recycling, and long-term contractor value.",
-          "_id": "6ab9f2fa859bdb070a7d659f"
+          "descriptionAr": "أدنى تأثير بيئي على السطح، وإعادة تدوير مغلقة لسوائل الحفر، وقيمة مضافة طويلة الأجل للمقاولين.",
+          "descriptionEn": "Minimal surface disturbance, closed-loop fluid recycling, and long-term contractor value."
         }
       ]
     },
     "contact": {
       "phone": "+966 509424820",
       "email": "mo.hdd@hotmail.com",
-      "addressAr": "ÙØ¨ÙÙ 3315Ø Ø´Ø§Ø±Ø¹ Ø­ÙØµØ© Ø¨ÙØª Ø¹ÙØ±Ø Ø­Ù Ø§ÙØ£ÙØ¯ÙØ³Ø Ø§ÙØ±ÙØ§Ø¶ 13212Ø Ø§ÙÙÙÙÙØ© Ø§ÙØ¹Ø±Ø¨ÙØ© Ø§ÙØ³Ø¹ÙØ¯ÙØ©",
+      "addressAr": "مبنى 3315، شارع حفصة بنت عمر، حي الأندلس، الرياض 13212، المملكة العربية السعودية",
       "addressEn": "Building 3315, Hafsa Bint Umar St., Al Andalus, Riyadh 13212, Kingdom of Saudi Arabia",
       "cr": "1009156401",
       "unifiedNo": "7043006183",
@@ -143,18 +133,18 @@
       "gosiNo": "652371032"
     },
     "seo": {
-      "titleAr": "Ø´Ø±ÙØ© Ø§ÙØ¹Ø§Ø¬ Ø§ÙÙØ¶Ù ÙÙÙÙØ§ÙÙØ§Øª | AACC HDD-MT - Ø§ÙÙÙÙÙØ© Ø§ÙØ¹Ø±Ø¨ÙØ© Ø§ÙØ³Ø¹ÙØ¯ÙØ©",
+      "titleAr": "شركة العاج الفضي للمقاولات | AACC HDD-MT - المملكة العربية السعودية",
       "titleEn": "Alaaj Alfedhi Contracting Company | AACC HDD-MT - KSA",
-      "descriptionAr": "Ø´Ø±ÙØ© Ø§ÙØ¹Ø§Ø¬ Ø§ÙÙØ¶Ù ÙÙÙÙØ§ÙÙØ§Øª ÙØªØ®ØµØµØ© ÙÙ Ø£Ø¹ÙØ§Ù Ø§ÙØ­ÙØ± Ø§ÙØ£ÙÙÙ Ø§ÙÙÙØ¬Ù HDDØ ÙØ§ÙØ£ÙÙØ§Ù Ø§ÙØ¯ÙÙÙØ© MicrotunnelingØ ÙØ´Ø¨ÙØ§Øª Ø§ÙÙÙØ§Ù ÙØ§ÙÙÙØ±Ø¨Ø§Ø¡ ÙØ§ÙØ¨ÙÙØ© Ø§ÙØªØ­ØªÙØ© Ø§ÙØ§Ø³ØªØ±Ø§ØªÙØ¬ÙØ© ÙÙ Ø§ÙÙÙÙÙØ© Ø§ÙØ¹Ø±Ø¨ÙØ© Ø§ÙØ³Ø¹ÙØ¯ÙØ©.",
+      "descriptionAr": "شركة العاج الفضي للمقاولات متخصصة في أعمال الحفر الأفقي الموجه HDD، والأنفاق الدقيقة Microtunneling، وشبكات المياه والكهرباء والبنية التحتية الاستراتيجية في المملكة العربية السعودية.",
       "descriptionEn": "Alaaj Alfedhi Contracting Company (AACC HDD-MT) specializes in Horizontal Directional Drilling, Microtunneling, utility networks, and mega infrastructure projects across Saudi Arabia.",
       "keywordsAr": [
-        "Ø­ÙØ± ÙÙØ¬Ù",
-        "Ø­ÙØ± Ø£ÙÙÙ",
-        "Ø£ÙÙØ§Ù Ø¯ÙÙÙØ©",
-        "Ø¨ÙÙØ© ØªØ­ØªÙØ©",
-        "Ø£Ø±Ø§ÙÙÙ",
-        "Ø§ÙØ±ÙØ§Ø¶",
-        "Ø§ÙØ³Ø¹ÙØ¯ÙØ©",
+        "حفر موجه",
+        "حفر أفقي",
+        "أنفاق دقيقة",
+        "بنية تحتية",
+        "أرامكو",
+        "الرياض",
+        "السعودية",
         "AACC"
       ],
       "keywordsEn": [
@@ -168,10 +158,7 @@
         "AACC"
       ],
       "ogImage": "/images/services/service_01_hdd.jpg"
-    },
-    "createdAt": "2026-09-28T04:54:18.321Z",
-    "updatedAt": "2026-09-28T04:54:18.321Z",
-    "__v": 0
+    }
   },
   "heroSlides": [
     {
